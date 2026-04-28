@@ -1,0 +1,105 @@
+DataBase:
+-------
+FrontEnd:UI 
+Requirements:Pass 
+Output:Your fb account is created, for login goto LoginPage.
+BackEnd:DataBase
+
+100%:
+Contacts:
+
+Store 
+Retrive
+
+Developers:
+-------
+Functonal Developers:DataBase:Reject
+DataBase Developers:Functions:Reject
+
+Functonal Defect:Pass Pass ErrorMessage Fail 
+DataBase Defect:Pass  Fail Pass Fail 
+
+DataBase:Container/Store/Hold the Data 
+We can store Data/Information.
+
+Amazon DataBase:Products 
+FaceBook DataBase:
+
+A to Z and a to z ,0 to 9 ,SS[!@$@^$%*(]
+
+Queries:
+
+10:30 to 11:30am
+
+Data:Raw Facts: Krishna[In Valid]
+Information:Collection of proceed data.
+Krishna QA Trainer Quality Thought Ammerpet 
+
+1-2-35/A:Data 
+Information:
+
+Table:Collection of Rows and Columns.
+Data:Field:
+
+Create Empty DataBase Table:Column Names:
+
+Queries:
+CRUD:Create/Insert Retrive/Search/Select Update/Modify Delete
+
+Manual/UI:
+Queries:
+====================================================
+GitHub:
+
+
+DataBase:
+Data:Collection of Raw Facts.
+Information:Processed data.
+
+Table:Collection of Rows and Columns.
+Create Update Select 
+Delete Insert
+
+DBMS:Software
+RDBMS:Relational DataBase Management System
+MYSQL OracleDB SQL Server etc...
+
+Htnosnamesagesaddress 
+
+Student:QT 
+Job:QT 
+
+Traditional DataBase:Books/Papers:100:3rd:20page
+Modern DataBase:DBMS and RDBMS:Contacts:100
+Krishna:
+
+Re-Use Duplicate Redundence 
+
+i.Program – Data dependence,
+ii.Redundancy of data,
+iii.Limited sharing data,
+iv.Lengthy program development time.
+v.Excessive program maintenance,
+vi.Data Isolation
+vii.Security problems
+
+CRUD:Create Retrive Update Delete
+
+Client-Server:
+-------------
+Client:User:Request
+Server:DataBase:Response
+Retriving:
+
+Store and Retrive
+
+URL(Linl):www.amazon.in 
+
+Request-->Process->Response
+
+Open:Any one can access without any credentionals 
+Secure:UserName and PWD
+
+Cloud[WireLess,Internet]:Gmail:UserName and Pwd 
+Wired:
+
