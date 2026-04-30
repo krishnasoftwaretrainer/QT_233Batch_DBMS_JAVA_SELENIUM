@@ -102,4 +102,75 @@ Secure:UserName and PWD
 
 Cloud[WireLess,Internet]:Gmail:UserName and Pwd 
 Wired:
+==============================
+SQL:Queries:
 
+Software:OracleDB,SQL Server,MYSQL etc...
+
+OracleDB:
+--------
+21c 
+
+11g
+
+DBA:Project:UserName and PWD,
+CRUD:
+Create:
+Read/View 
+Update
+Delete
+
+SysDBA:USER 
+
+Syntax:create user username identified by password;
+
+DataBase:Tables:Rows:Cells:Data/Information
+
+SQL> connect / as sysdba;
+Connected.
+
+SQL> create user QT233 identified by qt233;
+User created.
+
+SQL> connect qt233
+Enter password:
+ERROR:
+ORA-01045: user QT233 lacks CREATE SESSION privilege; logon denied
+
+
+SQL> connect / as sysdba;
+Connected.
+
+SQL> grant all privileges to qt233;
+Grant succeeded.
+
+SQL> connect qt233;
+Enter password:
+Connected.
+
+Create Tables 
+Insert Data into Table
+Update 
+Select
+Delete
+
+DDL: Data Defination Language
+Create
+Alter
+Rename
+Drop
+Truncate
+
+DML: Data Manipulation Language
+Insert
+Update
+Delete
+
+DCL: Data Control Language [SYSDBA]
+Grant:
+Revoke:
+
+TCL:Transaction Control Language:
+Commit
+RollBack
+SavePoint
