@@ -73,3 +73,447 @@ SQL> connect qt233;
 Enter password:
 Connected.
 SQL>
+=======================
+
+SQL*Plus: Release 11.2.0.2.0 Production on Fri May 1 10:39:47 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> select * from tab;
+SP2-0640: Not connected
+SQL> connect qt233
+Enter password:
+Connected.
+SQL> select * from tab;
+
+no rows selected
+
+SQL> create table Student(htno number(2),sname varchar2(10),cource varchar2(10));
+
+Table created.
+
+SQL> create table Student1(htno number,sname varchar2(10),cource varchar2(10));
+
+Table created.
+
+SQL> create table Student2(htno number,sname varchar2(10)cource varchar2(10));
+create table Student2(htno number,sname varchar2(10)cource varchar2(10))
+                                                    *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+STUDENT                        TABLE
+STUDENT1                       TABLE
+
+SQL> drop student1;
+drop student1
+     *
+ERROR at line 1:
+ORA-00950: invalid DROP option
+
+
+SQL> drop table student1;
+
+Table dropped.
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+STUDENT                        TABLE
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ HTNO                                               NUMBER(2)
+ SNAME                                              VARCHAR2(10)
+ COURCE                                             VARCHAR2(10)
+
+SQL> desc stu;
+ERROR:
+ORA-04043: object stu does not exist
+
+
+SQL> alter table student add(fee number(5));
+
+Table altered.
+
+SQL> desc stu;
+ERROR:
+ORA-04043: object stu does not exist
+
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ HTNO                                               NUMBER(2)
+ SNAME                                              VARCHAR2(10)
+ COURCE                                             VARCHAR2(10)
+ FEE                                                NUMBER(5)
+
+SQL> alter table student modify(htno number(3));
+
+Table altered.
+
+SQL> alter table student modify(cource char(10));
+
+Table altered.
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ HTNO                                               NUMBER(3)
+ SNAME                                              VARCHAR2(10)
+ COURCE                                             CHAR(10)
+ FEE                                                NUMBER(5)
+
+SQL> alter table student modify(rno number(3));
+alter table student modify(rno number(3))
+                           *
+ERROR at line 1:
+ORA-00904: "RNO": invalid identifier
+
+
+SQL> alter table student rename column htno to rno;
+
+Table altered.
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ RNO                                                NUMBER(3)
+ SNAME                                              VARCHAR2(10)
+ COURCE                                             CHAR(10)
+ FEE                                                NUMBER(5)
+
+SQL> alter table student drop column fee;
+
+Table altered.
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ RNO                                                NUMBER(3)
+ SNAME                                              VARCHAR2(10)
+ COURCE                                             CHAR(10)
+
+SQL> alter table student add(fee number(5));
+
+Table altered.
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ RNO                                                NUMBER(3)
+ SNAME                                              VARCHAR2(10)
+ COURCE                                             CHAR(10)
+ FEE                                                NUMBER(5)
+
+SQL> rename student to stu;
+
+Table renamed.
+
+SQL> desc student;
+ERROR:
+ORA-04043: object student does not exist
+
+
+SQL> desc stu;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ RNO                                                NUMBER(3)
+ SNAME                                              VARCHAR2(10)
+ COURCE                                             CHAR(10)
+ FEE                                                NUMBER(5)
+
+SQL> insert into student values(101,'Krishna','Testing',5000);
+insert into student values(101,'Krishna','Testing',5000)
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> insert into stu values(101,'Krishna','Testing',5000);
+
+1 row created.
+
+SQL> desc stu;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ RNO                                                NUMBER(3)
+ SNAME                                              VARCHAR2(10)
+ COURCE                                             CHAR(10)
+ FEE                                                NUMBER(5)
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+
+SQL> insert into stu values(102,'Madhu','API',3000);
+
+1 row created.
+
+SQL> select rno from stu;
+
+       RNO
+----------
+       101
+       102
+
+SQL> select rno from stu where rno=102;
+
+       RNO
+----------
+       102
+
+SQL> insert into stu values(102,'Madhu','API');
+insert into stu values(102,'Madhu','API')
+            *
+ERROR at line 1:
+ORA-00947: not enough values
+
+
+SQL> insert into stu(rno,sname,cource) values(103,'Ramesh','Java');
+
+1 row created.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              3000
+       103 Ramesh     Java
+
+SQL> insert into stu values(&rno,&sname,&cource,&fee);
+Enter value for rno: 104
+Enter value for sname: 'dgef'
+Enter value for cource: 'gefeg'
+Enter value for fee: 6000
+old   1: insert into stu values(&rno,&sname,&cource,&fee)
+new   1: insert into stu values(104,'dgef','gefeg',6000)
+
+1 row created.
+
+SQL> /
+Enter value for rno: 105
+Enter value for sname: 'dfgdf'
+Enter value for cource: 'vddfd
+Enter value for fee: 8000
+old   1: insert into stu values(&rno,&sname,&cource,&fee)
+new   1: insert into stu values(105,'dfgdf','vddfd,8000)
+ERROR:
+ORA-01756: quoted string not properly terminated
+
+
+SQL> /
+Enter value for rno: 105
+Enter value for sname: 'dfgdf'
+Enter value for cource: 'vddfd'
+Enter value for fee: 8000
+old   1: insert into stu values(&rno,&sname,&cource,&fee)
+new   1: insert into stu values(105,'dfgdf','vddfd',8000)
+
+1 row created.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              3000
+       103 Ramesh     Java
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+
+SQL> insert into stu values(&&rno,&&sname,&&cource,&&fee);
+Enter value for rno: 106
+Enter value for sname: 'Suman'
+Enter value for cource: 'Python'
+Enter value for fee: 7000
+old   1: insert into stu values(&&rno,&&sname,&&cource,&&fee)
+new   1: insert into stu values(106,'Suman','Python',7000)
+
+1 row created.
+
+SQL> //
+old   1: insert into stu values(&&rno,&&sname,&&cource,&&fee)
+new   1: insert into stu values(106,'Suman','Python',7000)
+
+1 row created.
+
+SQL> //
+old   1: insert into stu values(&&rno,&&sname,&&cource,&&fee)
+new   1: insert into stu values(106,'Suman','Python',7000)
+
+1 row created.
+
+SQL> //
+old   1: insert into stu values(&&rno,&&sname,&&cource,&&fee)
+new   1: insert into stu values(106,'Suman','Python',7000)
+
+1 row created.
+
+SQL> //
+old   1: insert into stu values(&&rno,&&sname,&&cource,&&fee)
+new   1: insert into stu values(106,'Suman','Python',7000)
+
+1 row created.
+
+SQL> //
+old   1: insert into stu values(&&rno,&&sname,&&cource,&&fee)
+new   1: insert into stu values(106,'Suman','Python',7000)
+
+1 row created.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              3000
+       103 Ramesh     Java
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+
+11 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> update stu set fee=4000;
+
+11 rows updated.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          4000
+       102 Madhu      API              4000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            4000
+       105 dfgdf      vddfd            4000
+       106 Suman      Python           4000
+       106 Suman      Python           4000
+       106 Suman      Python           4000
+       106 Suman      Python           4000
+       106 Suman      Python           4000
+       106 Suman      Python           4000
+
+11 rows selected.
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              3000
+       103 Ramesh     Java
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+
+11 rows selected.
+
+SQL> update stu set fee=4000 where rno=103;
+
+1 row updated.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              3000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+
+11 rows selected.
+
+SQL> update stu set fee=4000 where rno=109;
+
+0 rows updated.
+
+SQL> update stu set fee=9000 where rno=102 && cource='API;
+old   1: update stu set fee=9000 where rno=102 && cource='API
+new   1: update stu set fee=9000 where rno=102 'Python'='API
+ERROR:
+ORA-01756: quoted string not properly terminated
+
+
+SQL> update stu set fee=9000 where rno=102 && cource='API';
+old   1: update stu set fee=9000 where rno=102 && cource='API'
+new   1: update stu set fee=9000 where rno=102 'Python'='API'
+update stu set fee=9000 where rno=102 'Python'='API'
+                                      *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> update stu set fee=9000 where rno=102 & cource='API';
+old   1: update stu set fee=9000 where rno=102 & cource='API'
+new   1: update stu set fee=9000 where rno=102 'Python'='API'
+update stu set fee=9000 where rno=102 'Python'='API'
+                                      *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> update stu set fee=9000 where rno=102 and cource='API';
+
+1 row updated.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+
+11 rows selected.
+
+SQL> update stu set fee=9000 where rno=109 and cource='API';
+
+0 rows updated.
+
+SQL>

@@ -162,8 +162,17 @@ Drop
 Truncate
 
 DML: Data Manipulation Language
-Insert
-Update
+Insert:
+------
+Insert Single Record
+Insert Selected Columns Values
+Insert Values continues Without insert[&](/)
+Insert Same Values multiple times(&&)(//)
+
+Update:
+------
+
+Select
 Delete
 
 DCL: Data Control Language [SYSDBA]
@@ -174,3 +183,16 @@ TCL:Transaction Control Language:
 Commit
 RollBack
 SavePoint
+
+Delete Drop Truncate
+
+Create Table:
+Syntax:create table tablename(Column1 datatype size(),etc..)
+
+Alter:
+-----
+Add: To add new Column 
+Modify:Modify Size and Datatype 
+Rename:Rename Column 
+Drop:Drop Column 
+
