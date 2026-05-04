@@ -195,4 +195,66 @@ Add: To add new Column
 Modify:Modify Size and Datatype 
 Rename:Rename Column 
 Drop:Drop Column 
+==========
+Datatypes:
+--------
+1.Number:Plain Numbers
+-------
+number(5)
+12
+
+number(precesion,scale)
+p-s=6-4=2
+12.12
+123.123
+
+number(6,4)
+
+2.Char:
+-----
+char:Fixed
+
+Total:100bytes
+25bytes 75bytes 
+
+name(25)
+Krishna->7
+25-7=18[Waste] Release 
+
+Total:100bytes
+25bytes 75bytes 
+18btes 93bytes 
+varchar:
+---------2k 
+name(25)
+Krishna->7
+25-7=18 Release 
+
+varchar2
+--------4k 
+
+date:[10/dec/26]
+
+DDL:Create Alter Rename Drop Truncate
+DML:Insert Update Select Delete 
+DCL:Grant and Revoke
+TCL:Commit RollBack SavePoint
+
+Delete Drop Truncate:
+--------------------
+
+Delete and Shift+Delete
+
+Structure and Values:
+
+Records or Values.
+Specfic or All Values[Where].
+RollBack;
+
+Drop:No RollBack no Where 
+Values and Structure.
+
+Truncate:Values and Permentaly
+No rollback
+
 

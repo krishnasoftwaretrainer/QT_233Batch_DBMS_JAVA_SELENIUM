@@ -517,3 +517,408 @@ SQL> update stu set fee=9000 where rno=109 and cource='API';
 0 rows updated.
 
 SQL>
+===============
+
+SQL*Plus: Release 11.2.0.2.0 Production on Mon May 4 10:53:15 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect qt233
+Enter password:
+Connected.
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+STU                            TABLE
+
+SQL> desc stu;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ RNO                                                NUMBER(3)
+ SNAME                                              VARCHAR2(10)
+ COURCE                                             CHAR(10)
+ FEE                                                NUMBER(5)
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+
+11 rows selected.
+
+SQL> create table student(sid number(5),sname char(20),gender char(1),percentage number(5,2),dob date);
+
+Table created.
+
+SQL> alter table student modify(sname varchar2(20));
+
+Table altered.
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SID                                                NUMBER(5)
+ SNAME                                              VARCHAR2(20)
+ GENDER                                             CHAR(1)
+ PERCENTAGE                                         NUMBER(5,2)
+ DOB                                                DATE
+
+SQL> insert into student values(101,'Krishna','M',199.99,'10/jan/99');
+
+1 row created.
+
+SQL> select * from student;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Krishna              M     199.99 10-JAN-99
+
+SQL> insert into student values(101,'Krishna','Male',199.99,'10/jan/99');
+insert into student values(101,'Krishna','Male',199.99,'10/jan/99')
+                                         *
+ERROR at line 1:
+ORA-12899: value too large for column "QT233"."STUDENT"."GENDER" (actual: 4,
+maximum: 1)
+
+
+SQL> insert into student values(101,'Krishna','M',199.999,'10/jan/99');
+
+1 row created.
+
+SQL> insert into student values(101,'Krishna','M',199.9999,'10/jan/99');
+
+1 row created.
+
+SQL> insert into student values(101,'Krishna','M',1999.9999,'10/jan/99');
+insert into student values(101,'Krishna','M',1999.9999,'10/jan/99')
+                                             *
+ERROR at line 1:
+ORA-01438: value larger than specified precision allowed for this column
+
+
+SQL> insert into student values(101,'Krishna','M',199.99,'10/january/99');
+
+1 row created.
+
+SQL> select * from student;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Krishna              M     199.99 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+       101 Krishna              M     199.99 10-JAN-99
+
+SQL> update table student set sname='Ramesh' where sid=101;
+update table student set sname='Ramesh' where sid=101
+       *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> update  student set sname='Ramesh' where sid=101;
+
+4 rows updated.
+
+SQL> select * from student;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Ramesh               M     199.99 10-JAN-99
+       101 Ramesh               M        200 10-JAN-99
+       101 Ramesh               M        200 10-JAN-99
+       101 Ramesh               M     199.99 10-JAN-99
+
+SQL> update  student set sname='Krishna' where percentage=200;
+
+2 rows updated.
+
+SQL> select * from student;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Ramesh               M     199.99 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+       101 Ramesh               M     199.99 10-JAN-99
+
+SQL> select sid,sname from student;
+
+       SID SNAME
+---------- --------------------
+       101 Ramesh
+       101 Krishna
+       101 Krishna
+       101 Ramesh
+
+SQL> select sid,sname from student where sid=101;
+
+       SID SNAME
+---------- --------------------
+       101 Ramesh
+       101 Krishna
+       101 Krishna
+       101 Ramesh
+
+SQL> select sid,sname from student where sname='Ramesh';
+
+       SID SNAME
+---------- --------------------
+       101 Ramesh
+       101 Ramesh
+
+SQL> select sid,sname from student where sname='Suresh';
+
+no rows selected
+
+SQL> select * from student where percentage !=200;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Ramesh               M     199.99 10-JAN-99
+       101 Ramesh               M     199.99 10-JAN-99
+
+SQL> select * from student where percentage =200;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Krishna              M        200 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+
+SQL> commit;
+
+Commit complete.
+
+SQL> delete student;
+
+4 rows deleted.
+
+SQL> select * from student;
+
+no rows selected
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from student;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Ramesh               M     199.99 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+       101 Ramesh               M     199.99 10-JAN-99
+
+SQL> delate student where percenatge=199.99;
+SP2-0734: unknown command beginning "delate stu..." - rest of line ignored.
+SQL> delete student where percenatge=199.99;
+delete student where percenatge=199.99
+                     *
+ERROR at line 1:
+ORA-00904: "PERCENATGE": invalid identifier
+
+
+SQL> delete student where percentage=199.99;
+
+2 rows deleted.
+
+SQL> select * from student;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Krishna              M        200 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+
+SQL> commit;
+
+Commit complete.
+
+SQL> create table s1 select * from student;
+create table s1 select * from student
+                *
+ERROR at line 1:
+ORA-00922: missing or invalid option
+
+
+SQL> create table s1 as select * from student;
+
+Table created.
+
+SQL> create table s2 as select * from student;
+
+Table created.
+
+SQL> create table s3 as select * from student;
+
+Table created.
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+S1                             TABLE
+S2                             TABLE
+S3                             TABLE
+STU                            TABLE
+STUDENT                        TABLE
+
+SQL> select * from s1;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Krishna              M        200 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+
+SQL> select * from s2;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Krishna              M        200 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+
+SQL> select * from s3;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Krishna              M        200 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+
+SQL> commit;
+
+Commit complete.
+
+SQL> drop s3;
+drop s3
+     *
+ERROR at line 1:
+ORA-00950: invalid DROP option
+
+
+SQL> drop table s3;
+
+Table dropped.
+
+SQL> select * from s3;
+select * from s3
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> desc s3;
+ERROR:
+ORA-04043: object s3 does not exist
+
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> desc s3;
+ERROR:
+ORA-04043: object s3 does not exist
+
+
+SQL> select * from s3;
+select * from s3
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> truncate s2;
+truncate s2
+          *
+ERROR at line 1:
+ORA-03290: Invalid truncate command - missing CLUSTER or TABLE keyword
+
+
+SQL> truncate table s2;
+
+Table truncated.
+
+SQL> select * from s2;
+
+no rows selected
+
+SQL> desc s2;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SID                                                NUMBER(5)
+ SNAME                                              VARCHAR2(20)
+ GENDER                                             CHAR(1)
+ PERCENTAGE                                         NUMBER(5,2)
+ DOB                                                DATE
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> desc s2;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SID                                                NUMBER(5)
+ SNAME                                              VARCHAR2(20)
+ GENDER                                             CHAR(1)
+ PERCENTAGE                                         NUMBER(5,2)
+ DOB                                                DATE
+
+SQL> select * from s2;
+
+no rows selected
+
+SQL> truncate table s2 where sid=101;
+truncate table s2 where sid=101
+                  *
+ERROR at line 1:
+ORA-03291: Invalid truncate option - missing STORAGE keyword
+
+
+SQL> delete s1;
+
+2 rows deleted.
+
+SQL> select * from s1;
+
+no rows selected
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from s1;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Krishna              M        200 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+
+SQL> delete s1 where sid=101;
+
+2 rows deleted.
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from s1;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Krishna              M        200 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+
+SQL>
