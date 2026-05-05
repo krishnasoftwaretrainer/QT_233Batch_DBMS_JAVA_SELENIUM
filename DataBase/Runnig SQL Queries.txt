@@ -922,3 +922,788 @@ SQL> select * from s1;
        101 Krishna              M        200 10-JAN-99
 
 SQL>
+==============
+
+SQL*Plus: Release 11.2.0.2.0 Production on Tue May 5 10:40:02 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect qt233
+Enter password:
+Connected.
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+S1                             TABLE
+S2                             TABLE
+STU                            TABLE
+STUDENT                        TABLE
+
+SQL> select * from s1;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Krishna              M        200 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+
+SQL> select * from student;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Krishna              M        200 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+
+11 rows selected.
+
+SQL> delete stu where rno=101;
+
+1 row deleted.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+
+10 rows selected.
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+
+11 rows selected.
+
+SQL> delete stu;
+
+11 rows deleted.
+
+SQL> select * from stu;
+
+no rows selected
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+
+11 rows selected.
+
+SQL> select * from s1;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Krishna              M        200 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+
+SQL> truncate table s1;
+
+Table truncated.
+
+SQL> select * from s1;
+
+no rows selected
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from s1;
+
+no rows selected
+
+SQL> desc s1;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SID                                                NUMBER(5)
+ SNAME                                              VARCHAR2(20)
+ GENDER                                             CHAR(1)
+ PERCENTAGE                                         NUMBER(5,2)
+ DOB                                                DATE
+
+SQL> select * from s2;
+
+no rows selected
+
+SQL> select * from student;
+
+       SID SNAME                G PERCENTAGE DOB
+---------- -------------------- - ---------- ---------
+       101 Krishna              M        200 10-JAN-99
+       101 Krishna              M        200 10-JAN-99
+
+SQL> drop student;
+drop student
+     *
+ERROR at line 1:
+ORA-00950: invalid DROP option
+
+
+SQL> drop table student;
+
+Table dropped.
+
+SQL> select * from student;
+select * from student
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> desc student;
+ERROR:
+ORA-04043: object student does not exist
+
+
+SQL> desc s1;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SID                                                NUMBER(5)
+ SNAME                                              VARCHAR2(20)
+ GENDER                                             CHAR(1)
+ PERCENTAGE                                         NUMBER(5,2)
+ DOB                                                DATE
+
+SQL> drop table s1;
+
+Table dropped.
+
+SQL> drop table s2;
+
+Table dropped.
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+STU                            TABLE
+
+SQL> create table stu1 as select * from stu;
+
+Table created.
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+STU                            TABLE
+STU1                           TABLE
+
+SQL> create table stu2 as select * from stu;
+
+Table created.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+
+11 rows selected.
+
+SQL> delete stu2 where rno=106;
+
+6 rows deleted.
+
+SQL> delete stu2 where rno=101;
+
+1 row deleted.
+
+SQL> delete stu2 where rno=102;
+
+1 row deleted.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+
+11 rows selected.
+
+SQL> delete stu2 where rno=106;
+
+6 rows deleted.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+
+SQL> commit;
+
+Commit complete.
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+
+SQL> commit;
+
+Commit complete.
+
+SQL> insert into stu2 values(106,'dcf','sfgfs',5555);
+
+1 row created.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 dcf        sfgfs            5555
+
+6 rows selected.
+
+SQL> update table stu2 set sname='Suresh' where rno=105;
+update table stu2 set sname='Suresh' where rno=105
+       *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> update stu2 set sname='Suresh' where rno=105;
+
+1 row updated.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 Suresh     vddfd            8000
+       106 dcf        sfgfs            5555
+
+6 rows selected.
+
+SQL> delete stu2 where rno=104;
+
+1 row deleted.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       105 Suresh     vddfd            8000
+       106 dcf        sfgfs            5555
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+
+SQL> insert into stu2 values(106,'dcf','sfgfs',5555);
+
+1 row created.
+
+SQL> create savepoint st1;
+create savepoint st1
+       *
+ERROR at line 1:
+ORA-00901: invalid CREATE command
+
+
+SQL> create save point st1;
+create save point st1
+       *
+ERROR at line 1:
+ORA-00901: invalid CREATE command
+
+
+SQL> savepoint st1;
+
+Savepoint created.
+
+SQL> update stu2 set sname='Suresh' where rno=105;
+
+1 row updated.
+
+SQL> savepoint st2;
+
+Savepoint created.
+
+SQL> delete stu2 where rno=104;
+
+1 row deleted.
+
+SQL> savepoint st3;
+
+Savepoint created.
+
+SQL> rollback st1;
+rollback st1
+         *
+ERROR at line 1:
+ORA-02181: invalid option to ROLLBACK WORK
+
+
+SQL> rollback savepoint st1;
+rollback savepoint st1
+         *
+ERROR at line 1:
+ORA-02181: invalid option to ROLLBACK WORK
+
+
+SQL> rollback to st1;
+
+Rollback complete.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 dcf        sfgfs            5555
+
+6 rows selected.
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+
+SQL> commit;
+
+Commit complete.
+
+SQL> insert into stu2 values(106,'dcf','sfgfs',5555);
+
+1 row created.
+
+SQL> savepoint s1;
+
+Savepoint created.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 dcf        sfgfs            5555
+
+6 rows selected.
+
+SQL> update stu2 set sname='Suresh' where rno=105;
+
+1 row updated.
+
+SQL> savepoint s2;
+
+Savepoint created.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 Suresh     vddfd            8000
+       106 dcf        sfgfs            5555
+
+6 rows selected.
+
+SQL> delete stu2 where rno=104;
+
+1 row deleted.
+
+SQL> savepoint s3;
+
+Savepoint created.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       105 Suresh     vddfd            8000
+       106 dcf        sfgfs            5555
+
+SQL> rollback to s3;
+
+Rollback complete.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       105 Suresh     vddfd            8000
+       106 dcf        sfgfs            5555
+
+SQL> rollback to s2;
+
+Rollback complete.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 Suresh     vddfd            8000
+       106 dcf        sfgfs            5555
+
+6 rows selected.
+
+SQL> rollback to s1;
+
+Rollback complete.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 dcf        sfgfs            5555
+
+6 rows selected.
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+
+SQL> commit;
+
+Commit complete.
+
+SQL> delete stu2 where rno=104;
+
+1 row deleted.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       105 dfgdf      vddfd            8000
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+
+SQL> delete stu2 where rno=105;
+
+1 row deleted.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+
+SQL> commit;
+
+Commit complete.
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+
+SQL> insert into stu2(rno,cource) values(105,'Python');
+
+1 row created.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105            Python
+
+SQL> create table cons(eid varchar2(20) primary key,ename varchar2(10) not null,address varchar2(10),email varchar2(20) unique));
+create table cons(eid varchar2(20) primary key,ename varchar2(10) not null,address varchar2(10),email varchar2(20) unique))
+                                                                                                                          *
+ERROR at line 1:
+ORA-00922: missing or invalid option
+
+
+SQL> create table cons(eid varchar2(20) primary key,ename varchar2(10) not null,address varchar2(10),email varchar2(20) unique);
+
+Table created.
+
+SQL> desc cons;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                       NOT NULL VARCHAR2(20)
+ ENAME                                     NOT NULL VARCHAR2(10)
+ ADDRESS                                            VARCHAR2(10)
+ EMAIL                                              VARCHAR2(20)
+
+SQL> insert into cons(eid) value(1);
+insert into cons(eid) value(1)
+                      *
+ERROR at line 1:
+ORA-00926: missing VALUES keyword
+
+
+SQL> insert into cons(eid) values(1);
+insert into cons(eid) values(1)
+*
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("QT233"."CONS"."ENAME")
+
+
+SQL> insert into cons(1,'Krishna','Hyd','krishna@gmail.com');
+insert into cons(1,'Krishna','Hyd','krishna@gmail.com')
+                 *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> insert into cons values(1,'Krishna','Hyd','krishna@gmail.com');
+
+1 row created.
+
+SQL> select * from cons;
+
+EID                  ENAME      ADDRESS    EMAIL
+-------------------- ---------- ---------- --------------------
+1                    Krishna    Hyd        krishna@gmail.com
+
+SQL> insert into cons values(1,'Krishna','Hyd','krishna@gmail.com123');
+insert into cons values(1,'Krishna','Hyd','krishna@gmail.com123')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QT233.SYS_C007002) violated
+
+
+SQL> insert into cons values(2,'Krishna','Hyd','krishna@gmail.com');
+insert into cons values(2,'Krishna','Hyd','krishna@gmail.com')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QT233.SYS_C007003) violated
+
+
+SQL> insert into cons values(2,'Krishna','Hyd','krishna123@gmail.com');
+
+1 row created.
+
+SQL> select * from cons;
+
+EID                  ENAME      ADDRESS    EMAIL
+-------------------- ---------- ---------- --------------------
+1                    Krishna    Hyd        krishna@gmail.com
+2                    Krishna    Hyd        krishna123@gmail.com
+
+SQL> insert into cons(eid,ename) values(3,'Suresh');
+
+1 row created.
+
+SQL> select * from cons;
+
+EID                  ENAME      ADDRESS    EMAIL
+-------------------- ---------- ---------- --------------------
+1                    Krishna    Hyd        krishna@gmail.com
+2                    Krishna    Hyd        krishna123@gmail.com
+3                    Suresh
+
+SQL> insert into cons(ename) values(3,'Suresh');
+insert into cons(ename) values(3,'Suresh')
+            *
+ERROR at line 1:
+ORA-00913: too many values
+
+
+SQL> insert into cons(ename) values('rger');
+insert into cons(ename) values('rger')
+*
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("QT233"."CONS"."EID")
+
+
+SQL> insert into cons(eid,address,email) values(5,'fsgfsr','efsdfew');
+insert into cons(eid,address,email) values(5,'fsgfsr','efsdfew')
+*
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("QT233"."CONS"."ENAME")
+
+
+SQL>
