@@ -1707,3 +1707,578 @@ ORA-01400: cannot insert NULL into ("QT233"."CONS"."ENAME")
 
 
 SQL>
+=================
+
+SQL*Plus: Release 11.2.0.2.0 Production on Wed May 6 10:34:12 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect qt233
+Enter password:
+Connected.
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+
+11 rows selected.
+
+SQL> show pagesize;
+pagesize 14
+SQL> show linesize;
+linesize 80
+SQL> set linesize 200;
+SQL> show linesize;
+linesize 200
+SQL> set pagesize 30;
+SQL> show pagesize;
+pagesize 30
+SQL> create table emp (eid number(3) primary key,ename varchar2(20),sal number(5) default 5000);
+
+Table created.
+
+SQL> desc emp;
+ Name                                                                           Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ EID                                                                            NOT NULL NUMBER(3)
+ ENAME                                                                           VARCHAR2(20)
+ SAL                                                                             NUMBER(5)
+
+SQL> insert into emp(eid,ename) values(01,'Krishna');
+
+1 row created.
+
+SQL> insert into emp(eid,ename) values(02,'Suresh');
+
+1 row created.
+
+SQL> select * from emp;
+
+       EID ENAME                       SAL
+---------- -------------------- ----------
+         1 Krishna                    5000
+         2 Suresh                     5000
+
+SQL> create table emp1 (eid number(3) primary key,ename varchar2(20),sal number(5) check sal<=8000;
+create table emp1 (eid number(3) primary key,ename varchar2(20),sal number(5) check sal<=8000
+                                                                                    *
+ERROR at line 1:
+ORA-00906: missing left parenthesis
+
+
+SQL> create table emp1 (eid number(3) primary key,ename varchar2(20),sal number(5) (check sal<=8000);
+create table emp1 (eid number(3) primary key,ename varchar2(20),sal number(5) (check sal<=8000)
+                                                                              *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table emp1 (eid number(3) primary key,ename varchar2(20),sal number(5) check sal<=8000);
+create table emp1 (eid number(3) primary key,ename varchar2(20),sal number(5) check sal<=8000)
+                                                                                    *
+ERROR at line 1:
+ORA-00906: missing left parenthesis
+
+
+SQL> create table emp1 (eid number(3) primary key,ename varchar2(20),sal number(5) (check sal<=8000);
+create table emp1 (eid number(3) primary key,ename varchar2(20),sal number(5) (check sal<=8000)
+                                                                              *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table emp1 (eid number(3) primary key,ename varchar2(20),sal number(5) check (sal<=8000);
+create table emp1 (eid number(3) primary key,ename varchar2(20),sal number(5) check (sal<=8000)
+                                                                                              *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table emp1 (eid number(3) primary key,ename varchar2(20),sal number(5) check (sal<=8000));
+
+Table created.
+
+SQL> desc emp1
+ Name                                                                                                           Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ EID                                                                                                            NOT NULL NUMBER(3)
+ ENAME                                                                                                           VARCHAR2(20)
+ SAL                                                                                                             NUMBER(5)
+
+SQL> insert into emp1 values(01,'Krishna',8000);
+
+1 row created.
+
+SQL> insert into emp1 values(01,'Krishna',9000);
+insert into emp1 values(01,'Krishna',9000)
+*
+ERROR at line 1:
+ORA-02290: check constraint (QT233.SYS_C007005) violated
+
+
+SQL> select * from dual;
+
+D
+-
+X
+
+SQL> select 20+30 from emp;
+
+     20+30
+----------
+        50
+        50
+
+SQL> select 20+30 from stu;
+
+     20+30
+----------
+        50
+        50
+        50
+        50
+        50
+        50
+        50
+        50
+        50
+        50
+        50
+
+11 rows selected.
+
+SQL> select 20+30 from dual;
+
+     20+30
+----------
+        50
+
+SQL> select 20+30 as Addition from dual;
+
+  ADDITION
+----------
+        50
+
+SQL> select 20-30 as Substraction from dual;
+
+SUBSTRACTION
+------------
+         -10
+
+SQL> create table smarks(sid number(3),sname vrachar2(10),sub1 number(3),sub2 number(3),sub3 number(3),sub4 number(3));
+create table smarks(sid number(3),sname vrachar2(10),sub1 number(3),sub2 number(3),sub3 number(3),sub4 number(3))
+                                                *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table smarks(sid number(3),sname varchar2(10),sub1 number(3),sub2 number(3),sub3 number(3),sub4 number(3));
+
+Table created.
+
+SQL> desc smarks;
+ Name                                                                                  Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                    NUMBER(3)
+ SNAME                                                                                  VARCHAR2(10)
+ SUB1                                                                                   NUMBER(3)
+ SUB2                                                                                   NUMBER(3)
+ SUB3                                                                                   NUMBER(3)
+ SUB4                                                                                   NUMBER(3)
+
+SQL> set linesize 80;
+SQL> desc smarks;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SID                                                NUMBER(3)
+ SNAME                                              VARCHAR2(10)
+ SUB1                                               NUMBER(3)
+ SUB2                                               NUMBER(3)
+ SUB3                                               NUMBER(3)
+ SUB4                                               NUMBER(3)
+
+SQL> insert into smarks values('&sid','&sname','&sub1','&sub2','&sub3','&sub4');
+Enter value for sid: 101
+Enter value for sname: 'Krishna'
+Enter value for sub1: 58
+Enter value for sub2: 68
+Enter value for sub3: 78
+Enter value for sub4: 88
+old   1: insert into smarks values('&sid','&sname','&sub1','&sub2','&sub3','&sub4')
+new   1: insert into smarks values('101',''Krishna'','58','68','78','88')
+insert into smarks values('101',''Krishna'','58','68','78','88')
+                                  *
+ERROR at line 1:
+ORA-00917: missing comma
+
+
+SQL> insert into smarks values('&sid','&sname','&sub1','&sub2','&sub3','&sub4');
+Enter value for sid: 101
+Enter value for sname: 'Krishna'
+Enter value for sub1: insert into smarks values(&sid,'&sname',&sub1,&sub2,&sub3,&sub4);
+Enter value for sub2: insert into smarks values(&sid,'&sname',&sub1,&sub2,&sub3,&sub4);
+Enter value for sub3:
+Enter value for sub4:
+old   1: insert into smarks values('&sid','&sname','&sub1','&sub2','&sub3','&sub4')
+new   1: insert into smarks values('101',''Krishna'','insert into smarks values(&sid,'&sname',&sub1,&sub2,&sub3,&sub4);','insert into smarks values(&sid,'&sname',&sub1,&sub2,&sub3,&sub4);','','')
+SP2-0552: Bind variable "SNAME" not declared.
+SQL>
+SQL> insert into smarks values(&sid,'&sname',&sub1,&sub2,&sub3,&sub4);
+Enter value for sid: 101
+Enter value for sname: 'Krishna'
+Enter value for sub1: 58
+Enter value for sub2: 68
+Enter value for sub3: 78
+Enter value for sub4: 88
+old   1: insert into smarks values(&sid,'&sname',&sub1,&sub2,&sub3,&sub4)
+new   1: insert into smarks values(101,''Krishna'',58,68,78,88)
+insert into smarks values(101,''Krishna'',58,68,78,88)
+                                *
+ERROR at line 1:
+ORA-00917: missing comma
+
+
+SQL> insert into smarks values(&sid,'&sname',&sub1,&sub2,&sub3,&sub4);
+Enter value for sid: 101
+Enter value for sname: 'krishna'
+Enter value for sub1: 58
+Enter value for sub2: 68
+Enter value for sub3: 78
+Enter value for sub4: 88
+old   1: insert into smarks values(&sid,'&sname',&sub1,&sub2,&sub3,&sub4)
+new   1: insert into smarks values(101,''krishna'',58,68,78,88)
+insert into smarks values(101,''krishna'',58,68,78,88)
+                                *
+ERROR at line 1:
+ORA-00917: missing comma
+
+
+SQL> insert into smarks values(101,'Krishna',58,68,78,88);
+
+1 row created.
+
+SQL> insert into smarks values(102,'Ramesh',48,66,77,82);
+
+1 row created.
+
+SQL> insert into smarks values(103,'Vikas',95,62,74,87);
+
+1 row created.
+
+SQL> insert into smarks values(103,'Suresh',51,67,70,82);
+
+1 row created.
+
+SQL> insert into smarks values(103,'Suresh',55,60,44,88);
+
+1 row created.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4
+---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88
+       102 Ramesh             48         66         77         82
+       103 Vikas              95         62         74         87
+       103 Suresh             51         67         70         82
+       103 Suresh             55         60         44         88
+
+SQL> upadate table smarks set si=104 where sub1=51;
+SP2-0734: unknown command beginning "upadate ta..." - rest of line ignored.
+SQL> update table smarks set si=104 where sub1=51;
+update table smarks set si=104 where sub1=51
+       *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> update smarks set sid=104 where sub1=51;
+
+1 row updated.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4
+---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88
+       102 Ramesh             48         66         77         82
+       103 Vikas              95         62         74         87
+       104 Suresh             51         67         70         82
+       103 Suresh             55         60         44         88
+
+SQL> upadate table smarks set sname='Mahesh' where sub1=51;
+SP2-0734: unknown command beginning "upadate ta..." - rest of line ignored.
+SQL> upadate smarks set sname='Mahesh' where sub1=51;
+SP2-0734: unknown command beginning "upadate sm..." - rest of line ignored.
+SQL> update smarks set sname='Mahesh' where sub1=51;
+
+1 row updated.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4
+---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88
+       102 Ramesh             48         66         77         82
+       103 Vikas              95         62         74         87
+       104 Mahesh             51         67         70         82
+       103 Suresh             55         60         44         88
+
+SQL> update smarks set sid=105 where sub1=55;
+
+1 row updated.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4
+---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88
+       102 Ramesh             48         66         77         82
+       103 Vikas              95         62         74         87
+       104 Mahesh             51         67         70         82
+       105 Suresh             55         60         44         88
+
+SQL> alter table smarks add total number(3);
+
+Table altered.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88
+       102 Ramesh             48         66         77         82
+       103 Vikas              95         62         74         87
+       104 Mahesh             51         67         70         82
+       105 Suresh             55         60         44         88
+
+SQL> update smarks set total=sub1+sub2+sub3+sub4 where sid=101;
+
+1 row updated.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82
+       103 Vikas              95         62         74         87
+       104 Mahesh             51         67         70         82
+       105 Suresh             55         60         44         88
+
+SQL> update smarks set total=sub1+sub2+sub3+sub4;
+
+5 rows updated.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+
+SQL> select * from smarks where total=270;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       104 Mahesh             51         67         70         82        270
+
+SQL> select * from smarks where total<270;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       105 Suresh             55         60         44         88        247
+
+SQL> select * from smarks where total<=270;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+
+SQL> select * from smarks where total>270;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+
+SQL> select * from smarks where total>=270;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+
+SQL> select * from smarks where total!=270;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       105 Suresh             55         60         44         88        247
+
+SQL> select * from smarks where total<>270;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       105 Suresh             55         60         44         88        247
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+
+SQL> select * from smarks where total<270 and total>300;
+
+no rows selected
+
+SQL> select * from smarks where total>270 and total<290;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       102 Ramesh             48         66         77         82        273
+
+SQL> select * from smarks where total>270 or total<290;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+
+SQL> insert into smarks(sid,sname) values(106,'Humesh');
+
+1 row created.
+
+SQL> select * from smarks where sub1 is null;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       106 Humesh
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+       106 Humesh
+
+6 rows selected.
+
+SQL> select * from smarks where sub1 is null;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       106 Humesh
+
+SQL> select sid,sname from smarks where sub1 is null;
+
+       SID SNAME
+---------- ----------
+       106 Humesh
+
+SQL> select sid,sname from smarks where sub1 is not null;
+
+       SID SNAME
+---------- ----------
+       101 Krishna
+       102 Ramesh
+       103 Vikas
+       104 Mahesh
+       105 Suresh
+
+SQL> select sid,sname,total from smarks where sub1 is not null;
+
+       SID SNAME           TOTAL
+---------- ---------- ----------
+       101 Krishna           292
+       102 Ramesh            273
+       103 Vikas             318
+       104 Mahesh            270
+       105 Suresh            247
+
+SQL> select sid,sname,total from smarks where sub1 is not null order by total;
+
+       SID SNAME           TOTAL
+---------- ---------- ----------
+       105 Suresh            247
+       104 Mahesh            270
+       102 Ramesh            273
+       101 Krishna           292
+       103 Vikas             318
+
+SQL> select sid,sname,total from smarks;
+
+       SID SNAME           TOTAL
+---------- ---------- ----------
+       101 Krishna           292
+       102 Ramesh            273
+       103 Vikas             318
+       104 Mahesh            270
+       105 Suresh            247
+       106 Humesh
+
+6 rows selected.
+
+SQL> select sid,sname,total from smarks where total in(270,300);
+
+       SID SNAME           TOTAL
+---------- ---------- ----------
+       104 Mahesh            270
+
+SQL> select sid,sname,total from smarks where total between 270 and 300);
+select sid,sname,total from smarks where total between 270 and 300)
+                                                                  *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select sid,sname,total from smarks where total between 270 and 300);
+select sid,sname,total from smarks where total between 270 and 300)
+                                                                  *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select sid,sname,total from smarks where total between 270 and 300;
+
+       SID SNAME           TOTAL
+---------- ---------- ----------
+       101 Krishna           292
+       102 Ramesh            273
+       104 Mahesh            270
+
+SQL>

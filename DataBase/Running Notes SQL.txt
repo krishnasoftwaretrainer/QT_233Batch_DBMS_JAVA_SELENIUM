@@ -258,3 +258,40 @@ Truncate:Values and Permentaly
 No rollback
 
 
+TCL:
+commit;
+rollback; 3: 
+savepoint;
+
+Constraints: Rule 
+----------
+Primary Key:
+Unique:
+Not Null:
+
+Unique: 123  123 Duplicate No Repetation
+Null:No  
+ 
+Not Null:Not allow Blank values  
+Unique:No 
+
+Student:Sub1 Sub2 Sub3 Sub4 Total 
+		55	 88		73	64  
+		
+update table stu set total=Sub1+Sub2+Sub3+Sub4 
+
+>2000: 2001
+>=2000 2000
+
+<2000 1999
+<=2000 2000
+
+< or =:
+
+> or =
+
+boolean a=true;
+!a=false 
+
+&& || !
+and or not 
