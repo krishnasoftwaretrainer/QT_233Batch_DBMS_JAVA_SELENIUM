@@ -2282,3 +2282,546 @@ SQL> select sid,sname,total from smarks where total between 270 and 300;
        104 Mahesh            270
 
 SQL>
+=================================
+
+SQL*Plus: Release 11.2.0.2.0 Production on Thu May 7 10:35:52 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect qt233
+Enter password:
+Connected.
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+CONS                           TABLE
+EMP                            TABLE
+EMP1                           TABLE
+SMARKS                         TABLE
+STU                            TABLE
+STU1                           TABLE
+STU2                           TABLE
+
+7 rows selected.
+
+SQL> select * from emp;
+
+       EID ENAME                       SAL
+---------- -------------------- ----------
+         1 Krishna                    5000
+         2 Suresh                     5000
+
+SQL> select * from emp1;
+
+       EID ENAME                       SAL
+---------- -------------------- ----------
+         1 Krishna                    8000
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+       106 Humesh
+
+6 rows selected.
+
+SQL> SELECT sub1 FROM smarks WHERE EXISTS (SELECT sub1 FROM smarks WHERE total >270);
+
+      SUB1
+----------
+        58
+        48
+        95
+        51
+        55
+
+
+6 rows selected.
+
+SQL> SELECT sub1 FROM smarks WHERE total >270;
+
+      SUB1
+----------
+        58
+        48
+        95
+
+SQL> SELECT sub1 FROM smarks WHERE total >400;
+
+no rows selected
+
+SQL> SELECT sub1 FROM smarks WHERE EXISTS (SELECT sub1 FROM smarks WHERE total >400);
+
+no rows selected
+
+SQL> SELECT * FROM smarks WHERE sub1 > ALL (SELECT sub1 FROM smarks WHERE total > 270);
+
+no rows selected
+
+SQL> SELECT sub1 FROM smarks WHERE total > 270;
+
+      SUB1
+----------
+        58
+        48
+        95
+
+SQL> SELECT * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+       106 Humesh
+
+6 rows selected.
+
+SQL> SELECT * FROM smarks WHERE sub1 >= ALL (SELECT sub1 FROM smarks WHERE total > 270);
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       103 Vikas              95         62         74         87        318
+
+SQL> SELECT * FROM smarks WHERE sub1 >= ANY (SELECT sub1 FROM smarks WHERE total > 270);
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+
+SQL> SELECT * FROM smarks WHERE sub1 > ANY (SELECT sub1 FROM smarks WHERE total > 270);
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+
+SQL> Select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+       106 Humesh
+
+6 rows selected.
+
+SQL> Select * from smarks where sub1>=55;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       103 Vikas              95         62         74         87        318
+       105 Suresh             55         60         44         88        247
+
+SQL> Select * from smarks where sub1>=55 order by sub1;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       105 Suresh             55         60         44         88        247
+       101 Krishna            58         68         78         88        292
+       103 Vikas              95         62         74         87        318
+
+SQL> Select * from smarks where sub1>=55 order by sub1 asc;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       105 Suresh             55         60         44         88        247
+       101 Krishna            58         68         78         88        292
+       103 Vikas              95         62         74         87        318
+
+SQL> Select * from smarks where sub1>=55 order by sub1 desc;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       103 Vikas              95         62         74         87        318
+       101 Krishna            58         68         78         88        292
+       105 Suresh             55         60         44         88        247
+
+SQL> Select * from smarks where sub1>=55 order by sub1,sub2 desc;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       105 Suresh             55         60         44         88        247
+       101 Krishna            58         68         78         88        292
+       103 Vikas              95         62         74         87        318
+
+SQL> Select * from smarks where sub1>=55 order by sub1,sub2;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       105 Suresh             55         60         44         88        247
+       101 Krishna            58         68         78         88        292
+       103 Vikas              95         62         74         87        318
+
+SQL> Select * from smarks where sub1>=55 order by sub2,sub1;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       105 Suresh             55         60         44         88        247
+       103 Vikas              95         62         74         87        318
+       101 Krishna            58         68         78         88        292
+
+SQL> Select * from smarks where sub1>=55 order by sub2,sub1,sub3,sub4;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       105 Suresh             55         60         44         88        247
+       103 Vikas              95         62         74         87        318
+       101 Krishna            58         68         78         88        292
+
+SQL> Select * from smarks where sub4=82 order by sub2,sub1,sub3,sub4;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       102 Ramesh             48         66         77         82        273
+       104 Mahesh             51         67         70         82        270
+
+SQL> Select * from smarks where sub4=822 order by sub2,sub1,sub3,sub4;
+
+no rows selected
+
+SQL> commit;
+
+Commit complete.
+
+SQL> delete smarks;
+
+6 rows deleted.
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> Select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+       106 Humesh
+
+6 rows selected.
+
+SQL> delete smarks;
+
+6 rows deleted.
+
+SQL> Select * from smarks;
+
+no rows selected
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> Select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+       106 Humesh
+
+6 rows selected.
+
+SQL> Select * from smarks where sub1 like %9%
+  2  ;
+Select * from smarks where sub1 like %9%
+                                     *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+SQL> Select * from smarks where sub1 like '%9%'
+  2  ;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       103 Vikas              95         62         74         87        318
+
+SQL> Select * from smarks where sub1 like '9%';
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       103 Vikas              95         62         74         87        318
+
+SQL> Select * from smarks where sub1 like '%9'
+  2  ;
+
+no rows selected
+
+SQL> Select * from smarks where sub1 like '%9%';
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       103 Vikas              95         62         74         87        318
+
+SQL> Select * from smarks where sub1 like '9%';
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       103 Vikas              95         62         74         87        318
+
+SQL> Select * from smarks where sub1 like '%9';
+
+no rows selected
+
+SQL> Select * from smarks where sub1 like '%8';
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+
+SQL> Select * from smarks where sub1 like '%90%';
+
+no rows selected
+
+SQL> Select * from smarks where sub1 like '%58%';
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+
+SQL> Select * from smarks where sname like '%r%';
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       105 Suresh             55         60         44         88        247
+
+SQL> Select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+       106 Humesh
+
+6 rows selected.
+
+SQL> Select * from smarks where sname like '%e%';
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       102 Ramesh             48         66         77         82        273
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+       106 Humesh
+
+SQL> Select * from smarks where sname like '%sh%';
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+       106 Humesh
+
+SQL> Select * from smarks where sname like '%sh';
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       102 Ramesh             48         66         77         82        273
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+       106 Humesh
+
+SQL> Select * from smarks where sname like 'sh%';
+
+no rows selected
+
+SQL> Select * from smarks where sname total like'2_%_%';
+Select * from smarks where sname total like'2_%_%'
+                                 *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> Select * from smarks where total like'2_%_%';
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+
+SQL> Select * from smarks where total like'2%7_%';
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       102 Ramesh             48         66         77         82        273
+       104 Mahesh             51         67         70         82        270
+
+SQL> Select * from smarks where total like'_%0%0';
+
+no rows selected
+
+SQL> Select * from smarks where total like'_%_%0';
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       104 Mahesh             51         67         70         82        270
+
+SQL> Select * from smarks where total like'%2';
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+
+SQL> Select * from smarks where total like'2%';
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+
+SQL> Select * from smarks where total like'%2%';
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+
+SQL> Select distinct from smarks;
+Select distinct from smarks
+                *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> Select distinct sub4 from smarks;
+
+      SUB4
+----------
+        87
+
+        88
+        82
+
+SQL> Select * from smarks ;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+       106 Humesh
+
+6 rows selected.
+
+SQL> Select distinct sname from smarks;
+
+SNAME
+----------
+Mahesh
+Ramesh
+Suresh
+Humesh
+Krishna
+Vikas
+
+6 rows selected.
+
+SQL> Select distinct sname,sub4 from smarks;
+
+SNAME            SUB4
+---------- ----------
+Krishna            88
+Mahesh             82
+Suresh             88
+Humesh
+Ramesh             82
+Vikas              87
+
+6 rows selected.
+
+SQL> Select distinct sub4,sname from smarks;
+
+      SUB4 SNAME
+---------- ----------
+        88 Krishna
+        87 Vikas
+        82 Ramesh
+        88 Suresh
+           Humesh
+        82 Mahesh
+
+6 rows selected.
+
+SQL> Select distinct sub4 from smarks;
+
+      SUB4
+----------
+        87
+
+        88
+        82
+
+SQL> Select distinct sub4 from smarks order by sub4;
+
+      SUB4
+----------
+        82
+        87
+        88
+
+
+SQL> Select distinct sub4 from smarks order by sub4 desc;
+
+      SUB4
+----------
+
+        88
+        87
+        82
+
+SQL> create table customers (id number(1),name varchar2(10),age number(3),address varchar2(20),salary number(6));
+
+Table created.
+
+SQL> desc customers;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                                 NUMBER(1)
+ NAME                                               VARCHAR2(10)
+ AGE                                                NUMBER(3)
+ ADDRESS                                            VARCHAR2(20)
+ SALARY                                             NUMBER(6)
+
+SQL>
