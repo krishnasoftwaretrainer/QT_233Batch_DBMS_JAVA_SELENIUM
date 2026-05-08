@@ -2825,3 +2825,717 @@ SQL> desc customers;
  SALARY                                             NUMBER(6)
 
 SQL>
+====================================================
+
+SQL*Plus: Release 11.2.0.2.0 Production on Fri May 8 10:38:48 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> select sum(20+10) from dual;
+SP2-0640: Not connected
+SQL> connect qt233
+Enter password:
+Connected.
+SQL> select sum(20+10) from dual;
+
+SUM(20+10)
+----------
+        30
+
+SQL> select sum(20+10) as sum from dual;
+
+       SUM
+----------
+        30
+
+SQL> select sum(20+10) as sum from smarks;
+
+       SUM
+----------
+       180
+
+SQL> select sum(20+10) as sum from dual;
+
+       SUM
+----------
+        30
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+       106 Humesh
+
+6 rows selected.
+
+SQL> select sum(sub1) as sum from smarks;
+
+       SUM
+----------
+       307
+
+SQL> select sum(sub1+sub2+sub3+sub4) as sum from smarks;
+
+       SUM
+----------
+      1400
+
+SQL> select sum(sub1+sub2+sub3+sub4) as sum from smarks whre sid=101;
+select sum(sub1+sub2+sub3+sub4) as sum from smarks whre sid=101
+                                                        *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select sum(sub1+sub2+sub3+sub4) as total from smarks whre sid=101;
+select sum(sub1+sub2+sub3+sub4) as total from smarks whre sid=101
+                                                          *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select sum(sub1+sub2+sub3+sub4) as total from smarks where sid=101;
+
+     TOTAL
+----------
+       292
+
+SQL> select ave(10,20,30) from dual;
+select ave(10,20,30) from dual
+       *
+ERROR at line 1:
+ORA-00904: "AVE": invalid identifier
+
+
+SQL> select avg(10,20,30) from dual;
+select avg(10,20,30) from dual
+       *
+ERROR at line 1:
+ORA-00909: invalid number of arguments
+
+
+SQL> select avg(sub1) from smarks;
+
+ AVG(SUB1)
+----------
+      61.4
+
+SQL> select avg(sub1+sub2+sub3+sub4)/4 as Average from smarks where sid=101;
+
+   AVERAGE
+----------
+        73
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+       106 Humesh
+
+6 rows selected.
+
+SQL> alter smarks add(avg number(5,2),percentage number(6,2));
+alter smarks add(avg number(5,2),percentage number(6,2))
+      *
+ERROR at line 1:
+ORA-00940: invalid ALTER command
+
+
+SQL> alter table smarks add(avg number(5,2),percentage number(6,2));
+
+Table altered.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       101 Krishna            58         68         78         88        292
+
+
+       102 Ramesh             48         66         77         82        273
+
+
+       103 Vikas              95         62         74         87        318
+
+
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       104 Mahesh             51         67         70         82        270
+
+
+       105 Suresh             55         60         44         88        247
+
+
+       106 Humesh
+
+
+
+6 rows selected.
+
+SQL> show linesize;
+linesize 80
+SQL> set linesize 200;
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+       106 Humesh
+
+6 rows selected.
+
+SQL> show pagesize;
+pagesize 14
+SQL> set pagesize 30;
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292
+       102 Ramesh             48         66         77         82        273
+       103 Vikas              95         62         74         87        318
+       104 Mahesh             51         67         70         82        270
+       105 Suresh             55         60         44         88        247
+       106 Humesh
+
+6 rows selected.
+
+SQL> update avg set (sub1+sub2+sub3+sub4)/4 from smarks
+  2  ;
+update avg set (sub1+sub2+sub3+sub4)/4 from smarks
+                    *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> update smarks set avg=(sub1+sub2+sub3+sub4)/4;
+
+6 rows updated.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292         73
+       102 Ramesh             48         66         77         82        273      68.25
+       103 Vikas              95         62         74         87        318       79.5
+       104 Mahesh             51         67         70         82        270       67.5
+       105 Suresh             55         60         44         88        247      61.75
+       106 Humesh
+
+6 rows selected.
+
+SQL> update smarks set percentage=(total/400)*100 where sid=101;
+
+1 row updated.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292         73         73
+       102 Ramesh             48         66         77         82        273      68.25
+       103 Vikas              95         62         74         87        318       79.5
+       104 Mahesh             51         67         70         82        270       67.5
+       105 Suresh             55         60         44         88        247      61.75
+       106 Humesh
+
+6 rows selected.
+
+SQL> update smarks set percentage=(total/400)*100;
+
+6 rows updated.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292         73         73
+       102 Ramesh             48         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh
+
+6 rows selected.
+
+SQL> select max(total) from smarks;
+
+MAX(TOTAL)
+----------
+       318
+
+SQL> select min(total) from smarks;
+
+MIN(TOTAL)
+----------
+       247
+
+SQL> select count(sid) from smarks;
+
+COUNT(SID)
+----------
+         6
+
+SQL> select count(sub1) from smarks;
+
+COUNT(SUB1)
+-----------
+          5
+
+SQL> select count(*) from smarks;
+
+  COUNT(*)
+----------
+         6
+
+SQL> select count(sub4) from smarks;
+
+COUNT(SUB4)
+-----------
+          5
+
+SQL> select count(distinct sub4) from smarks;
+
+COUNT(DISTINCTSUB4)
+-------------------
+                  3
+
+SQL> select count(distinct sub3) from smarks;
+
+COUNT(DISTINCTSUB3)
+-------------------
+                  5
+
+SQL> select upr('abcdefgh') from dual;
+select upr('abcdefgh') from dual
+       *
+ERROR at line 1:
+ORA-00904: "UPR": invalid identifier
+
+
+SQL> select upper('abcdefgh') from dual;
+
+UPPER('A
+--------
+ABCDEFGH
+
+SQL> select upper('abcdefgh') as Uper from dual;
+
+UPER
+--------
+ABCDEFGH
+
+SQL> select lower('ABCDEFGH') as Uper from dual;
+
+UPER
+--------
+abcdefgh
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292         73         73
+       102 Ramesh             48         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh
+
+6 rows selected.
+
+SQL> select sid,sname upper(sname) from smarks;
+select sid,sname upper(sname) from smarks
+                      *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select sid,sname upper('sname') from smarks;
+select sid,sname upper('sname') from smarks
+                      *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select sid,sname, upper('sname') from smarks;
+
+       SID SNAME      UPPER
+---------- ---------- -----
+       101 Krishna    SNAME
+       102 Ramesh     SNAME
+       103 Vikas      SNAME
+       104 Mahesh     SNAME
+       105 Suresh     SNAME
+       106 Humesh     SNAME
+
+6 rows selected.
+
+SQL> select sid,sname, upper(sname) from smarks;
+
+       SID SNAME      UPPER(SNAM
+---------- ---------- ----------
+       101 Krishna    KRISHNA
+       102 Ramesh     RAMESH
+       103 Vikas      VIKAS
+       104 Mahesh     MAHESH
+       105 Suresh     SURESH
+       106 Humesh     HUMESH
+
+6 rows selected.
+
+SQL> select sid,sname, lower(sname) from smarks;
+
+       SID SNAME      LOWER(SNAM
+---------- ---------- ----------
+       101 Krishna    krishna
+       102 Ramesh     ramesh
+       103 Vikas      vikas
+       104 Mahesh     mahesh
+       105 Suresh     suresh
+       106 Humesh     humesh
+
+6 rows selected.
+
+SQL> select initcap('abcdefgh') as Uper from dual;
+
+UPER
+--------
+Abcdefgh
+
+SQL> select initcap('rama rao') as Uper from dual;
+
+UPER
+--------
+Rama Rao
+
+SQL> select length('rama rao') as Uper from dual;
+
+      UPER
+----------
+         8
+
+SQL> select length('ramarao') as Uper from dual;
+
+      UPER
+----------
+         7
+
+SQL> select sid,sname, length(sname) from smarks;
+
+       SID SNAME      LENGTH(SNAME)
+---------- ---------- -------------
+       101 Krishna                7
+       102 Ramesh                 6
+       103 Vikas                  5
+       104 Mahesh                 6
+       105 Suresh                 6
+       106 Humesh                 6
+
+6 rows selected.
+
+SQL> SELECT REPLACE('Hello World', 'Hello', 'Hi') AS Result FROM dual;
+
+RESULT
+--------
+Hi World
+
+SQL> SELECT REPLACE(sname, 'Ramesh', 'RRRRRR') FROM smarks;
+
+REPLACE(SNAME,'RAMESH','RRRRRR')
+------------------------------------------------------------
+Krishna
+RRRRRR
+Vikas
+Mahesh
+Suresh
+Humesh
+
+6 rows selected.
+
+SQL> SELECT sid,sname, REPLACE(sname, 'Ramesh', 'RRRRRR') as replace FROM smarks;
+
+       SID SNAME      REPLACE
+---------- ---------- ------------------------------------------------------------
+       101 Krishna    Krishna
+       102 Ramesh     RRRRRR
+       103 Vikas      Vikas
+       104 Mahesh     Mahesh
+       105 Suresh     Suresh
+       106 Humesh     Humesh
+
+6 rows selected.
+
+SQL> select LPAD('oracle',10,'z') from dual;
+
+LPAD('ORAC
+----------
+zzzzoracle
+
+SQL> select LPAD('oracle',15,'z') from dual;
+
+LPAD('ORACLE',1
+---------------
+zzzzzzzzzoracle
+
+SQL> select RPAD('oracle',15,'z') from dual;
+
+RPAD('ORACLE',1
+---------------
+oraclezzzzzzzzz
+
+SQL> SELECT sid,sname, LPAD(sname,15,'.') as lpad FROM smarks;
+
+       SID SNAME      LPAD
+---------- ---------- ------------------------------------------------------------
+       101 Krishna    ........Krishna
+       102 Ramesh     .........Ramesh
+       103 Vikas      ..........Vikas
+       104 Mahesh     .........Mahesh
+       105 Suresh     .........Suresh
+       106 Humesh     .........Humesh
+
+6 rows selected.
+
+SQL> SELECT sid,sname, LPAD(sname,10,'.') as lpad FROM smarks;
+
+       SID SNAME      LPAD
+---------- ---------- ----------------------------------------
+       101 Krishna    ...Krishna
+       102 Ramesh     ....Ramesh
+       103 Vikas      .....Vikas
+       104 Mahesh     ....Mahesh
+       105 Suresh     ....Suresh
+       106 Humesh     ....Humesh
+
+6 rows selected.
+
+SQL> SELECT sid,sname, RPAD(sname,10,'.') as lpad FROM smarks;
+
+       SID SNAME      LPAD
+---------- ---------- ----------------------------------------
+       101 Krishna    Krishna...
+       102 Ramesh     Ramesh....
+       103 Vikas      Vikas.....
+       104 Mahesh     Mahesh....
+       105 Suresh     Suresh....
+       106 Humesh     Humesh....
+
+6 rows selected.
+
+SQL> Select LTRIM('zzzzoracle','z') from dual;
+
+LTRIM(
+------
+oracle
+
+SQL> Select RTRIM('zzzzoraclezzzz','z') from dual;
+
+RTRIM('ZZZ
+----------
+zzzzoracle
+
+SQL> Select LTRIM('zzzzoraclezzzzzz','z') from dual;
+
+LTRIM('ZZZZO
+------------
+oraclezzzzzz
+
+SQL> Select TRIM('zzzzoraclezzzzzz','z') from dual;
+Select TRIM('zzzzoraclezzzzzz','z') from dual
+                              *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> Select TRIM('z' from 'zzzzoraclezzzzz' ) from dual;
+
+TRIM('
+------
+oracle
+
+SQL> Select LTRIM('   zzzzoraclezzzzzz','') from dual;
+
+L
+-
+
+
+SQL> Select LTRIM('   zzzzoraclezzzzzz','') as Ltrim from dual;
+
+L
+-
+
+
+SQL> Select LTRIM('  oraclezzzzzz','  ') as Ltrim from dual;
+
+LTRIM
+------------
+oraclezzzzzz
+
+SQL> Select LTRIM('     oraclezzzzzz',' ') as Ltrim from dual;
+
+LTRIM
+------------
+oraclezzzzzz
+
+SQL> Select LTRIM('zzzzoraclezzzzzz','p') from dual;
+
+LTRIM('ZZZZORACL
+----------------
+zzzzoraclezzzzzz
+
+SQL> SELECT INSTR('Hello World', 'Wo') AS position FROM dual;
+
+  POSITION
+----------
+         7
+
+SQL> SELECT INSTR('Hello World', 'd') AS position FROM dual;
+
+  POSITION
+----------
+        11
+
+SQL> Select SUBSTR('ORACLE',2,3) from dual;
+
+SUB
+---
+RAC
+
+SQL> Select SUBSTR('ORACLE',3,3) from dual;
+
+SUB
+---
+ACL
+
+SQL> Select SUBSTR('ORACLE',3,10) from dual;
+
+SUBS
+----
+ACLE
+
+SQL> SELECT CONCAT('Hello', 'World') AS concatenated_string FROM dual;
+
+CONCATENAT
+----------
+HelloWorld
+
+SQL> SELECT sid,sname CONCAT('Mr.', sname) AS concatenated_string FROM smarks;
+SELECT sid,sname CONCAT('Mr.', sname) AS concatenated_string FROM smarks
+                       *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT sid,sname CONCAT(sname, 'Mr.') AS concatenated_string FROM smarks;
+SELECT sid,sname CONCAT(sname, 'Mr.') AS concatenated_string FROM smarks
+                       *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT sid,sname CONCAT('Mr.','Krishna') AS concatenated_string FROM smarks;
+SELECT sid,sname CONCAT('Mr.','Krishna') AS concatenated_string FROM smarks
+                       *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT CONCAT('Mr.','Krishna') AS concatenated_string FROM dual;
+
+CONCATENAT
+----------
+Mr.Krishna
+
+SQL> SELECT sid,sname, CONCAT('Mr.','Krishna') AS concatenated_string FROM smarks;
+
+       SID SNAME      CONCATENAT
+---------- ---------- ----------
+       101 Krishna    Mr.Krishna
+       102 Ramesh     Mr.Krishna
+       103 Vikas      Mr.Krishna
+       104 Mahesh     Mr.Krishna
+       105 Suresh     Mr.Krishna
+       106 Humesh     Mr.Krishna
+
+6 rows selected.
+
+SQL> SELECT sid,sname, CONCAT('Mr.', sname) AS concatenated_string FROM smarks;
+
+       SID SNAME      CONCATENATED_
+---------- ---------- -------------
+       101 Krishna    Mr.Krishna
+       102 Ramesh     Mr.Ramesh
+       103 Vikas      Mr.Vikas
+       104 Mahesh     Mr.Mahesh
+       105 Suresh     Mr.Suresh
+       106 Humesh     Mr.Humesh
+
+6 rows selected.
+
+SQL> SELECT ASCII('ABCDE') FROM dual;
+
+ASCII('ABCDE')
+--------------
+            65
+
+SQL> SELECT sname, ASCII(sname) FROM smarks;
+
+SNAME      ASCII(SNAME)
+---------- ------------
+Krishna              75
+Ramesh               82
+Vikas                86
+Mahesh               77
+Suresh               83
+Humesh               72
+
+6 rows selected.
+
+SQL> SELECT sname, TRANSLATE(sname, 'ae', '12') FROM smarks;
+
+SNAME      TRANSLATE(SNAME,'AE','12')
+---------- ----------------------------------------
+Krishna    Krishn1
+Ramesh     R1m2sh
+Vikas      Vik1s
+Mahesh     M1h2sh
+Suresh     Sur2sh
+Humesh     Hum2sh
+
+6 rows selected.
+
+SQL> SELECT sname, TRANSLATE(sname, 'aeh', '128') FROM smarks;
+
+SNAME      TRANSLATE(SNAME,'AEH','128')
+---------- ----------------------------------------
+Krishna    Kris8n1
+Ramesh     R1m2s8
+Vikas      Vik1s
+Mahesh     M182s8
+Suresh     Sur2s8
+Humesh     Hum2s8
+
+6 rows selected.
+
+SQL>
