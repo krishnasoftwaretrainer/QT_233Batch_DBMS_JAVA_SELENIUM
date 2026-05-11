@@ -3539,3 +3539,693 @@ Humesh     Hum2s8
 6 rows selected.
 
 SQL>
+-----------------------------
+
+SQL*Plus: Release 11.2.0.2.0 Production on Mon May 11 10:37:42 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect qt233
+Enter password:
+Connected.
+SQL> select abs(-10,20) from dual;
+select abs(-10,20) from dual
+       *
+ERROR at line 1:
+ORA-00909: invalid number of arguments
+
+
+SQL> select abs(-10) from dual;
+
+  ABS(-10)
+----------
+        10
+
+SQL> select abs(10) from dual;
+
+   ABS(10)
+----------
+        10
+
+SQL> select abs(-10.5) from dual;
+
+ABS(-10.5)
+----------
+      10.5
+
+SQL> select sqrt(9) from dual;
+
+   SQRT(9)
+----------
+         3
+
+SQL> select sqrt(125) from dual;
+
+ SQRT(125)
+----------
+11.1803399
+
+SQL> select sqrt(25) from dual;
+
+  SQRT(25)
+----------
+         5
+
+SQL> select mod(10,3) from dual;
+
+ MOD(10,3)
+----------
+         1
+
+SQL> select mod(10,4) from dual;
+
+ MOD(10,4)
+----------
+         2
+
+SQL> select mod(10,2) from dual;
+
+ MOD(10,2)
+----------
+         0
+
+SQL> select power(2,3) from dual;
+
+POWER(2,3)
+----------
+         8
+
+SQL> select power(10,3) from dual;
+
+POWER(10,3)
+-----------
+       1000
+
+SQL> select round(44.2) from dual;
+
+ROUND(44.2)
+-----------
+         44
+
+SQL> select round(44.4) from dual;
+
+ROUND(44.4)
+-----------
+         44
+
+SQL> select round(44.5) from dual;
+
+ROUND(44.5)
+-----------
+         45
+
+SQL> select ceil(44.2) from dual;
+
+CEIL(44.2)
+----------
+        45
+
+SQL> select ceil(44.8) from dual;
+
+CEIL(44.8)
+----------
+        45
+
+SQL> select floor(44.8) from dual;
+
+FLOOR(44.8)
+-----------
+         44
+
+SQL> Select ROUND(856.81766,3) from dual;
+
+ROUND(856.81766,3)
+------------------
+           856.818
+
+SQL> Select ROUND(856.81766666,3) from dual;
+
+ROUND(856.81766666,3)
+---------------------
+              856.818
+
+SQL> Select ROUND(856.81266666,3) from dual;
+
+ROUND(856.81266666,3)
+---------------------
+              856.813
+
+SQL> Select ROUND(856.81266662,3) from dual;
+
+ROUND(856.81266662,3)
+---------------------
+              856.813
+
+SQL> Select ROUND(123,-1) from dual;
+
+ROUND(123,-1)
+-------------
+          120
+
+SQL> Select ROUND(128,-1) from dual;
+
+ROUND(128,-1)
+-------------
+          130
+
+SQL> Select ROUND(128,-4) from dual;
+
+ROUND(128,-4)
+-------------
+            0
+
+SQL> Select ROUND(124,-1) from dual;
+
+ROUND(124,-1)
+-------------
+          120
+
+SQL> Select ROUND(125,-1) from dual;
+
+ROUND(125,-1)
+-------------
+          130
+
+SQL> Select ROUND(125,-2) from dual;
+
+ROUND(125,-2)
+-------------
+          100
+
+SQL> Select ROUND(165,-2) from dual;
+
+ROUND(165,-2)
+-------------
+          200
+
+SQL> Select ROUND(145,-2) from dual;
+
+ROUND(145,-2)
+-------------
+          100
+
+SQL> Select ROUND(145,-3) from dual;
+
+ROUND(145,-3)
+-------------
+            0
+
+SQL> Select ROUND(23145,-3) from dual;
+
+ROUND(23145,-3)
+---------------
+          23000
+
+SQL> Select ROUND(23845,-3) from dual;
+
+ROUND(23845,-3)
+---------------
+          24000
+
+SQL> Select TRUNC(40.1234,2) from dual;
+
+TRUNC(40.1234,2)
+----------------
+           40.12
+
+SQL> Select TRUNC(40.1234,3) from dual;
+
+TRUNC(40.1234,3)
+----------------
+          40.123
+
+SQL> Select TRUNC(40.1234,1) from dual;
+
+TRUNC(40.1234,1)
+----------------
+            40.1
+
+SQL> Select TRUNC(40.1234567,3) from dual;
+
+TRUNC(40.1234567,3)
+-------------------
+             40.123
+
+SQL> Select TRUNC(40.123456,3) from dual;
+
+TRUNC(40.123456,3)
+------------------
+            40.123
+
+SQL> Select TRUNC(40.123456,4) from dual;
+
+TRUNC(40.123456,4)
+------------------
+           40.1234
+
+SQL> Select TRUNC(40.123456,6) from dual;
+
+TRUNC(40.123456,6)
+------------------
+         40.123456
+
+SQL> Select TRUNC(40.123456,2) from dual;
+
+TRUNC(40.123456,2)
+------------------
+             40.12
+
+SQL> Select TRUNC(40.123456,1) from dual;
+
+TRUNC(40.123456,1)
+------------------
+              40.1
+
+SQL> Select TRUNC(40.123456,2) from dual;
+
+TRUNC(40.123456,2)
+------------------
+             40.12
+
+SQL> Select TRUNC(40.123456,3) from dual;
+
+TRUNC(40.123456,3)
+------------------
+            40.123
+
+SQL> Select TRUNC(40.123456,4) from dual;
+
+TRUNC(40.123456,4)
+------------------
+           40.1234
+
+SQL> Select TRUNC(40.123456,5) from dual;
+
+TRUNC(40.123456,5)
+------------------
+          40.12345
+
+SQL> Select TRUNC(40.123456,6) from dual;
+
+TRUNC(40.123456,6)
+------------------
+         40.123456
+
+SQL> Select TRUNC(40.123456,7) from dual;
+
+TRUNC(40.123456,7)
+------------------
+         40.123456
+
+SQL> Select TRUNC(684798,-1) from dual;
+
+TRUNC(684798,-1)
+----------------
+          684790
+
+SQL> Select TRUNC(684798,-2) from dual;
+
+TRUNC(684798,-2)
+----------------
+          684700
+
+SQL> Select TRUNC(684798,-3) from dual;
+
+TRUNC(684798,-3)
+----------------
+          684000
+
+SQL> Select TRUNC(684798,-4) from dual;
+
+TRUNC(684798,-4)
+----------------
+          680000
+
+SQL> Select GREATEST (100,200,300) from dual;
+
+GREATEST(100,200,300)
+---------------------
+                  300
+
+SQL> Select GREATEST (100,800,300) from dual;
+
+GREATEST(100,800,300)
+---------------------
+                  800
+
+SQL> Select LEAST (100,800,300) from dual;
+
+LEAST(100,800,300)
+------------------
+               100
+
+SQL> SELECT SIGN(7) AS sign_value FROM dual;
+
+SIGN_VALUE
+----------
+         1
+
+SQL> SELECT SIGN(-785) AS sign_value FROM dual;
+
+SIGN_VALUE
+----------
+        -1
+
+SQL> SELECT SIGN(-000) AS sign_value FROM dual;
+
+SIGN_VALUE
+----------
+         0
+
+SQL> Select ADD_MONTHS('11-APR-05',3) from dual;
+
+ADD_MONTH
+---------
+11-JUL-05
+
+SQL> select sysdate from dual;
+
+SYSDATE
+---------
+11-MAY-26
+
+SQL> select currentdate from dual;
+select currentdate from dual
+       *
+ERROR at line 1:
+ORA-00904: "CURRENTDATE": invalid identifier
+
+
+SQL> select current_date from dual;
+
+CURRENT_D
+---------
+11-MAY-26
+
+SQL> select sysdate from dual;
+
+SYSDATE
+---------
+11-MAY-26
+
+SQL> select systimestamp from dual;
+
+SYSTIMESTAMP
+---------------------------------------------------------------------------
+11-MAY-26 11.05.59.648000 AM +05:30
+
+SQL> select current_timestamp from dual;
+
+CURRENT_TIMESTAMP
+---------------------------------------------------------------------------
+11-MAY-26 11.06.38.175000 AM +05:30
+
+SQL> Select ADD_MONTHS('11-APR-05',3) from dual;
+
+ADD_MONTH
+---------
+11-JUL-05
+
+SQL> Select ADD_MONTHS(sysdate,3) from dual;
+
+ADD_MONTH
+---------
+11-AUG-26
+
+SQL> Select ADD_MONTHS(sysdate,12) from dual;
+
+ADD_MONTH
+---------
+11-MAY-27
+
+SQL> SQL> Select MONTHS_BETWEEN(sysdate,'11-AUG-26') from dual;
+SP2-0734: unknown command beginning "SQL> Selec..." - rest of line ignored.
+SQL> Select MONTHS_BETWEEN(sysdate,'11-AUG-26') from dual;
+
+MONTHS_BETWEEN(SYSDATE,'11-AUG-26')
+-----------------------------------
+                                 -3
+
+SQL> Select MONTHS_BETWEEN(sysdate,'11-Jan-26') from dual;
+
+MONTHS_BETWEEN(SYSDATE,'11-JAN-26')
+-----------------------------------
+                                  4
+
+SQL> Select MONTHS_BETWEEN('10-jan-25','11-Jan-26') from dual;
+
+MONTHS_BETWEEN('10-JAN-25','11-JAN-26')
+---------------------------------------
+                             -12.032258
+
+SQL> Select MONTHS_BETWEEN('10-jan-26','11-Jan-25') from dual;
+
+MONTHS_BETWEEN('10-JAN-26','11-JAN-25')
+---------------------------------------
+                             11.9677419
+
+SQL> Select MONTHS_BETWEEN('11-jan-26','11-Jan-25') from dual;
+
+MONTHS_BETWEEN('11-JAN-26','11-JAN-25')
+---------------------------------------
+                                     12
+
+SQL> Select NEXT_DAY(SYSDATE,'MONDAY') from dual;
+
+NEXT_DAY(
+---------
+18-MAY-26
+
+SQL> Select NEXT_DAY(SYSDATE,'sunday') from dual;
+
+NEXT_DAY(
+---------
+17-MAY-26
+
+SQL> Select LAST_DAY(SYSDATE) from dual;
+
+LAST_DAY(
+---------
+31-MAY-26
+
+SQL> Select LAST_DAY('01-feb-25') from dual;
+
+LAST_DAY(
+---------
+28-FEB-25
+
+SQL> Select LAST_DAY('01-feb-24') from dual;
+
+LAST_DAY(
+---------
+29-FEB-24
+
+SQL> Select LAST_DAY('01-feb-23') from dual;
+
+LAST_DAY(
+---------
+28-FEB-23
+
+SQL> select sysdate from dual;
+
+SYSDATE
+---------
+11-MAY-26
+
+SQL> SELECT TO_CHAR(SYSDATE, 'YYYY-MM-DD') FROM dual;
+
+TO_CHAR(SY
+----------
+2026-05-11
+
+SQL> SELECT TO_CHAR(SYSDATE, 'YYYY-DD-MM') FROM dual;
+
+TO_CHAR(SY
+----------
+2026-11-05
+
+SQL> SELECT TO_CHAR(SYSDATE, 'DD-MM-YY') FROM dual;
+
+TO_CHAR(
+--------
+11-05-26
+
+SQL> SELECT TO_CHAR(SYSDATE, 'DD-MM-YYYY') FROM dual;
+
+TO_CHAR(SY
+----------
+11-05-2026
+
+SQL> SELECT TO_CHAR(SYSDATE, 'DD') FROM dual;
+
+TO
+--
+11
+
+SQL> SELECT TO_CHAR(SYSDATE, 'MM') FROM dual;
+
+TO
+--
+05
+
+SQL> SELECT TO_CHAR(SYSDATE, 'YY') FROM dual;
+
+TO
+--
+26
+
+SQL> SELECT TO_CHAR(SYSDATE, 'YYYY') FROM dual;
+
+TO_C
+----
+2026
+
+SQL> SELECT TO_CHAR(SYSDATE, 'Day: MONTH, DD, YYYY') FROM dual;
+
+TO_CHAR(SYSDATE,'DAY:MONTH,DD,YYYY')
+--------------------------------------------------------------------------------
+Monday   : MAY      , 11, 2026
+
+SQL> select TO_CHAR(SYSDATE, 'Day: MONTH DD, YYYY', 'NLS_DATE_LANGUAGE = Spanish') from dual;
+
+TO_CHAR(SYSDATE,'DAY:MONTHDD,YYYY','NLS_DATE_LANGUAGE=SPANISH')
+--------------------------------------------------------------------------------
+Lunes    : MAYO       11, 2026
+
+SQL> select TO_CHAR(SYSDATE, 'Day: MONTH DD, YYYY', 'NLS_DATE_LANGUAGE = Spanish') from telugu;
+select TO_CHAR(SYSDATE, 'Day: MONTH DD, YYYY', 'NLS_DATE_LANGUAGE = Spanish') from telugu
+                                                                                   *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select TO_CHAR(SYSDATE, 'Day: MONTH DD, YYYY', 'NLS_DATE_LANGUAGE = telugu') from dual;
+
+TO_CHAR(SYSDATE,'DAY:MONTHDD,YYYY','NLS_DATE_LANGUAGE=TELUGU')
+--------------------------------------------------------------------------------
+┐┐┐┐┐┐┐  : ┐┐         11, 2026
+
+SQL> select TO_CHAR(SYSDATE, 'Day: MONTH DD, YYYY', 'NLS_DATE_LANGUAGE = english') from dual;
+
+TO_CHAR(SYSDATE,'DAY:MONTHDD,YYYY','NLS_DATE_LANGUAGE=ENGLISH')
+--------------------------------------------------------------------------------
+Monday   : MAY       11, 2026
+
+SQL> Select TO_CHAR(SYSDATE,'DD-MM-YYYY') from dual;
+
+TO_CHAR(SY
+----------
+11-05-2026
+
+SQL> Select TO_CHAR(SYSDATE,'DD-MONTH-YYYY') from dual;
+
+TO_CHAR(SYSDATE,'DD-MONTH-YYYY')
+--------------------------------------------
+11-MAY      -2026
+
+SQL> Select TO_CHAR('01-01-26','DD-MONTH-YYYY') from dual;
+Select TO_CHAR('01-01-26','DD-MONTH-YYYY') from dual
+               *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> Select TO_CHAR('01-JAN-26','DD-MONTH-YYYY') from dual;
+Select TO_CHAR('01-JAN-26','DD-MONTH-YYYY') from dual
+               *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> Select TO_CHAR('11-FEB-26','DD-MONTH-YYYY') from dual;
+Select TO_CHAR('11-FEB-26','DD-MONTH-YYYY') from dual
+               *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> Select TO_CHAR(SYSDATE,'DD-MONTH-YYYY') from dual;
+
+TO_CHAR(SYSDATE,'DD-MONTH-YYYY')
+--------------------------------------------
+11-MAY      -2026
+
+SQL> Select TO_CHAR(SYSDATE,'DDD') from dual;
+
+TO_
+---
+131
+
+SQL> Select TO_CHAR(SYSDATE,'DD-MM-YY HH:MI:SS') from dual;
+
+TO_CHAR(SYSDATE,'
+-----------------
+11-05-26 11:25:34
+
+SQL> Select SYSTIMESTAMP FROM DUAL;
+
+SYSTIMESTAMP
+---------------------------------------------------------------------------
+11-MAY-26 11.25.52.697000 AM +05:30
+
+SQL> Select TO_NUMBER(LTRIM('$1400','$')) + 10 from dual;
+
+TO_NUMBER(LTRIM('$1400','$'))+10
+--------------------------------
+                            1410
+
+SQL> Select TO_NUMBER(LTRIM('$1400','$'))  from dual;
+
+TO_NUMBER(LTRIM('$1400','$'))
+-----------------------------
+                         1400
+
+SQL> Select To_number (' 000012134 ') from dual;
+
+TO_NUMBER('000012134')
+----------------------
+                 12134
+
+SQL> Select To_number (' 000012134   ') from dual;
+
+TO_NUMBER('000012134')
+----------------------
+                 12134
+
+SQL> Select To_number (' 00001213400   ') from dual;
+
+TO_NUMBER('00001213400')
+------------------------
+                 1213400
+
+SQL> SELECT TO_NUMBER('97.13') + 25.5 FROM dual;
+
+TO_NUMBER('97.13')+25.5
+-----------------------
+                 122.63
+
+SQL> SELECT TO_NUMBER 97.13 + 25.5 FROM dual;
+SELECT TO_NUMBER 97.13 + 25.5 FROM dual
+                 *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT 97.13 + 25.5 FROM dual;
+
+97.13+25.5
+----------
+    122.63
+
+SQL> SELECT 97.13 + 25.5  AS SUMFROM dual;
+SELECT 97.13 + 25.5  AS SUMFROM dual
+                                *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT 97.13 + 25.5  AS SUM FROM dual;
+
+       SUM
+----------
+    122.63
