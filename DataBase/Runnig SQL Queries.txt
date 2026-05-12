@@ -4229,3 +4229,850 @@ SQL> SELECT 97.13 + 25.5  AS SUM FROM dual;
        SUM
 ----------
     122.63
+====================
+
+SQL*Plus: Release 11.2.0.2.0 Production on Tue May 12 10:35:40 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect qt233
+Enter password:
+Connected.
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+CONS                           TABLE
+CUSTOMERS                      TABLE
+EMP                            TABLE
+EMP1                           TABLE
+SMARKS                         TABLE
+STU                            TABLE
+STU1                           TABLE
+STU2                           TABLE
+
+8 rows selected.
+
+SQL> select * from emp1;
+
+       EID ENAME                       SAL
+---------- -------------------- ----------
+         1 Krishna                    8000
+
+SQL> select * from cons;
+
+EID                  ENAME      ADDRESS    EMAIL
+-------------------- ---------- ---------- --------------------
+1                    Krishna    Hyd        krishna@gmail.com
+2                    Krishna    Hyd        krishna123@gmail.com
+3                    Suresh
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       101 Krishna            58         68         78         88        292
+        73         73
+
+       102 Ramesh             48         66         77         82        273
+     68.25      68.25
+
+       103 Vikas              95         62         74         87        318
+      79.5       79.5
+
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       104 Mahesh             51         67         70         82        270
+      67.5       67.5
+
+       105 Suresh             55         60         44         88        247
+     61.75      61.75
+
+       106 Humesh
+
+
+
+6 rows selected.
+
+SQL> set linesize 200;
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292         73         73
+       102 Ramesh             48         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh
+
+6 rows selected.
+
+SQL> select * from smarks where where sub1>50;
+select * from smarks where where sub1>50
+                           *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> select * from smarks where sub1>50;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292         73         73
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+
+SQL> select sid,sname,sub1 from smarks where sub1>50;
+
+       SID SNAME            SUB1
+---------- ---------- ----------
+       101 Krishna            58
+       103 Vikas              95
+       104 Mahesh             51
+       105 Suresh             55
+
+SQL> create view sv1 as select sid,sname,sub1 from smarks where sub1>50;
+
+View created.
+
+SQL> select * from sv1;
+
+       SID SNAME            SUB1
+---------- ---------- ----------
+       101 Krishna            58
+       103 Vikas              95
+       104 Mahesh             51
+       105 Suresh             55
+
+SQL>
+
+SQL*Plus: Release 11.2.0.2.0 Production on Tue May 12 10:42:11 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect qt233
+Enter password:
+Connected.
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+CONS                           TABLE
+CUSTOMERS                      TABLE
+EMP                            TABLE
+EMP1                           TABLE
+SMARKS                         TABLE
+STU                            TABLE
+STU1                           TABLE
+STU2                           TABLE
+SV1                            VIEW
+
+9 rows selected.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       101 Krishna            58         68         78         88        292
+        73         73
+
+       102 Ramesh             48         66         77         82        273
+     68.25      68.25
+
+       103 Vikas              95         62         74         87        318
+      79.5       79.5
+
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       104 Mahesh             51         67         70         82        270
+      67.5       67.5
+
+       105 Suresh             55         60         44         88        247
+     61.75      61.75
+
+       106 Humesh
+
+
+
+6 rows selected.
+
+SQL> set linesize 200;
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292         73      73
+       102 Ramesh             48         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh
+
+6 rows selected.
+
+SQL> select * from sv1;
+
+       SID SNAME            SUB1
+---------- ---------- ----------
+       101 Krishna            58
+       103 Vikas              95
+       104 Mahesh             51
+       105 Suresh             55
+
+SQL> insert into smarks(sid,sname,sub) values(107,'Kiran',77);
+insert into smarks(sid,sname,sub) values(107,'Kiran',77)
+                             *
+ERROR at line 1:
+ORA-00904: "SUB": invalid identifier
+
+
+SQL> insert into smarks(sid,sname,sub1) values(107,'Kiran',77);
+
+1 row created.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292         73         73
+       102 Ramesh             48         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh
+       107 Kiran              77
+
+7 rows selected.
+
+SQL> select * from sv1;
+
+       SID SNAME            SUB1
+---------- ---------- ----------
+       101 Krishna            58
+       103 Vikas              95
+       104 Mahesh             51
+       105 Suresh             55
+       107 Kiran              77
+
+SQL> insert into smarks(sid,sname,sub1) values(108,'Kumar',44);
+
+1 row created.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292         73         73
+       102 Ramesh             48         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh
+       107 Kiran              77
+       108 Kumar              44
+
+8 rows selected.
+
+SQL> select * from sv1;
+
+       SID SNAME            SUB1
+---------- ---------- ----------
+       101 Krishna            58
+       103 Vikas              95
+       104 Mahesh             51
+       105 Suresh             55
+       107 Kiran              77
+
+SQL> insert into sv1 values(109,'Suman',66);
+
+1 row created.
+
+SQL> select * from sv1;
+
+       SID SNAME            SUB1
+---------- ---------- ----------
+       101 Krishna            58
+       103 Vikas              95
+       104 Mahesh             51
+       105 Suresh             55
+       107 Kiran              77
+       109 Suman              66
+
+6 rows selected.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292         73         73
+       102 Ramesh             48         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh
+       107 Kiran              77
+       108 Kumar              44
+       109 Suman              66
+
+9 rows selected.
+
+SQL> update sv1 set sub1=88 where sid=106;
+
+0 rows updated.
+
+SQL> select * from sv1;
+
+       SID SNAME            SUB1
+---------- ---------- ----------
+       101 Krishna            58
+       103 Vikas              95
+       104 Mahesh             51
+       105 Suresh             55
+       107 Kiran              77
+       109 Suman              66
+
+6 rows selected.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292         73         73
+       102 Ramesh             48         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh
+       107 Kiran              77
+       108 Kumar              44
+       109 Suman              66
+
+9 rows selected.
+
+SQL> update sv1 set sub1=88 where sid=106;
+
+0 rows updated.
+
+SQL> update smarks set sub1=88 where sid=106;
+
+1 row updated.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292         73         73
+       102 Ramesh             48         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88
+       107 Kiran              77
+       108 Kumar              44
+       109 Suman              66
+
+9 rows selected.
+
+SQL> update sv1 set sub1=64 where sid=109;
+
+1 row updated.
+
+SQL> select * from sv1;
+
+       SID SNAME            SUB1
+---------- ---------- ----------
+       101 Krishna            58
+       103 Vikas              95
+       104 Mahesh             51
+       105 Suresh             55
+       106 Humesh             88
+       107 Kiran              77
+       109 Suman              64
+
+7 rows selected.
+
+SQL> create view simpleview as select * from smarks where sub>50;
+create view simpleview as select * from smarks where sub>50
+                                                     *
+ERROR at line 1:
+ORA-00904: "SUB": invalid identifier
+
+
+SQL> create view simpleview as select * from smarks where su1b>50;
+create view simpleview as select * from smarks where su1b>50
+                                                     *
+ERROR at line 1:
+ORA-00904: "SU1B": invalid identifier
+
+
+SQL> create view simpleview as select * from smarks where sub1>50;
+
+View created.
+
+SQL> desc simpleview;
+ Name                                                                                               Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                 NUMBER(3)
+ SNAME                                                                                               VARCHAR2(10)
+ SUB1                                                                                                NUMBER(3)
+ SUB2                                                                                                NUMBER(3)
+ SUB3                                                                                                NUMBER(3)
+ SUB4                                                                                                NUMBER(3)
+ TOTAL                                                                                               NUMBER(3)
+ AVG                                                                                                 NUMBER(5,2)
+ PERCENTAGE                                                                                          NUMBER(6,2)
+
+SQL> select * from simpleview;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292         73         73
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88
+       107 Kiran              77
+       109 Suman              64
+
+7 rows selected.
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+CONS                           TABLE
+CUSTOMERS                      TABLE
+EMP                            TABLE
+EMP1                           TABLE
+SIMPLEVIEW                     VIEW
+SMARKS                         TABLE
+STU                            TABLE
+STU1                           TABLE
+STU2                           TABLE
+SV1                            VIEW
+
+10 rows selected.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+
+11 rows selected.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            58         68         78         88        292         73         73
+       102 Ramesh             48         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88
+       107 Kiran              77
+       108 Kumar              44
+       109 Suman              64
+
+9 rows selected.
+
+SQL> create view complexview as select stu.rno,stu.sname,stu.cource,smarks.sid,smarks.sname,smarks.total from stu,smarks;
+create view complexview as select stu.rno,stu.sname,stu.cource,smarks.sid,smarks.sname,smarks.total from stu,smarks
+                                                                                 *
+ERROR at line 1:
+ORA-00957: duplicate column name
+
+
+SQL> create view complexview as select stu.rno,stu.sname,stu.cource,smarks.sid,smarks.total,smarks.percentage from stu,smarks;
+
+View created.
+
+SQL> desc complexview;
+ Name                                                                                                           Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ RNO                                                                                                             NUMBER(3)
+ SNAME                                                                                                           VARCHAR2(10)
+ COURCE                                                                                                          CHAR(10)
+ SID                                                                                                             NUMBER(3)
+ TOTAL                                                                                                           NUMBER(3)
+ PERCENTAGE                                                                                                      NUMBER(6,2)
+     select * complexview;
+select * complexview
+         *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select * complexview;
+select * complexview
+         *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select *  from complexview;
+
+       RNO SNAME      COURCE            SID      TOTAL PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           101        292         73
+       102 Madhu      API               101        292         73
+       103 Ramesh     Java              101        292         73
+       104 dgef       gefeg             101        292         73
+       105 dfgdf      vddfd             101        292         73
+       106 Suman      Python            101        292         73
+       106 Suman      Python            101        292         73
+       106 Suman      Python            101        292         73
+       106 Suman      Python            101        292         73
+       106 Suman      Python            101        292         73
+       106 Suman      Python            101        292         73
+
+       RNO SNAME      COURCE            SID      TOTAL PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           102        273      68.25
+       102 Madhu      API               102        273      68.25
+       103 Ramesh     Java              102        273      68.25
+       104 dgef       gefeg             102        273      68.25
+       105 dfgdf      vddfd             102        273      68.25
+       106 Suman      Python            102        273      68.25
+       106 Suman      Python            102        273      68.25
+       106 Suman      Python            102        273      68.25
+       106 Suman      Python            102        273      68.25
+       106 Suman      Python            102        273      68.25
+       106 Suman      Python            102        273      68.25
+
+       RNO SNAME      COURCE            SID      TOTAL PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           103        318       79.5
+       102 Madhu      API               103        318       79.5
+       103 Ramesh     Java              103        318       79.5
+       104 dgef       gefeg             103        318       79.5
+       105 dfgdf      vddfd             103        318       79.5
+       106 Suman      Python            103        318       79.5
+       106 Suman      Python            103        318       79.5
+       106 Suman      Python            103        318       79.5
+       106 Suman      Python            103        318       79.5
+       106 Suman      Python            103        318       79.5
+       106 Suman      Python            103        318       79.5
+
+       RNO SNAME      COURCE            SID      TOTAL PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           104        270       67.5
+       102 Madhu      API               104        270       67.5
+       103 Ramesh     Java              104        270       67.5
+       104 dgef       gefeg             104        270       67.5
+       105 dfgdf      vddfd             104        270       67.5
+       106 Suman      Python            104        270       67.5
+       106 Suman      Python            104        270       67.5
+       106 Suman      Python            104        270       67.5
+       106 Suman      Python            104        270       67.5
+       106 Suman      Python            104        270       67.5
+       106 Suman      Python            104        270       67.5
+
+       RNO SNAME      COURCE            SID      TOTAL PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           105        247      61.75
+       102 Madhu      API               105        247      61.75
+       103 Ramesh     Java              105        247      61.75
+       104 dgef       gefeg             105        247      61.75
+       105 dfgdf      vddfd             105        247      61.75
+       106 Suman      Python            105        247      61.75
+       106 Suman      Python            105        247      61.75
+       106 Suman      Python            105        247      61.75
+       106 Suman      Python            105        247      61.75
+       106 Suman      Python            105        247      61.75
+       106 Suman      Python            105        247      61.75
+
+       RNO SNAME      COURCE            SID      TOTAL PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           106
+       102 Madhu      API               106
+       103 Ramesh     Java              106
+       104 dgef       gefeg             106
+       105 dfgdf      vddfd             106
+       106 Suman      Python            106
+       106 Suman      Python            106
+       106 Suman      Python            106
+       106 Suman      Python            106
+       106 Suman      Python            106
+       106 Suman      Python            106
+
+       RNO SNAME      COURCE            SID      TOTAL PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           107
+       102 Madhu      API               107
+       103 Ramesh     Java              107
+       104 dgef       gefeg             107
+       105 dfgdf      vddfd             107
+       106 Suman      Python            107
+       106 Suman      Python            107
+       106 Suman      Python            107
+       106 Suman      Python            107
+       106 Suman      Python            107
+       106 Suman      Python            107
+
+       RNO SNAME      COURCE            SID      TOTAL PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           108
+       102 Madhu      API               108
+       103 Ramesh     Java              108
+       104 dgef       gefeg             108
+       105 dfgdf      vddfd             108
+       106 Suman      Python            108
+       106 Suman      Python            108
+       106 Suman      Python            108
+       106 Suman      Python            108
+       106 Suman      Python            108
+       106 Suman      Python            108
+
+       RNO SNAME      COURCE            SID      TOTAL PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           109
+       102 Madhu      API               109
+       103 Ramesh     Java              109
+       104 dgef       gefeg             109
+       105 dfgdf      vddfd             109
+       106 Suman      Python            109
+       106 Suman      Python            109
+       106 Suman      Python            109
+       106 Suman      Python            109
+       106 Suman      Python            109
+       106 Suman      Python            109
+
+99 rows selected.
+
+SQL> desc complexview;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ RNO                                                                                                                    NUMBER(3)
+ SNAME                                                                                                                  VARCHAR2(10)
+ COURCE                                                                                                                 CHAR(10)
+ SID                                                                                                                    NUMBER(3)
+ TOTAL                                                                                                                  NUMBER(3)
+ PERCENTAGE                                                                                                             NUMBER(6,2)
+
+SQL> insert into complexview values(11,'Krishna','Testing',22,565,22.3);
+insert into complexview values(11,'Krishna','Testing',22,565,22.3)
+*
+ERROR at line 1:
+ORA-01779: cannot modify a column which maps to a non key-preserved table
+
+
+SQL> create view readonlyview as select sid,sname,total from smarks with read only;
+
+View created.
+
+SQL> desc readonlyview;
+ Name                                                                                                     Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                       NUMBER(3)
+ SNAME                                                                                                     VARCHAR2(10)
+ TOTAL                                                                                                     NUMBER(3)
+
+SQL> select * from readonlyview;
+
+       SID SNAME           TOTAL
+---------- ---------- ----------
+       101 Krishna           292
+       102 Ramesh            273
+       103 Vikas             318
+       104 Mahesh            270
+       105 Suresh            247
+       106 Humesh
+       107 Kiran
+       108 Kumar
+       109 Suman
+
+9 rows selected.
+
+SQL> insert intom readonlyview values(101,'dd',555);
+insert intom readonlyview values(101,'dd',555)
+       *
+ERROR at line 1:
+ORA-00925: missing INTO keyword
+
+
+SQL> insert into readonlyview values(101,'dd',555);
+insert into readonlyview values(101,'dd',555)
+*
+ERROR at line 1:
+ORA-42399: cannot perform a DML operation on a read-only view
+
+
+SQL> select * from readonlyview;
+
+       SID SNAME           TOTAL
+---------- ---------- ----------
+       101 Krishna           292
+       102 Ramesh            273
+       103 Vikas             318
+       104 Mahesh            270
+       105 Suresh            247
+       106 Humesh
+       107 Kiran
+       108 Kumar
+       109 Suman
+
+9 rows selected.
+
+SQL> select * from readonlyview where sid>105;
+
+       SID SNAME           TOTAL
+---------- ---------- ----------
+       106 Humesh
+       107 Kiran
+       108 Kumar
+       109 Suman
+
+SQL> create view readonlyview as select sid,sname,sub1,sub2 where sub1>=50 with check option;
+create view readonlyview as select sid,sname,sub1,sub2 where sub1>=50 with check option
+                                                       *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> create view readonlyview as select sid,sname,sub1,sub2 from smarks where sub1>=50 with check option;
+create view readonlyview as select sid,sname,sub1,sub2 from smarks where sub1>=50 with check option
+            *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> create view checkoptionview as select sid,sname,sub1,sub2 from smarks where sub1>=50 with check option;
+
+View created.
+
+SQL> desc checkoptionview;
+ Name                                                                                                     Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                       NUMBER(3)
+ SNAME                                                                                                     VARCHAR2(10)
+ SUB1                                                                                                      NUMBER(3)
+ SUB2                                                                                                      NUMBER(3)
+
+SQL> select * from checkoptionview;
+
+       SID SNAME            SUB1       SUB2
+---------- ---------- ---------- ----------
+       101 Krishna            58         68
+       103 Vikas              95         62
+       104 Mahesh             51         67
+       105 Suresh             55         60
+       106 Humesh             88
+       107 Kiran              77
+       109 Suman              64
+
+7 rows selected.
+
+SQL> insert into checkoptionview values(111,'fdf',40,99);
+insert into checkoptionview values(111,'fdf',40,99)
+            *
+ERROR at line 1:
+ORA-01402: view WITH CHECK OPTION where-clause violation
+
+
+SQL> insert into checkoptionview values(111,'fdf',60,99);
+
+1 row created.
+
+SQL> update checkoptionview set sub1=44;
+update checkoptionview set sub1=44
+       *
+ERROR at line 1:
+ORA-01402: view WITH CHECK OPTION where-clause violation
+
+
+SQL> update checkoptionview set sub1=44 where sid=101;
+update checkoptionview set sub1=44 where sid=101
+       *
+ERROR at line 1:
+ORA-01402: view WITH CHECK OPTION where-clause violation
+
+
+SQL> update checkoptionview set sub1=64 where sid=101;
+
+1 row updated.
+
+SQL> create materialized view as select sid,sname,sub1,sub2 from smarks;
+create materialized view as select sid,sname,sub1,sub2 from smarks
+                         *
+ERROR at line 1:
+ORA-00931: missing identifier
+
+
+SQL> create materialized view mv as select sid,sname,sub1,sub2 from smarks;
+
+Materialized view created.
+
+SQL> desc mv;
+ Name                                                                                                     Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                       NUMBER(3)
+ SNAME                                                                                                     VARCHAR2(10)
+ SUB1                                                                                                      NUMBER(3)
+ SUB2                                                                                                      NUMBER(3)
+
+SQL> select * from mv;
+
+       SID SNAME            SUB1       SUB2
+---------- ---------- ---------- ----------
+       101 Krishna            64         68
+       102 Ramesh             48         66
+       103 Vikas              95         62
+       104 Mahesh             51         67
+       105 Suresh             55         60
+       106 Humesh             88
+       107 Kiran              77
+       108 Kumar              44
+       109 Suman              64
+       111 fdf                60         99
+
+10 rows selected.
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+CHECKOPTIONVIEW                VIEW
+COMPLEXVIEW                    VIEW
+CONS                           TABLE
+CUSTOMERS                      TABLE
+EMP                            TABLE
+EMP1                           TABLE
+MV                             TABLE
+READONLYVIEW                   VIEW
+SIMPLEVIEW                     VIEW
+SMARKS                         TABLE
+STU                            TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+STU1                           TABLE
+STU2                           TABLE
+SV1                            VIEW
+
+14 rows selected.
+
+SQL>
