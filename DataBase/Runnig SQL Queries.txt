@@ -5076,3 +5076,631 @@ SV1                            VIEW
 14 rows selected.
 
 SQL>
+=========================
+
+SQL*Plus: Release 11.2.0.2.0 Production on Wed May 13 10:43:58 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect qt233
+Enter password:
+Connected.
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       101 Krishna            64         68         78         88        292
+        73         73
+
+       102 Ramesh             48         66         77         82        273
+     68.25      68.25
+
+       103 Vikas              95         62         74         87        318
+      79.5       79.5
+
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       104 Mahesh             51         67         70         82        270
+      67.5       67.5
+
+       105 Suresh             55         60         44         88        247
+     61.75      61.75
+
+       106 Humesh             88
+
+
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       107 Kiran              77
+
+
+       108 Kumar              44
+
+
+       109 Suman              64
+
+
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       111 fdf                60         99
+
+
+
+10 rows selected.
+
+SQL> set linesize 200;
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            64         68         78         88        292         73         73
+       102 Ramesh             48         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88
+       107 Kiran              77
+       108 Kumar              44
+       109 Suman              64
+       111 fdf                60         99
+
+10 rows selected.
+
+SQL> create index idx1 on smarks(sname);
+
+Index created.
+
+SQL> select sname from smarks;
+
+SNAME
+----------
+Krishna
+Ramesh
+Vikas
+Mahesh
+Suresh
+Humesh
+Kiran
+Kumar
+Suman
+fdf
+
+10 rows selected.
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+CHECKOPTIONVIEW                VIEW
+COMPLEXVIEW                    VIEW
+CONS                           TABLE
+CUSTOMERS                      TABLE
+EMP                            TABLE
+EMP1                           TABLE
+MV                             TABLE
+READONLYVIEW                   VIEW
+SIMPLEVIEW                     VIEW
+SMARKS                         TABLE
+STU                            TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+STU1                           TABLE
+STU2                           TABLE
+SV1                            VIEW
+
+14 rows selected.
+
+SQL> select index_name, table_name from user_indexes;
+
+INDEX_NAME                     TABLE_NAME
+------------------------------ ------------------------------
+IDX1                           SMARKS
+SYS_C007006                    EMP1
+SYS_C007004                    EMP
+SYS_C007002                    CONS
+SYS_C007003                    CONS
+
+SQL> desc emp1;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ EID                                                                                                               NOT NULL NUMBER(3)
+ ENAME                                                                                                                  VARCHAR2(20)
+ SAL                                                                                                                    NUMBER(5)
+
+SQL> desc cons;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ EID                                                                                                               NOT NULL VARCHAR2(20)
+ ENAME                                                                                                             NOT NULL VARCHAR2(10)
+ ADDRESS                                                                                                                    VARCHAR2(10)
+ EMAIL                                                                                                                      VARCHAR2(20)
+
+SQL> select index_name, table_name from user_indexes;
+
+INDEX_NAME                     TABLE_NAME
+------------------------------ ------------------------------
+IDX1                           SMARKS
+SYS_C007006                    EMP1
+SYS_C007004                    EMP
+SYS_C007002                    CONS
+SYS_C007003                    CONS
+
+SQL> create table id1(sid number(5) primary key);
+
+Table created.
+
+SQL> desc id1;
+ Name                                                                                                           Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                            NOT NULL NUMBER(5)
+
+SQL> select index_name, table_name from user_indexes;
+
+INDEX_NAME                     TABLE_NAME
+------------------------------ ------------------------------
+IDX1                           SMARKS
+SYS_C007015                    ID1
+SYS_C007006                    EMP1
+SYS_C007004                    EMP
+SYS_C007002                    CONS
+SYS_C007003                    CONS
+
+6 rows selected.
+
+SQL> alter table id1 add(name varchar2(10));
+
+Table altered.
+
+SQL> desc id1;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                               NOT NULL NUMBER(5)
+ NAME                                                                                                                       VARCHAR2(10)
+
+SQL> create index index1 on id1(name);
+
+Index created.
+
+SQL> select index_name, table_name from user_indexes;
+
+INDEX_NAME                     TABLE_NAME
+------------------------------ ------------------------------
+IDX1                           SMARKS
+SYS_C007015                    ID1
+INDEX1                         ID1
+SYS_C007006                    EMP1
+SYS_C007004                    EMP
+SYS_C007002                    CONS
+SYS_C007003                    CONS
+
+7 rows selected.
+
+SQL> ALTER INDEX index1 RENAME TO idxxx11;
+
+Index altered.
+
+SQL> select index_name, table_name from user_indexes;
+
+INDEX_NAME                     TABLE_NAME
+------------------------------ ------------------------------
+IDX1                           SMARKS
+SYS_C007015                    ID1
+IDXXX11                        ID1
+SYS_C007006                    EMP1
+SYS_C007004                    EMP
+SYS_C007002                    CONS
+SYS_C007003                    CONS
+
+7 rows selected.
+
+SQL> drop index idxxx11;
+
+Index dropped.
+
+SQL> select index_name, table_name from user_indexes;
+
+INDEX_NAME                     TABLE_NAME
+------------------------------ ------------------------------
+IDX1                           SMARKS
+SYS_C007015                    ID1
+SYS_C007006                    EMP1
+SYS_C007004                    EMP
+SYS_C007002                    CONS
+SYS_C007003                    CONS
+
+6 rows selected.
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+CHECKOPTIONVIEW                VIEW
+COMPLEXVIEW                    VIEW
+CONS                           TABLE
+CUSTOMERS                      TABLE
+EMP                            TABLE
+EMP1                           TABLE
+ID1                            TABLE
+MV                             TABLE
+READONLYVIEW                   VIEW
+SIMPLEVIEW                     VIEW
+SMARKS                         TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+STU                            TABLE
+STU1                           TABLE
+STU2                           TABLE
+SV1                            VIEW
+
+15 rows selected.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105            Python
+
+SQL> desc stu2;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ RNO                                                                                                                        NUMBER(3)
+ SNAME                                                                                                                      VARCHAR2(10)
+ COURCE                                                                                                                     CHAR(10)
+ FEE                                                                                                                        NUMBER(5)
+
+SQL> create index stuidx1 on stu2(rno);
+
+Index created.
+
+SQL> select * from stu2;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105            Python
+
+SQL> create index stuidx2 on stu2(sname,cource,fee);
+
+Index created.
+
+SQL> select index_name, table_name from user_indexes;
+
+INDEX_NAME                     TABLE_NAME
+------------------------------ ------------------------------
+STUIDX1                        STU2
+STUIDX2                        STU2
+IDX1                           SMARKS
+SYS_C007015                    ID1
+SYS_C007006                    EMP1
+SYS_C007004                    EMP
+SYS_C007002                    CONS
+SYS_C007003                    CONS
+
+8 rows selected.
+
+SQL> desc id1;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                               NOT NULL NUMBER(5)
+ NAME                                                                                                                       VARCHAR2(10)
+
+SQL> select index_name, table_name from user_indexes;
+
+INDEX_NAME                     TABLE_NAME
+------------------------------ ------------------------------
+STUIDX1                        STU2
+STUIDX2                        STU2
+IDX1                           SMARKS
+SYS_C007015                    ID1
+SYS_C007006                    EMP1
+SYS_C007004                    EMP
+SYS_C007002                    CONS
+SYS_C007003                    CONS
+
+8 rows selected.
+
+SQL> alter table id1 add(marks number(3),gender varchar2(8));
+
+Table altered.
+
+SQL> desc id1;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                               NOT NULL NUMBER(5)
+ NAME                                                                                                                       VARCHAR2(10)
+ MARKS                                                                                                                      NUMBER(3)
+ GENDER                                                                                                                     VARCHAR2(8)
+
+SQL> create unique index idunique1 on id1(name);
+
+Index created.
+
+SQL> select index_name, table_name from user_indexes;
+
+INDEX_NAME                     TABLE_NAME
+------------------------------ ------------------------------
+STUIDX1                        STU2
+STUIDX2                        STU2
+IDX1                           SMARKS
+SYS_C007015                    ID1
+IDUNIQUE1                      ID1
+SYS_C007006                    EMP1
+SYS_C007004                    EMP
+SYS_C007002                    CONS
+SYS_C007003                    CONS
+
+9 rows selected.
+
+SQL> insert into id1 values(101,'Krishna',55,'Male');
+
+1 row created.
+
+SQL> select * from id1;
+
+       SID NAME            MARKS GENDER
+---------- ---------- ---------- --------
+       101 Krishna            55 Male
+
+SQL> insert into id1 values(102,'Krishna',55,'Male');
+insert into id1 values(102,'Krishna',55,'Male')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QT233.IDUNIQUE1) violated
+
+
+SQL> insert into id1 values(102,'Suresh',55,'Male');
+
+1 row created.
+
+SQL> select * from id1;
+
+       SID NAME            MARKS GENDER
+---------- ---------- ---------- --------
+       101 Krishna            55 Male
+       102 Suresh             55 Male
+
+SQL> insert into id1 values(102,'qbcd',55,'Male');
+insert into id1 values(102,'qbcd',55,'Male')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QT233.SYS_C007015) violated
+
+
+SQL>
+SQL> drop index IDUNIQUE1;
+
+Index dropped.
+
+SQL> insert into id1 values(103,'Krishna',55,'Male');
+
+1 row created.
+
+SQL> select * from id1;
+
+       SID NAME            MARKS GENDER
+---------- ---------- ---------- --------
+       101 Krishna            55 Male
+       102 Suresh             55 Male
+       103 Krishna            55 Male
+
+SQL> SELECT * FROM smarks WHERE SID IN (SELECT SID FROM student WHERE sub1 > 60) ;
+SELECT * FROM smarks WHERE SID IN (SELECT SID FROM student WHERE sub1 > 60)
+                                                   *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT * FROM smarks WHERE SID IN (SELECT SID FROM smarks WHERE sub1 > 60) ;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            64         68         78         88        292         73         73
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       106 Humesh             88
+       107 Kiran              77
+       109 Suman              64
+
+SQL> SELECT SID FROM smarks WHERE sub1 > 60 ;
+
+       SID
+----------
+       101
+       103
+       106
+       107
+       109
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            64         68         78         88        292         73         73
+       102 Ramesh             48         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88
+       107 Kiran              77
+       108 Kumar              44
+       109 Suman              64
+       111 fdf                60         99
+
+10 rows selected.
+
+SQL> SELECT sid,sname FROM smarks WHERE SID IN (SELECT SID FROM smarks WHERE sub1 > 60) and sname IN (SELECT sname FROM smarks WHERE sub2 < 70);
+
+       SID SNAME
+---------- ----------
+       101 Krishna
+       103 Vikas
+
+SQL> SELECT SID FROM smarks WHERE sub1 > 60;
+
+       SID
+----------
+       101
+       103
+       106
+       107
+       109
+
+SQL> SELECT sname FROM smarks WHERE sub2 < 70;
+
+SNAME
+----------
+Krishna
+Ramesh
+Vikas
+Mahesh
+Suresh
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            64         68         78         88        292         73         73
+       102 Ramesh             48         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88
+       107 Kiran              77
+       108 Kumar              44
+       109 Suman              64
+       111 fdf                60         99
+
+10 rows selected.
+
+SQL> CREATE TABLE smarks1 AS SELECT * FROM smarks WHERE sid IN (SELECT sid FROM smarks WHERE sub1>70);
+
+Table created.
+
+SQL> SELECT sid FROM smarks WHERE sub1>70;
+
+       SID
+----------
+       103
+       106
+       107
+
+SQL> select * from smarks1;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       106 Humesh             88
+       107 Kiran              77
+
+SQL> CREATE TABLE smarks2 AS SELECT sid,sname,total FROM smarks WHERE sid IN (SELECT sid FROM smarks WHERE sub1>70);
+
+Table created.
+
+SQL> select * from smarks2;
+
+       SID SNAME           TOTAL
+---------- ---------- ----------
+       103 Vikas             318
+       106 Humesh
+       107 Kiran
+
+SQL> CREATE TABLE smarks1 AS SELECT * FROM smarks WHERE sid IN (SELECT sid FROM smarks WHERE sub>10);
+CREATE TABLE smarks1 AS SELECT * FROM smarks WHERE sid IN (SELECT sid FROM smarks WHERE sub>10)
+                                                                                        *
+ERROR at line 1:
+ORA-00904: "SUB": invalid identifier
+
+
+SQL> CREATE TABLE smarks1 AS SELECT * FROM smarks WHERE sid IN (SELECT sid FROM smarks WHERE sub1>10);
+CREATE TABLE smarks1 AS SELECT * FROM smarks WHERE sid IN (SELECT sid FROM smarks WHERE sub1>10)
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> CREATE TABLE smarks3 AS SELECT * FROM smarks WHERE sid IN (SELECT sid FROM smarks WHERE sub1>10);
+
+Table created.
+
+SQL> select * from smarks3;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            64         68         78         88        292         73         73
+       102 Ramesh             48         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88
+       107 Kiran              77
+       108 Kumar              44
+       109 Suman              64
+       111 fdf                60         99
+
+10 rows selected.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            64         68         78         88        292         73         73
+       102 Ramesh             48         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88
+       107 Kiran              77
+       108 Kumar              44
+       109 Suman              64
+       111 fdf                60         99
+
+10 rows selected.
+
+SQL> UPDATE Smarks SET SUB1 = SUB1 + 10 WHERE SUB1 IN (SELECT SUB1 FROM STUDENT5 WHERE SUB1 <= 50 );
+UPDATE Smarks SET SUB1 = SUB1 + 10 WHERE SUB1 IN (SELECT SUB1 FROM STUDENT5 WHERE SUB1 <= 50 )
+                                                                   *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> UPDATE Smarks SET SUB1 = SUB1 + 10 WHERE SUB1 IN (SELECT SUB1 FROM Smarks WHERE SUB1 <= 50 );
+
+2 rows updated.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            64         68         78         88        292         73         73
+       102 Ramesh             58         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88
+       107 Kiran              77
+       108 Kumar              54
+       109 Suman              64
+       111 fdf                60         99
+
+10 rows selected.
+
+SQL>
