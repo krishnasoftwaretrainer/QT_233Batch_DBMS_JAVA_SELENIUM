@@ -295,3 +295,63 @@ boolean a=true;
 
 && || !
 and or not 
+
+
+Theory:
+Basic Queries:
+Advanced Queries:
+
+Payroll:X :10L 15L 20L 
+Y:Client
+
+TCS:Client and Payroll
+
+Project:6Months 10
+
+Notice Period:6Months 3Months 1Month IJ 
+
+Bentch:
+
+WFH 
+WFO:
+Hybrid:
+
+Project:TCS IBM TSRTC: 6 1 2 3 
+Product:Microsoft Google Oracle Amazon
+
+
+99.3: 99
+
+99.6:100
+
+  09  
+   90
+   
+  ============================
+Views in SQL:
+-----------
+
+First table all the values map with second table each value.
+
+First table:Records * Second table:Records 
+			11 * 9 = 99Records 
+			
+Index in SQL:
+-----------
+Text Books:
+
+Table:1k Records:One specfic Record  
+
+With Index
+Without Index
+
+Select
+
+Sub-Queries in SQL:
+-----------------
+Outer Query(Inner Queries);
+
+Levels of Sub-Queries:
+
+FT:5:1val*50=50 2val*50=50
+ST:50:250 Rows 

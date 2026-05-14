@@ -5704,3 +5704,768 @@ SQL> select * from smarks;
 10 rows selected.
 
 SQL>
+================
+
+SQL*Plus: Release 11.2.0.2.0 Production on Thu May 14 10:38:49 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect qt233
+Enter password:
+Connected.
+SQL> select 8 from tab;
+
+         8
+----------
+         8
+         8
+         8
+         8
+         8
+         8
+         8
+         8
+         8
+         8
+         8
+
+         8
+----------
+         8
+         8
+         8
+         8
+         8
+         8
+         8
+
+18 rows selected.
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+CHECKOPTIONVIEW                VIEW
+COMPLEXVIEW                    VIEW
+CONS                           TABLE
+CUSTOMERS                      TABLE
+EMP                            TABLE
+EMP1                           TABLE
+ID1                            TABLE
+MV                             TABLE
+READONLYVIEW                   VIEW
+SIMPLEVIEW                     VIEW
+SMARKS                         TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+SMARKS1                        TABLE
+SMARKS2                        TABLE
+SMARKS3                        TABLE
+STU                            TABLE
+STU1                           TABLE
+STU2                           TABLE
+SV1                            VIEW
+
+18 rows selected.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       101 Krishna            64         68         78         88        292
+        73         73
+
+       102 Ramesh             58         66         77         82        273
+     68.25      68.25
+
+       103 Vikas              95         62         74         87        318
+      79.5       79.5
+
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       104 Mahesh             51         67         70         82        270
+      67.5       67.5
+
+       105 Suresh             55         60         44         88        247
+     61.75      61.75
+
+       106 Humesh             88
+
+
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       107 Kiran              77
+
+
+       108 Kumar              54
+
+
+       109 Suman              64
+
+
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       111 fdf                60         99
+
+
+
+10 rows selected.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+
+11 rows selected.
+
+SQL> set linesize 200;
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            64         68         78         88        292         73         73
+       102 Ramesh             58         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88
+       107 Kiran              77
+       108 Kumar              54
+       109 Suman              64
+       111 fdf                60         99
+
+10 rows selected.
+
+SQL> delete stu where rno=106;
+
+6 rows deleted.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            64         68         78         88        292         73         73
+       102 Ramesh             58         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88
+       107 Kiran              77
+       108 Kumar              54
+       109 Suman              64
+       111 fdf                60         99
+
+10 rows selected.
+
+SQL> SELECT stu.rno, stu.sNAME, stu.cource,smarks.sid,smarks.sname, FROM stu INNER JOIN smarks ON stu.rno = smarks.SID;
+SELECT stu.rno, stu.sNAME, stu.cource,smarks.sid,smarks.sname, FROM stu INNER JOIN smarks ON stu.rno = smarks.SID
+                                                               *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> SELECT stu.rno, stu.sNAME, stu.cource,smarks.sid,smarks.sname FROM stu INNER JOIN smarks ON stu.rno = smarks.SID;
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           101 Krishna
+       102 Madhu      API               102 Ramesh
+       103 Ramesh     Java              103 Vikas
+       104 dgef       gefeg             104 Mahesh
+       105 dfgdf      vddfd             105 Suresh
+
+SQL> SELECT stu.rno, stu.sNAME, stu.cource,smarks.sid,smarks.sname FROM stu INNER JOIN smarks ON stu.rno <> smarks.SID;
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       102 Madhu      API               101 Krishna
+       103 Ramesh     Java              101 Krishna
+       104 dgef       gefeg             101 Krishna
+       105 dfgdf      vddfd             101 Krishna
+       101 Krishna    Testing           102 Ramesh
+       103 Ramesh     Java              102 Ramesh
+       104 dgef       gefeg             102 Ramesh
+       105 dfgdf      vddfd             102 Ramesh
+       101 Krishna    Testing           103 Vikas
+       102 Madhu      API               103 Vikas
+       104 dgef       gefeg             103 Vikas
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       105 dfgdf      vddfd             103 Vikas
+       101 Krishna    Testing           104 Mahesh
+       102 Madhu      API               104 Mahesh
+       103 Ramesh     Java              104 Mahesh
+       105 dfgdf      vddfd             104 Mahesh
+       101 Krishna    Testing           105 Suresh
+       102 Madhu      API               105 Suresh
+       103 Ramesh     Java              105 Suresh
+       104 dgef       gefeg             105 Suresh
+       101 Krishna    Testing           106 Humesh
+       102 Madhu      API               106 Humesh
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       103 Ramesh     Java              106 Humesh
+       104 dgef       gefeg             106 Humesh
+       105 dfgdf      vddfd             106 Humesh
+       101 Krishna    Testing           107 Kiran
+       102 Madhu      API               107 Kiran
+       103 Ramesh     Java              107 Kiran
+       104 dgef       gefeg             107 Kiran
+       105 dfgdf      vddfd             107 Kiran
+       101 Krishna    Testing           108 Kumar
+       102 Madhu      API               108 Kumar
+       103 Ramesh     Java              108 Kumar
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       104 dgef       gefeg             108 Kumar
+       105 dfgdf      vddfd             108 Kumar
+       101 Krishna    Testing           109 Suman
+       102 Madhu      API               109 Suman
+       103 Ramesh     Java              109 Suman
+       104 dgef       gefeg             109 Suman
+       105 dfgdf      vddfd             109 Suman
+       101 Krishna    Testing           111 fdf
+       102 Madhu      API               111 fdf
+       103 Ramesh     Java              111 fdf
+       104 dgef       gefeg             111 fdf
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       105 dfgdf      vddfd             111 fdf
+
+45 rows selected.
+
+SQL> SELECT stu.rno, stu.sNAME, stu.cource,smarks.sid,smarks.sname FROM stu INNER JOIN smarks ON stu.rno > smarks.SID;
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       102 Madhu      API               101 Krishna
+       103 Ramesh     Java              101 Krishna
+       104 dgef       gefeg             101 Krishna
+       105 dfgdf      vddfd             101 Krishna
+       103 Ramesh     Java              102 Ramesh
+       104 dgef       gefeg             102 Ramesh
+       105 dfgdf      vddfd             102 Ramesh
+       104 dgef       gefeg             103 Vikas
+       105 dfgdf      vddfd             103 Vikas
+       105 dfgdf      vddfd             104 Mahesh
+
+10 rows selected.
+
+SQL> SELECT stu.rno, stu.sNAME, stu.cource,smarks.sid,smarks.sname FROM stu INNER JOIN smarks ON stu.rno >= smarks.SID;
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           101 Krishna
+       102 Madhu      API               101 Krishna
+       103 Ramesh     Java              101 Krishna
+       104 dgef       gefeg             101 Krishna
+       105 dfgdf      vddfd             101 Krishna
+       102 Madhu      API               102 Ramesh
+       103 Ramesh     Java              102 Ramesh
+       104 dgef       gefeg             102 Ramesh
+       105 dfgdf      vddfd             102 Ramesh
+       103 Ramesh     Java              103 Vikas
+       104 dgef       gefeg             103 Vikas
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       105 dfgdf      vddfd             103 Vikas
+       104 dgef       gefeg             104 Mahesh
+       105 dfgdf      vddfd             104 Mahesh
+       105 dfgdf      vddfd             105 Suresh
+
+15 rows selected.
+
+SQL> SELECT stu.rno, stu.sNAME, stu.cource,smarks.sid,smarks.sname FROM stu LEFT JOIN smarks ON stu.rno >= smarks.SID;
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       105 dfgdf      vddfd             105 Suresh
+       105 dfgdf      vddfd             104 Mahesh
+       105 dfgdf      vddfd             103 Vikas
+       105 dfgdf      vddfd             102 Ramesh
+       105 dfgdf      vddfd             101 Krishna
+       104 dgef       gefeg             104 Mahesh
+       104 dgef       gefeg             103 Vikas
+       104 dgef       gefeg             102 Ramesh
+       104 dgef       gefeg             101 Krishna
+       103 Ramesh     Java              103 Vikas
+       103 Ramesh     Java              102 Ramesh
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       103 Ramesh     Java              101 Krishna
+       102 Madhu      API               102 Ramesh
+       102 Madhu      API               101 Krishna
+       101 Krishna    Testing           101 Krishna
+
+15 rows selected.
+
+SQL> SELECT stu.rno, stu.sNAME, stu.cource,smarks.sid,smarks.sname FROM stu LEFT JOIN smarks ON stu.rno = smarks.SID;
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           101 Krishna
+       102 Madhu      API               102 Ramesh
+       103 Ramesh     Java              103 Vikas
+       104 dgef       gefeg             104 Mahesh
+       105 dfgdf      vddfd             105 Suresh
+
+SQL> SELECT stu.rno, stu.sNAME, stu.cource,smarks.sid,smarks.sname FROM stu right JOIN smarks ON stu.rno = smarks.SID;
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           101 Krishna
+       102 Madhu      API               102 Ramesh
+       103 Ramesh     Java              103 Vikas
+       104 dgef       gefeg             104 Mahesh
+       105 dfgdf      vddfd             105 Suresh
+                                        111 fdf
+                                        109 Suman
+                                        106 Humesh
+                                        108 Kumar
+                                        107 Kiran
+
+10 rows selected.
+
+SQL> SELECT stu.rno, stu.sNAME, stu.cource,smarks.sid,smarks.sname FROM stu right JOIN smarks ON stu.rno != smarks.SID;
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       102 Madhu      API               101 Krishna
+       103 Ramesh     Java              101 Krishna
+       104 dgef       gefeg             101 Krishna
+       105 dfgdf      vddfd             101 Krishna
+       101 Krishna    Testing           102 Ramesh
+       103 Ramesh     Java              102 Ramesh
+       104 dgef       gefeg             102 Ramesh
+       105 dfgdf      vddfd             102 Ramesh
+       101 Krishna    Testing           103 Vikas
+       102 Madhu      API               103 Vikas
+       104 dgef       gefeg             103 Vikas
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       105 dfgdf      vddfd             103 Vikas
+       101 Krishna    Testing           104 Mahesh
+       102 Madhu      API               104 Mahesh
+       103 Ramesh     Java              104 Mahesh
+       105 dfgdf      vddfd             104 Mahesh
+       101 Krishna    Testing           105 Suresh
+       102 Madhu      API               105 Suresh
+       103 Ramesh     Java              105 Suresh
+       104 dgef       gefeg             105 Suresh
+       101 Krishna    Testing           106 Humesh
+       102 Madhu      API               106 Humesh
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       103 Ramesh     Java              106 Humesh
+       104 dgef       gefeg             106 Humesh
+       105 dfgdf      vddfd             106 Humesh
+       101 Krishna    Testing           107 Kiran
+       102 Madhu      API               107 Kiran
+       103 Ramesh     Java              107 Kiran
+       104 dgef       gefeg             107 Kiran
+       105 dfgdf      vddfd             107 Kiran
+       101 Krishna    Testing           108 Kumar
+       102 Madhu      API               108 Kumar
+       103 Ramesh     Java              108 Kumar
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       104 dgef       gefeg             108 Kumar
+       105 dfgdf      vddfd             108 Kumar
+       101 Krishna    Testing           109 Suman
+       102 Madhu      API               109 Suman
+       103 Ramesh     Java              109 Suman
+       104 dgef       gefeg             109 Suman
+       105 dfgdf      vddfd             109 Suman
+       101 Krishna    Testing           111 fdf
+       102 Madhu      API               111 fdf
+       103 Ramesh     Java              111 fdf
+       104 dgef       gefeg             111 fdf
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       105 dfgdf      vddfd             111 fdf
+
+45 rows selected.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+
+SQL> insert into stu values(108,'dfd','dfsse',5555);
+
+1 row created.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       108 dfd        dfsse            5555
+
+6 rows selected.
+
+SQL> SELECT stu.rno, stu.sNAME, stu.cource,smarks.sid,smarks.sname FROM stu full outer JOIN smarks ON stu.rno != smarks.SID;
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           102 Ramesh
+       101 Krishna    Testing           103 Vikas
+       101 Krishna    Testing           104 Mahesh
+       101 Krishna    Testing           105 Suresh
+       101 Krishna    Testing           106 Humesh
+       101 Krishna    Testing           107 Kiran
+       101 Krishna    Testing           108 Kumar
+       101 Krishna    Testing           109 Suman
+       101 Krishna    Testing           111 fdf
+       102 Madhu      API               101 Krishna
+       102 Madhu      API               103 Vikas
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       102 Madhu      API               104 Mahesh
+       102 Madhu      API               105 Suresh
+       102 Madhu      API               106 Humesh
+       102 Madhu      API               107 Kiran
+       102 Madhu      API               108 Kumar
+       102 Madhu      API               109 Suman
+       102 Madhu      API               111 fdf
+       103 Ramesh     Java              101 Krishna
+       103 Ramesh     Java              102 Ramesh
+       103 Ramesh     Java              104 Mahesh
+       103 Ramesh     Java              105 Suresh
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       103 Ramesh     Java              106 Humesh
+       103 Ramesh     Java              107 Kiran
+       103 Ramesh     Java              108 Kumar
+       103 Ramesh     Java              109 Suman
+       103 Ramesh     Java              111 fdf
+       104 dgef       gefeg             101 Krishna
+       104 dgef       gefeg             102 Ramesh
+       104 dgef       gefeg             103 Vikas
+       104 dgef       gefeg             105 Suresh
+       104 dgef       gefeg             106 Humesh
+       104 dgef       gefeg             107 Kiran
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       104 dgef       gefeg             108 Kumar
+       104 dgef       gefeg             109 Suman
+       104 dgef       gefeg             111 fdf
+       105 dfgdf      vddfd             101 Krishna
+       105 dfgdf      vddfd             102 Ramesh
+       105 dfgdf      vddfd             103 Vikas
+       105 dfgdf      vddfd             104 Mahesh
+       105 dfgdf      vddfd             106 Humesh
+       105 dfgdf      vddfd             107 Kiran
+       105 dfgdf      vddfd             108 Kumar
+       105 dfgdf      vddfd             109 Suman
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       105 dfgdf      vddfd             111 fdf
+       108 dfd        dfsse             101 Krishna
+       108 dfd        dfsse             102 Ramesh
+       108 dfd        dfsse             103 Vikas
+       108 dfd        dfsse             104 Mahesh
+       108 dfd        dfsse             105 Suresh
+       108 dfd        dfsse             106 Humesh
+       108 dfd        dfsse             107 Kiran
+       108 dfd        dfsse             109 Suman
+       108 dfd        dfsse             111 fdf
+
+54 rows selected.
+
+SQL> SELECT stu.rno, stu.sNAME, stu.cource,smarks.sid,smarks.sname FROM stu full outer JOIN smarks ON stu.rno = smarks.SID;
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           101 Krishna
+       102 Madhu      API               102 Ramesh
+       103 Ramesh     Java              103 Vikas
+       104 dgef       gefeg             104 Mahesh
+       105 dfgdf      vddfd             105 Suresh
+       108 dfd        dfsse             108 Kumar
+                                        111 fdf
+                                        109 Suman
+                                        106 Humesh
+                                        107 Kiran
+
+10 rows selected.
+
+SQL> SELECT stu.rno, stu.sNAME, stu.cource,smarks.sid,smarks.sname FROM stu full outer JOIN smarks ON stu.rno = smarks.SID asc sid;
+SELECT stu.rno, stu.sNAME, stu.cource,smarks.sid,smarks.sname FROM stu full outer JOIN smarks ON stu.rno = smarks.SID asc sid
+                                                                                                                      *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> SELECT stu.rno, stu.sNAME, stu.cource,smarks.sid,smarks.sname FROM stu full outer JOIN smarks ON stu.rno = smarks.SID order by sid asc;
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           101 Krishna
+       102 Madhu      API               102 Ramesh
+       103 Ramesh     Java              103 Vikas
+       104 dgef       gefeg             104 Mahesh
+       105 dfgdf      vddfd             105 Suresh
+                                        106 Humesh
+                                        107 Kiran
+       108 dfd        dfsse             108 Kumar
+                                        109 Suman
+                                        111 fdf
+
+10 rows selected.
+
+SQL> SELECT s1.rno,s1.sname,s1.cource as student,s2.sid,s2.sname as marks from stu s1 left join smarks s2 on s1.rno=s2.sid;
+
+       RNO SNAME      STUDENT           SID MARKS
+---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           101 Krishna
+       102 Madhu      API               102 Ramesh
+       103 Ramesh     Java              103 Vikas
+       104 dgef       gefeg             104 Mahesh
+       105 dfgdf      vddfd             105 Suresh
+       108 dfd        dfsse             108 Kumar
+
+6 rows selected.
+
+SQL> SELECT s1.rno,s1.sname,s1.cource,s2.rno,s2.sname,s2.cource from stu s1 join stu s2 on s1.rno=s2.rno;
+
+       RNO SNAME      COURCE            RNO SNAME      COURCE
+---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           101 Krishna    Testing
+       102 Madhu      API               102 Madhu      API
+       103 Ramesh     Java              103 Ramesh     Java
+       104 dgef       gefeg             104 dgef       gefeg
+       105 dfgdf      vddfd             105 dfgdf      vddfd
+       108 dfd        dfsse             108 dfd        dfsse
+
+6 rows selected.
+
+SQL> select * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       108 dfd        dfsse            5555
+
+6 rows selected.
+
+SQL> SELECT s1.rno,s1.sname,s1.cource,s2.rno,s2.sname,s2.cource from stu s1 join stu s2 on s1.rno<>s2.rno;
+
+       RNO SNAME      COURCE            RNO SNAME      COURCE
+---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           102 Madhu      API
+       101 Krishna    Testing           103 Ramesh     Java
+       101 Krishna    Testing           104 dgef       gefeg
+       101 Krishna    Testing           105 dfgdf      vddfd
+       101 Krishna    Testing           108 dfd        dfsse
+       102 Madhu      API               101 Krishna    Testing
+       102 Madhu      API               103 Ramesh     Java
+       102 Madhu      API               104 dgef       gefeg
+       102 Madhu      API               105 dfgdf      vddfd
+       102 Madhu      API               108 dfd        dfsse
+       103 Ramesh     Java              101 Krishna    Testing
+
+       RNO SNAME      COURCE            RNO SNAME      COURCE
+---------- ---------- ---------- ---------- ---------- ----------
+       103 Ramesh     Java              102 Madhu      API
+       103 Ramesh     Java              104 dgef       gefeg
+       103 Ramesh     Java              105 dfgdf      vddfd
+       103 Ramesh     Java              108 dfd        dfsse
+       104 dgef       gefeg             101 Krishna    Testing
+       104 dgef       gefeg             102 Madhu      API
+       104 dgef       gefeg             103 Ramesh     Java
+       104 dgef       gefeg             105 dfgdf      vddfd
+       104 dgef       gefeg             108 dfd        dfsse
+       105 dfgdf      vddfd             101 Krishna    Testing
+       105 dfgdf      vddfd             102 Madhu      API
+
+       RNO SNAME      COURCE            RNO SNAME      COURCE
+---------- ---------- ---------- ---------- ---------- ----------
+       105 dfgdf      vddfd             103 Ramesh     Java
+       105 dfgdf      vddfd             104 dgef       gefeg
+       105 dfgdf      vddfd             108 dfd        dfsse
+       108 dfd        dfsse             101 Krishna    Testing
+       108 dfd        dfsse             102 Madhu      API
+       108 dfd        dfsse             103 Ramesh     Java
+       108 dfd        dfsse             104 dgef       gefeg
+       108 dfd        dfsse             105 dfgdf      vddfd
+
+30 rows selected.
+
+SQL> SELECT stu.rno, stu.SNAME, stu.cource, smarks.sid,smarks.sname FROM stu CROSS JOIN smarks;
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       101 Krishna    Testing           101 Krishna
+       102 Madhu      API               101 Krishna
+       103 Ramesh     Java              101 Krishna
+       104 dgef       gefeg             101 Krishna
+       105 dfgdf      vddfd             101 Krishna
+       108 dfd        dfsse             101 Krishna
+       101 Krishna    Testing           102 Ramesh
+       102 Madhu      API               102 Ramesh
+       103 Ramesh     Java              102 Ramesh
+       104 dgef       gefeg             102 Ramesh
+       105 dfgdf      vddfd             102 Ramesh
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       108 dfd        dfsse             102 Ramesh
+       101 Krishna    Testing           103 Vikas
+       102 Madhu      API               103 Vikas
+       103 Ramesh     Java              103 Vikas
+       104 dgef       gefeg             103 Vikas
+       105 dfgdf      vddfd             103 Vikas
+       108 dfd        dfsse             103 Vikas
+       101 Krishna    Testing           104 Mahesh
+       102 Madhu      API               104 Mahesh
+       103 Ramesh     Java              104 Mahesh
+       104 dgef       gefeg             104 Mahesh
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       105 dfgdf      vddfd             104 Mahesh
+       108 dfd        dfsse             104 Mahesh
+       101 Krishna    Testing           105 Suresh
+       102 Madhu      API               105 Suresh
+       103 Ramesh     Java              105 Suresh
+       104 dgef       gefeg             105 Suresh
+       105 dfgdf      vddfd             105 Suresh
+       108 dfd        dfsse             105 Suresh
+       101 Krishna    Testing           106 Humesh
+       102 Madhu      API               106 Humesh
+       103 Ramesh     Java              106 Humesh
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       104 dgef       gefeg             106 Humesh
+       105 dfgdf      vddfd             106 Humesh
+       108 dfd        dfsse             106 Humesh
+       101 Krishna    Testing           107 Kiran
+       102 Madhu      API               107 Kiran
+       103 Ramesh     Java              107 Kiran
+       104 dgef       gefeg             107 Kiran
+       105 dfgdf      vddfd             107 Kiran
+       108 dfd        dfsse             107 Kiran
+       101 Krishna    Testing           108 Kumar
+       102 Madhu      API               108 Kumar
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       103 Ramesh     Java              108 Kumar
+       104 dgef       gefeg             108 Kumar
+       105 dfgdf      vddfd             108 Kumar
+       108 dfd        dfsse             108 Kumar
+       101 Krishna    Testing           109 Suman
+       102 Madhu      API               109 Suman
+       103 Ramesh     Java              109 Suman
+       104 dgef       gefeg             109 Suman
+       105 dfgdf      vddfd             109 Suman
+       108 dfd        dfsse             109 Suman
+       101 Krishna    Testing           111 fdf
+
+       RNO SNAME      COURCE            SID SNAME
+---------- ---------- ---------- ---------- ----------
+       102 Madhu      API               111 fdf
+       103 Ramesh     Java              111 fdf
+       104 dgef       gefeg             111 fdf
+       105 dfgdf      vddfd             111 fdf
+       108 dfd        dfsse             111 fdf
+
+60 rows selected.
+
+SQL> SELECT * from stu;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       108 dfd        dfsse            5555
+
+6 rows selected.
+
+SQL> SELECT * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            64         68         78         88        292         73         73
+       102 Ramesh             58         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88
+       107 Kiran              77
+       108 Kumar              54
+       109 Suman              64
+       111 fdf                60         99
+
+10 rows selected.
+
+SQL>
