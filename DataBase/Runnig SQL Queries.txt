@@ -6469,3 +6469,389 @@ SQL> SELECT * from smarks;
 10 rows selected.
 
 SQL>
+SQL*Plus: Release 11.2.0.2.0 Production on Fri May 15 10:40:42 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect qt233
+Enter password:
+Connected.
+SQL> create table seq(sid number(3),name varchar2(6),age number(2));
+
+Table created.
+
+SQL> CREATE SEQUENCE seq_sid START WITH 1 INCREMENT BY 2;
+
+Sequence created.
+
+SQL> insert into seq(name,age) values(seq_sid.nextval,'Krishna',30);
+insert into seq(name,age) values(seq_sid.nextval,'Krishna',30)
+            *
+ERROR at line 1:
+ORA-00913: too many values
+
+
+SQL> insert into seq(sid,name,age) values(seq_sid.nextval,'Krishna',30);
+insert into seq(sid,name,age) values(seq_sid.nextval,'Krishna',30)
+                                                     *
+ERROR at line 1:
+ORA-12899: value too large for column "QT233"."SEQ"."NAME" (actual: 7, maximum:
+6)
+
+
+SQL> insert into seq(sid,name,age) values(seq_sid.nextval,'Krish',30);
+
+1 row created.
+
+SQL> select * from seq;
+
+       SID NAME          AGE
+---------- ------ ----------
+         3 Krish          30
+
+SQL> insert into seq(sid,name,age) values(seq_sid.nextval,'abcd',20);
+
+1 row created.
+
+SQL> insert into seq(sid,name,age) values(seq_sid.nextval,'pppp',0);
+
+1 row created.
+
+SQL> select * from seq;
+
+       SID NAME          AGE
+---------- ------ ----------
+         3 Krish          30
+         5 abcd           20
+         7 pppp            0
+
+SQL> SELECT seq_sid.CURRVAL FROM DUAL;
+
+   CURRVAL
+----------
+         7
+
+SQL> ALTER SEQUENCE seq_sid INCREMENT BY 5 MAXVALUE 20;
+
+Sequence altered.
+
+SQL> insert into seq(sid,name,age) values(seq_sid.nextval,'pppp',60);
+
+1 row created.
+
+SQL> select * from seq;
+
+       SID NAME          AGE
+---------- ------ ----------
+         3 Krish          30
+         5 abcd           20
+         7 pppp            0
+        12 pppp           60
+
+SQL> insert into seq(sid,name,age) values(seq_sid.nextval,'pppp',80);
+
+1 row created.
+
+SQL> select * from seq;
+
+       SID NAME          AGE
+---------- ------ ----------
+         3 Krish          30
+         5 abcd           20
+         7 pppp            0
+        12 pppp           60
+        17 pppp           80
+
+SQL> insert into seq(sid,name,age) values(seq_sid.nextval,'pppp',60);
+insert into seq(sid,name,age) values(seq_sid.nextval,'pppp',60)
+            *
+ERROR at line 1:
+ORA-08004: sequence SEQ_SID.NEXTVAL exceeds MAXVALUE and cannot be instantiated
+
+
+SQL> SELECT sequence_name FROM user_sequences;
+
+SEQUENCE_NAME
+------------------------------
+SEQ_SID
+
+SQL> SELECT sequence_name, min_value, max_value, increment_by, last_number FROM user_sequences;
+
+SEQUENCE_NAME                   MIN_VALUE  MAX_VALUE INCREMENT_BY LAST_NUMBER
+------------------------------ ---------- ---------- ------------ -----------
+SEQ_SID                                 1         20            5          22
+
+SQL> select * from seq;
+
+       SID NAME          AGE
+---------- ------ ----------
+         3 Krish          30
+         5 abcd           20
+         7 pppp            0
+        12 pppp           60
+        17 pppp           80
+
+SQL> CREATE SYNONYM seq FOR sequence;
+CREATE SYNONYM seq FOR sequence
+               *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> CREATE SYNONYM sequence FOR seq;
+
+Synonym created.
+
+SQL> select * from seq;
+
+       SID NAME          AGE
+---------- ------ ----------
+         3 Krish          30
+         5 abcd           20
+         7 pppp            0
+        12 pppp           60
+        17 pppp           80
+
+SQL> select * from sequence;
+
+       SID NAME          AGE
+---------- ------ ----------
+         3 Krish          30
+         5 abcd           20
+         7 pppp            0
+        12 pppp           60
+        17 pppp           80
+
+SQL> insert into sequence values(18,'yyy',88);
+
+1 row created.
+
+SQL> select * from sequence;
+
+       SID NAME          AGE
+---------- ------ ----------
+         3 Krish          30
+         5 abcd           20
+         7 pppp            0
+        12 pppp           60
+        17 pppp           80
+        18 yyy            88
+
+6 rows selected.
+
+SQL> select * from seq;
+
+       SID NAME          AGE
+---------- ------ ----------
+         3 Krish          30
+         5 abcd           20
+         7 pppp            0
+        12 pppp           60
+        17 pppp           80
+        18 yyy            88
+
+6 rows selected.
+
+SQL> select synonym_name from user_synonyms;
+
+SYNONYM_NAME
+------------------------------
+SEQUENCE
+
+
+SQL*Plus: Release 11.2.0.2.0 Production on Fri May 15 10:56:30 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect qt233
+Enter password:
+Connected.
+SQL> create table lock(id number(3),name varchar2(1),size number(5));
+create table lock(id number(3),name varchar2(1),size number(5))
+             *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> create table locks(id number(3),name varchar2(1),size number(5));
+create table locks(id number(3),name varchar2(1),size number(5))
+                                                 *
+ERROR at line 1:
+ORA-00904: : invalid identifier
+
+
+SQL> create table locks(id number(3),name varchar2(10),size number(5));
+create table locks(id number(3),name varchar2(10),size number(5))
+                                                  *
+ERROR at line 1:
+ORA-00904: : invalid identifier
+
+
+SQL> create table locks(id number(3),name varchar2(10),age number(5));
+
+Table created.
+
+SQL> desc locks;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                                 NUMBER(3)
+ NAME                                               VARCHAR2(10)
+ AGE                                                NUMBER(5)
+
+SQL> insert into locks values(11,'fgr',23);
+
+1 row created.
+
+SQL> insert into locks values(22,'rrr',33);
+
+1 row created.
+
+SQL> select * from locks;
+
+        ID NAME              AGE
+---------- ---------- ----------
+        11 fgr                23
+        22 rrr                33
+
+SQL> alter table locks add(marks number(3));
+
+Table altered.
+
+SQL> desc locks;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                                 NUMBER(3)
+ NAME                                               VARCHAR2(10)
+ AGE                                                NUMBER(5)
+ MARKS                                              NUMBER(3)
+
+SQL> insert into locks values(33,'eee',43);
+insert into locks values(33,'eee',43)
+            *
+ERROR at line 1:
+ORA-00947: not enough values
+
+
+SQL> insert into locks values(33,'eee',43,99);
+
+1 row created.
+
+SQL> select * from locks;
+
+        ID NAME              AGE      MARKS
+---------- ---------- ---------- ----------
+        11 fgr                23
+        22 rrr                33
+        33 eee                43         99
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from locks;
+
+        ID NAME              AGE      MARKS
+---------- ---------- ---------- ----------
+        11 fgr                23
+        22 rrr                33
+        33 eee                43         99
+
+SQL> select * from locks;
+
+        ID NAME              AGE      MARKS
+---------- ---------- ---------- ----------
+        11 fgr                23
+        22 rrr                33
+        33 eee                43         99
+
+SQL> select * from locks;
+
+        ID NAME              AGE      MARKS
+---------- ---------- ---------- ----------
+        11 fgr                23
+        22 rrr                33         89
+        33 eee                43         99
+
+SQL>
+
+
+SQL*Plus: Release 11.2.0.2.0 Production on Fri May 15 10:56:21 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect qt233
+Enter password:
+Connected.
+SQL> desc locks;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                                 NUMBER(3)
+ NAME                                               VARCHAR2(10)
+ AGE                                                NUMBER(5)
+
+SQL> select * from locks;
+
+no rows selected
+
+SQL> desc locks;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                                 NUMBER(3)
+ NAME                                               VARCHAR2(10)
+ AGE                                                NUMBER(5)
+ MARKS                                              NUMBER(3)
+
+SQL> select * from locks;
+
+        ID NAME              AGE      MARKS
+---------- ---------- ---------- ----------
+        11 fgr                23
+        22 rrr                33
+
+SQL> select * from locks;
+
+        ID NAME              AGE      MARKS
+---------- ---------- ---------- ----------
+        11 fgr                23
+        22 rrr                33
+
+SQL> select * from locks;
+
+        ID NAME              AGE      MARKS
+---------- ---------- ---------- ----------
+        11 fgr                23
+        22 rrr                33
+        33 eee                43         99
+
+SQL> update locks set marks=999 where id=22;
+
+1 row updated.
+
+SQL> select * from locks;
+
+        ID NAME              AGE      MARKS
+---------- ---------- ---------- ----------
+        11 fgr                23
+        22 rrr                33        999
+        33 eee                43         99
+
+SQL> update locks set marks=89 where id=22;
+
+1 row updated.
+
+SQL> select * from locks;
+
+        ID NAME              AGE      MARKS
+---------- ---------- ---------- ----------
+        11 fgr                23
+        22 rrr                33         89
+        33 eee                43         99
+
+SQL> commit;
+
+Commit complete.
+
+SQL>
+
+==============================
+

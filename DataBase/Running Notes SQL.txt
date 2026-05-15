@@ -355,3 +355,18 @@ Levels of Sub-Queries:
 
 FT:5:1val*50=50 2val*50=50
 ST:50:250 Rows 
+
+Sub-Queries in SQL:
+-----------------
+Outer Query(Inner Queries);
+
+Levels of Sub-Queries:
+
+FT:5:1val*50=50 2val*50=50
+ST:50:250 Rows 
+
+DDL:Create Alter Rename
+DML:Insert Update Delete
+
+Locks:Amazon DataBase:19999
+update:DML 
