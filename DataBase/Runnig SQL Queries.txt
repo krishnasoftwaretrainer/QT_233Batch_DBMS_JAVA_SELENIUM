@@ -6855,3 +6855,475 @@ SQL>
 
 ==============================
 
+
+SQL*Plus: Release 11.2.0.2.0 Production on Mon May 18 10:41:52 2026
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect qt233
+Enter password:
+Connected.
+SQL> select 20+30 from dual;
+
+     20+30
+----------
+        50
+
+SQL> select 20+30  as Addition from dual;
+
+  ADDITION
+----------
+        50
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+CHECKOPTIONVIEW                VIEW
+COMPLEXVIEW                    VIEW
+CONS                           TABLE
+CUSTOMERS                      TABLE
+EMP                            TABLE
+EMP1                           TABLE
+ID1                            TABLE
+LOCKS                          TABLE
+MV                             TABLE
+READONLYVIEW                   VIEW
+SEQ                            TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+SEQUENCE                       SYNONYM
+SIMPLEVIEW                     VIEW
+SMARKS                         TABLE
+SMARKS1                        TABLE
+SMARKS2                        TABLE
+SMARKS3                        TABLE
+STU                            TABLE
+STU1                           TABLE
+SV1                            VIEW
+
+20 rows selected.
+
+SQL> select * from cons;
+
+EID                  ENAME      ADDRESS    EMAIL
+-------------------- ---------- ---------- --------------------
+1                    Krishna    Hyd        krishna@gmail.com
+2                    Krishna    Hyd        krishna123@gmail.com
+3                    Suresh
+
+SQL> select eid as empid from cons;
+
+EMPID
+--------------------
+1
+2
+3
+
+SQL> select * from cons;
+
+EID                  ENAME      ADDRESS    EMAIL
+-------------------- ---------- ---------- --------------------
+1                    Krishna    Hyd        krishna@gmail.com
+2                    Krishna    Hyd        krishna123@gmail.com
+3                    Suresh
+
+SQL> select eid as empid,ename as empname from cons;
+
+EMPID                EMPNAME
+-------------------- ----------
+1                    Krishna
+2                    Krishna
+3                    Suresh
+
+SQL> CREATE TABLE ee1 AS SELECT eid,ename,address FROM cons;
+
+Table created.
+
+SQL> select * from cons;
+
+EID                  ENAME      ADDRESS    EMAIL
+-------------------- ---------- ---------- --------------------
+1                    Krishna    Hyd        krishna@gmail.com
+2                    Krishna    Hyd        krishna123@gmail.com
+3                    Suresh
+
+SQL> select * from ee1;
+
+EID                  ENAME      ADDRESS
+-------------------- ---------- ----------
+1                    Krishna    Hyd
+2                    Krishna    Hyd
+3                    Suresh
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       101 Krishna            64         68         78         88        292
+        73         73
+
+       102 Ramesh             58         66         77         82        273
+     68.25      68.25
+
+       103 Vikas              95         62         74         87        318
+      79.5       79.5
+
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       104 Mahesh             51         67         70         82        270
+      67.5       67.5
+
+       105 Suresh             55         60         44         88        247
+     61.75      61.75
+
+       106 Humesh             88
+
+
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       107 Kiran              77
+
+
+       108 Kumar              54
+
+
+       109 Suman              64
+
+
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+       AVG PERCENTAGE
+---------- ----------
+       111 fdf                60         99
+
+
+
+10 rows selected.
+
+SQL> set linesize 200;
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            64         68         78         88        292         73 73
+       102 Ramesh             58         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88
+       107 Kiran              77
+       108 Kumar              54
+       109 Suman              64
+       111 fdf                60         99
+
+10 rows selected.
+
+SQL> CREATE TABLE marks AS SELECT sid,smarks,total,percentage FROM smarks where total>270;
+CREATE TABLE marks AS SELECT sid,smarks,total,percentage FROM smarks where total>270
+                                 *
+ERROR at line 1:
+ORA-00904: "SMARKS": invalid identifier
+
+
+SQL> CREATE TABLE marks AS SELECT sid,sname,total,percentage FROM smarks where total>270;
+
+Table created.
+
+SQL> desc marks;
+ Name                                                                                                     Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ SID                                                                                                       NUMBER(3)
+ SNAME                                                                                                     VARCHAR2(10)
+ TOTAL                                                                                                     NUMBER(3)
+ PERCENTAGE                                                                                                NUMBER(6,2)
+
+SQL> select * from marks;
+
+       SID SNAME           TOTAL PERCENTAGE
+---------- ---------- ---------- ----------
+       101 Krishna           292         73
+       102 Ramesh            273      68.25
+       103 Vikas             318       79.5
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            64         68         78         88        292         73         73
+       102 Ramesh             58         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88
+       107 Kiran              77
+       108 Kumar              54
+       109 Suman              64
+       111 fdf                60         99
+
+10 rows selected.
+
+SQL> CREATE OR REPLACE TRIGGER trg_smarks_update
+  2  AFTER UPDATE ON smarks
+  3  FOR EACH ROW
+  4  BEGIN
+  5  DBMS_OUTPUT.PUT_LINE('Update Operation Performed Successfully');
+  6  END;
+  7  /
+
+Trigger created.
+
+SQL> update table smarks set sub2=35 where sid=106;
+update table smarks set sub2=35 where sid=106
+       *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> update smarks set sub2=35 where sid=106;
+
+1 row updated.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            64         68         78         88        292         73         73
+       102 Ramesh             58         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88         35
+       107 Kiran              77
+       108 Kumar              54
+       109 Suman              64
+       111 fdf                60         99
+
+10 rows selected.
+
+SQL> SET SERVEROUTPUT ON;
+SQL> update smarks set sub2=55 where sid=107;
+Update Operation Performed Successfully
+
+1 row updated.
+
+SQL> select * from smarks;
+
+       SID SNAME            SUB1       SUB2       SUB3       SUB4      TOTAL        AVG PERCENTAGE
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+       101 Krishna            64         68         78         88        292         73         73
+       102 Ramesh             58         66         77         82        273      68.25      68.25
+       103 Vikas              95         62         74         87        318       79.5       79.5
+       104 Mahesh             51         67         70         82        270       67.5       67.5
+       105 Suresh             55         60         44         88        247      61.75      61.75
+       106 Humesh             88         35
+       107 Kiran              77         55
+       108 Kumar              54
+       109 Suman              64
+       111 fdf                60         99
+
+10 rows selected.
+
+SQL> CREATE OR REPLACE TRIGGER trg_smarks_Delete
+  2  AFTER DELETE ON smarks
+  3  FOR EACH ROW
+  4  BEGIN
+  5  DBMS_OUTPUT.PUT_LINE('Delete Operation Performed Successfully');
+  6  END;
+  7  /
+
+Trigger created.
+
+SQL> delete smarks where sid=111;
+Delete Operation Performed Successfully
+
+1 row deleted.
+
+SQL> commit
+  2  ;
+
+Commit complete.
+
+SQL> select * from tab;;
+select * from tab;
+                 *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+CHECKOPTIONVIEW                VIEW
+COMPLEXVIEW                    VIEW
+CONS                           TABLE
+CUSTOMERS                      TABLE
+EE1                            TABLE
+EMP                            TABLE
+EMP1                           TABLE
+ID1                            TABLE
+LOCKS                          TABLE
+MARKS                          TABLE
+MV                             TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+READONLYVIEW                   VIEW
+SEQ                            TABLE
+SEQUENCE                       SYNONYM
+SIMPLEVIEW                     VIEW
+SMARKS                         TABLE
+SMARKS1                        TABLE
+SMARKS2                        TABLE
+SMARKS3                        TABLE
+STU                            TABLE
+STU1                           TABLE
+SV1                            VIEW
+
+22 rows selected.
+
+SQL> delete stu1;
+
+11 rows deleted.
+
+SQL> select * from stu1;
+
+no rows selected
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from stu1;
+
+       RNO SNAME      COURCE            FEE
+---------- ---------- ---------- ----------
+       101 Krishna    Testing          5000
+       102 Madhu      API              9000
+       103 Ramesh     Java             4000
+       104 dgef       gefeg            6000
+       105 dfgdf      vddfd            8000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+       106 Suman      Python           7000
+
+11 rows selected.
+
+SQL> drop table stu1;
+
+Table dropped.
+
+SQL> select * from stu1;
+select * from stu1
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> show recyclebin;
+SQL> show parameter recyclebin;
+ORA-00942: table or view does not exist
+
+
+SQL> Alter system set recycle bin = on;
+Alter system set recycle bin = on
+                 *
+ERROR at line 1:
+ORA-02065: illegal option for ALTER SYSTEM
+
+
+SQL> Alter system set recyclebin = on;
+Alter system set recyclebin = on
+                               *
+ERROR at line 1:
+ORA-02096: specified initialization parameter is not modifiable with this option
+
+
+SQL> ALTER SYSTEM SET recyclebin = OFF;
+ALTER SYSTEM SET recyclebin = OFF
+                                *
+ERROR at line 1:
+ORA-02096: specified initialization parameter is not modifiable with this option
+
+
+SQL> ALTER SESSION SET recyclebin = OFF;
+
+Session altered.
+
+SQL> ALTER SESSION SET recyclebin = ON;
+
+Session altered.
+
+SQL> show recyclebin;
+SQL> show parameter recyclebin;
+ORA-00942: table or view does not exist
+
+
+SQL> flashback table sTU1 to before drop;
+flashback table sTU1 to before drop
+*
+ERROR at line 1:
+ORA-38305: object not in RECYCLE BIN
+
+
+SQL> select object_name, droptime from dba_recyclebin;
+select object_name, droptime from dba_recyclebin
+                                  *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> purge recyclebin;
+
+Recyclebin purged.
+
+SQL> REVOKE ALL PRIVILEGES FROM QT233;
+
+Revoke succeeded.
+
+SQL> SELECT * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+CHECKOPTIONVIEW                VIEW
+COMPLEXVIEW                    VIEW
+CONS                           TABLE
+CUSTOMERS                      TABLE
+EE1                            TABLE
+EMP                            TABLE
+EMP1                           TABLE
+ID1                            TABLE
+LOCKS                          TABLE
+MARKS                          TABLE
+MV                             TABLE
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+READONLYVIEW                   VIEW
+SEQ                            TABLE
+SEQUENCE                       SYNONYM
+SIMPLEVIEW                     VIEW
+SMARKS                         TABLE
+SMARKS1                        TABLE
+SMARKS2                        TABLE
+SMARKS3                        TABLE
+STU                            TABLE
+SV1                            VIEW
+
+21 rows selected.
+
+SQL>

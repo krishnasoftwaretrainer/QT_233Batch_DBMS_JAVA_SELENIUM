@@ -370,3 +370,28 @@ DML:Insert Update Delete
 
 Locks:Amazon DataBase:19999
 update:DML 
+
+
+Theory Part:
+Basic SQL Queries:
+Advanced SQL Queries:
+
+Triggers:
+--------
+CREATE OR REPLACE TRIGGER trg_smarks_update
+AFTER UPDATE ON smarks
+FOR EACH ROW
+BEGIN
+DBMS_OUTPUT.PUT_LINE('Update Operation Performed Successfully');
+END;
+/
+
+CREATE OR REPLACE TRIGGER trg_smarks_Delete
+AFTER DELETE ON smarks
+FOR EACH ROW
+BEGIN
+DBMS_OUTPUT.PUT_LINE('Delete Operation Performed Successfully');
+END;
+/
+
+Delete and Drop
