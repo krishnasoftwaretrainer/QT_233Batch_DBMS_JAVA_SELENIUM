@@ -1,0 +1,103 @@
+233 & 234 Batch Core Java 
+------------
+
+Manual Testing: To test the given app manually, without using any automation tools.
+
+To convert manual process into automation.
+
+Washing Cloths:
+Manuvally: Human Efforts[100%] 
+Washing Machine:[20%+80%]
+
+Automation Testing: To test the given app by using automation tools.
+
+20%: Write Selenium Scripts:Run 
+
+Save the Human Efforts
+Save the Time 
+
+Money PL 
+
+10:MTE:9 to 6pm  
+3:ATE:24hrs 
+
+Selenium with Java: 5 Programming Languages 
+----------------
+Selenium: Automation Tool
+Based on Selenium Script
+
+Java:Programming Language
+Java Concepts:
+
+Java:Core Java[50%] + Advanced Java[50%] 
+
+1.To develop the different types of App 
+Software Developers 
+
+2.To test the app by using automation
+To write automation scripts 
+Software Test Engineers 
+SDET:
+
+SDLC:Develop Test
+
+Core Java[50%]:
+1.Basic Concepts 
+C C++ JAva Python .net JS TS etc...
+
+Core Java Basic Concepts:
+-------------------
+1.Java History and Versions
+2.Java Features 
+3.Diff C,C++ and Java 
+4.Java[JDK] Download and Install and Path Setting
+5.Write Java Programs:NotePad,++,Edit+
+Compile and Run Using:Command Propmpt 
+6.Download and Install:EclipseIDE,IntellijIDE
+7.Scanner Class:Dynamic Inputs 
+8.Variables and DataTypes
+9.Java Tokens:KeyWords, Identifiers,Literals
+Constants.
+10.Errors, Comments and Type Conversions
+11.Operators[8 Types]
+12.Conditional Statements:
+A.if Condition:Simple-if,if-else,else-if,nested
+B.switch Condition
+C.Loops Statements:for while do-while nested
+D.Jumping statements
+13.Arrays 
+14.String 
+
+Java OOPS Concepts:
+------------------
+1.Methods 
+2.Constructors
+3.Inheritance
+4.Polimorphism[MOL & MOR]
+5.Data Abstraction
+6.Interface
+7.Encapsulation
+8.Garbage Collection
+9.Exception Handling
+
+20 to 30 Java Programs only for Interview
+
+Running Notes 
+Class Programs 
+Assignments 
+Interview Questions
+PDF 
+Mock Test[Online(MCQs) & Offline(15)] 
+Mock Interviews 
+------------
+GitHUb 
+
+To get IT JOB 
+
+--------------------------
+Java History:
+
+2 Versions:Even-22(2025)[March] Odd[September](2025) 23 
+
+2026(24) 2026(25)
+2027(26) 2027(27)
