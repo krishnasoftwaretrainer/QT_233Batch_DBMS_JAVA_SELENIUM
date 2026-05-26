@@ -101,3 +101,49 @@ Java History:
 
 2026(24) 2026(25)
 2027(26) 2027(27)
+================
+Software Testing:
+--------------
+Goal:To delivery Qualty app to Client/Market.
+Manual and Automation
+
+TC1:1defect VU VP:Open Error Message
+TC2:Pass 
+TC3:Pass:Fail 
+Fixed->ReTest->Pass 
+Regression Testing:
+
+100TC:MTE:90P:10F:2RT:PAss 
+100TC:ATE:Script:Run 
+Run 
+Run 
+Run 
+-------
+148:1L LOC  
+149:20k LOC:1.20L
+
+150:10k OC 
+
+Selenium:Script 
+Programming Language:Java 
+
+Core Java:
+---------
+1.To develop different types of App[Dev]
+2.To perform Automation Testing.
+
+PRograms:
+------
+Write Java Program[New/Edit]
+Compilation[Error Checking]Defect/Error
+Excute/Run:OutPut
+
+2,3 + 5 -1 5
+
+OOPS:
+----
+Download Java[Check the Old Version] .exe 
+Download from Oracle Website
+[https://www.oracle.com/in/java/technologies/downloads/#jdk26-windows]
+
+Path Setting:
