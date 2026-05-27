@@ -146,4 +146,57 @@ Download Java[Check the Old Version] .exe
 Download from Oracle Website
 [https://www.oracle.com/in/java/technologies/downloads/#jdk26-windows]
 
+===================
 Path Setting:
+
+
+
+DeskTop[.exe]
+Web[URL]
+Mobile[.apk]
+
+s1:number=10
+s2:string="abcd"
+
+s1+s2 
+10abcd 
+
+Editors:
+1.Basic Editor:NotePad,++,Edit+ etc...
+2.Advanced Editor: 
+IDE:EclipseIDE,IntellijIDE 
+
+How to Write,Compile and Run Java Program:
+----------------------------
+1.Open NotePad Editor or ++ or Edit+
+2.Creat Java Class 
+[Syntax: Class ClassName]
+3.Declare Main Method
+4.Write Actuval Java Program[Body]
+5.Compile Java Program
+[javac filename.java]
+
+6.Run/Excute Java Program
+7.Analsis the OutPut
+
+WAJP to Print HelloWorld text in OutPut
+
+Pre-Define and User-Defined 
+Case-Sensitive: int Int 
+
+User-Define:
+-----------Rules:
+1.Start only with Alphabet or _ $ 
+2.Dont Use any Pre-define[int,class]
+3.SS[Only use _ $ ]
+4.Duplicate Class Names[Dont Use]
+5.Don't give the White Space between Characters
+
+[A to Z, a to z, 0 to 9 or SS[_ $]: Text 
+
+class:static
+Object:Instance:
+
+Assignment-1:
+------------
+Print any 10 Statements in Java Program.
