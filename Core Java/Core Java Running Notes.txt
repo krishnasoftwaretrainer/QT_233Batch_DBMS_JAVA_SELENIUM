@@ -200,3 +200,82 @@ Object:Instance:
 Assignment-1:
 ------------
 Print any 10 Statements in Java Program.
+==============
+
+1.WAJP to perform Addition on given two numbers.
+
+2,3 + 5
+
+Arthametic Operations: + - * / 
+2Numbers or 3Numbers
+
+10 20s Performence:
+13Lines:Compilation:13s
+13Lines:Execution:13s
+				------
+				26s
+				
+Assignment-2:
+-----------
+1.WAJP to perform Addition on given Two Numbers.
+2.WAJP to perform Substraction on given Two Numbers.
+3.WAJP to perform Multiply on given Two Numbers.
+4.WAJP to perform Divide on given Two Numbers.
+
+5.WAJP to perform Addition on given Three Numbers.
+6.WAJP to perform Substract on given Three Numbers.
+7.WAJP to perform Multiply on given Three Numbers.
+8.WAJP to perform Divide on given Three Numbers.
+.java .class Compile and Run:OutPut
+
+Java Programming:
+-----------
+1.DeskTop App: .exe 
+2.Web App:Client-Server[URL]->Browsers
+3.Mobile App:
+4.EnterPrise App:SBI  GMail TMail TSRTC
+DeskTop Web Mobile  
+
+Amazon:Server[Database]->Cloud
+Get or Retrive 
+
+SE:Practice[Open Source/Free or Licensied] 
+ME:Mobile or Micro App 
+EE:SBI 
+
+LTS:Long Term Support 
+Trail Versions:
+
+Re-Usebulity:Inheritance
+Readabulity:Methods 
+Security:Encapsulation
+
+DMart:Developers:Calculator:+ - * /:1k  
+
+datatype variablename=value;
+
+Interpreted Programming Language:
+-------------------------
+Compile and Execute:Compilers 
+500LOC:
+
+1.Interpreter:
+10LOC:1 2 3 4 5 6x throws error 4th 
+
+2.Compiler:
+10LOC:1 2 3 4x 5 6x 7 8 9 10x:3Errors
+
+HighLevel:English:Humans
+
+Transalators[Internal]:
+HighLevel to MachineLevel
+MachineLevel to HighLevel
+
+Low or Machine Level:Binary[0,1]
+
+JIT:Just Intime Compiler 
+
+JDK:JVM JRE JIT 
+
+IDE:JVM 
+CMD:javac & java 
