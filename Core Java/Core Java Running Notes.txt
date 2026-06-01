@@ -279,3 +279,69 @@ JDK:JVM JRE JIT
 
 IDE:JVM 
 CMD:javac & java 
+
+
+Static Values:Fixed:Only in ProgramCompile Run 
+Dynamic Values:Change/Excution Time bu User 
+
+Pre-Define: Scanner Class 
+Methods:nextInt() and nextFloat()
+
+Static:Cal through ClassName
+Instance:Object
+Syntax to Create Object:
+-------
+ClassName ObjName=new ClassName();
+Scanner scan=new Scanner();
+scan.nextInt();
+
+new is a KeyWord:To allocate memory at run time. 
+89
+
+Bus:Reserved[33] Ordenary General Reserved
+
+50 60
+
+10,20
+30,40
+50,60
+70,80
+90,100
+
+User-Define:Addition2Num
+
+ Scanner Class:
+ ------------
+
+Numeric Values:
+------------
+Plain Numbers:3465 45745 -6756 95: int 
+nextInt()
+
+Point Values:22.33 -3243.23454 95.77: float 
+nextFloat()
+
+Editors:
+-------
+1.Basic Editor:NotePad ++ Edit+[Cmd]
+2.Advanced Editors:
+IDE:EclipseIDE and IntellijIDE
+
+URL for Eclipse Download: https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2026-03/R/eclipse-inst-jre-win64.exe
+
+4 Versions:
+----------
+2025-03 2025-06 2025-09 2025-12
+2026-03 2026-06 2026-09 2026-12
+
+Project:Galary
+Package:Songs Video Images Documnets 
+Class:Song1 Song2 Song3 
+Class: Video1 Video2  
+MainMethod
+
+How to Creat Project in Eclipse:
+
+Red 
+Yellow
+Green
