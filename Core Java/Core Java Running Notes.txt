@@ -345,3 +345,103 @@ How to Creat Project in Eclipse:
 Red 
 Yellow
 Green
+
+
+Program:Input[2,3,+] Process OutPut[5]
+
+Static[Inside the Program] and Dynamic[Run Time]
+
+Scanner Class:Methods
+import java.util.Scanner [Static or Instance] 
+
+Syntax:ClassName ObjName=new ClassName();
+Example:Scanner scan=new Scanner(System.in);
+int a=scan.nextInt();
+float b=scan.nextFloat();
+
+DataTypes and Variables in Java:
+------------------
+int a=10;
+int b=scan.nextInt();
+
+DataTypes:
+---------
+22 33:Data 
+1.5 2.5:Data 
+I.Primitive DataTypes:
+----------------------
+1.Numeric DataTypes:
+A.Plain Numbers:45756 -987 -34567 [Size]
+a.byte:-128 to 127 1byte     [1kg]
+b.short:-32768 to 32767 2bytes [2kg]
+c.int: -2,147,483,648 to 2,147,483,647	4bytes		 [3kg]
+d.long: 9,223,372,036,854,775,807 8bytes          [5kg]
+
+10,20 
+int a=10;int b=20; 8bytes
+byte a=10;byte b=20; 2bytes
+
+B.Point Values:89.45  -87.123
+----------
+a.float:567.123456
+
+b.double:567.123456789012345
+
+2.Non-Numeric:
+------------
+a.char:Character: 'B' 'g' '5' '#'
+
+b.boolean:true false
+
+Krishna 
+
+AI Tools:Yes GitHub Copilet[IDE]
+
+II.Non-Primitive DataTypes:
+--------------------
+String:Collection of Characters
+A to Z a to z 0 to 9 SS[!@$@#%#$]
+
+Arrays 
+Class 
+Object
+OOPS
+
+//Static and Non Static 
+		/*
+		 * byte a;
+		 * byte a=scan.nextByte();
+		 * 
+		 * short a;
+		 * short a=scan.nextShort();
+		 * 
+		 * int a;
+		 * int a=scan.nextInt();
+		 * 
+		 * long a;
+		 * long a=scan.nextLong();
+		 * 
+		 * float a;
+		 * float a=scan.nextFloat();
+		 * 
+		 * double a;
+		 * double a=scan.nextDouble();
+		 * 
+		 * char a;
+		 * char a=scan.next().charAt(0);
+		 * 
+		 * boolean a;
+		 * boolean a=scan.nextBoolean();
+		 * 
+		 * String a;
+		 * String a=scan.nextLine(); //Rama Rao is boy
+		 * String a=scan.next(); //Rama Rao is boy
+		 */
+Assignment:
+1.WJP to cover all datatypes by using Student details Static and Dynamic Way.
+2.WJP to cover all datatypes by using Employee details Static and Dynamic Way.
+3.WJP to cover all datatypes by using Customer details Static and Dynamic Way.
+
+Index:ABCDEFGH
+	  01234567
+0 to n-1 
