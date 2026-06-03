@@ -445,3 +445,85 @@ Assignment:
 Index:ABCDEFGH
 	  01234567
 0 to n-1 
+
+I.Primitive DataTypes: Working with Single Values 
+int a=10; Normal Variable
+
+1.Numeric DataTypes
+A.Plain Numbers:6578	099887	-34567
+a.byte: 1byte byte a=20; nextByte();
+b.short: 2bytes short b=32760; nextShort();
+c.int: 4bytes: int c=4676867; nextInt();
+d.long: 8bytes: long d=1233423445L; nextLong()
+
+B.Point Values:678.0 789.123 -988.567 
+a.float:6decimal points  4bytes
+float e=123.123456f; nextFloat();
+b.double:15decimal points 8bytes
+double f=123.123456789012345d; nextDouble();
+
+2.Non-Numeric DataTypes:
+----------------
+char:'D' 'g' '8' '#' Index[0] 1st value
+char grade='A' next.charAt(0);
+boolean:true or false
+boolean resul=true; nextBoolean();
+binary:0 or 1s  
+
+II.Non-Primitive DataTypes:Multiple
+Strings: ""
+String email="Krish123@gmail.com"
+12345 EDFSD dffwef #@$#^%$
+ 
+Arrays:int a[]={10,20,30,40};
+
+Syntax:
+datatype variablename=value;[Static]
+datatype variablename=scan.nextMethod();
+int a=20; Here int is datatype 20 is value 
+int b=scan.nextInt();
+
+Variables in Java:
+----------------
+Container:To store or Hold the different datatype values.
+
+Syntax:
+datatype variablename=value;[Static]
+datatype variablename=scan.nextMethod();
+
+int obtainedmarks=55;
+int:datatype[pre-define]
+obtainedmarks:Variable[User-Defined]
+55=value:[User-Defined][Static and Dynamic]
+
+Declaration and Initialization:
+--------------
+datatype variablename;
+int a;
+int b;
+
+Without initialization you cant use the declared variables, if you are trying to use it throws error: The local variable a may not have been initialized
+
+Variable initialization in 2 Ways:
+---------
+Static:Declare and Initialization inside th program. These variable values you can cal it as static  or fixed values.
+
+Dynamic:
+int a=scan.nextInt()
+
+Variable is Container it store or hold the different datatype values in memory location.
+
+Index:0 to n-1 
+Address:
+Name:
+Re-Declaration:Not Possible
+Re-Initialization:Possible
+
+Variables Types:
+---------------
+1.Local Variables:Declare Inside Class and Inside MainMethod
+
+Global Variables  
+2.Static Variables 
+3.Instance Variables 
+4.Final Variables 
