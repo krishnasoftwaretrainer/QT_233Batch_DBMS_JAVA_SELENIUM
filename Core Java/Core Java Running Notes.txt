@@ -527,3 +527,101 @@ Global Variables
 2.Static Variables 
 3.Instance Variables 
 4.Final Variables 
+
+
+Java Tokens:Small part of Java Program
+-----------
+1.KeyWords:Reserved/Library/Pre-Define
+Just Use it, 
+Case-Sensitive:Use same as it is: int Int inte
+Few words already using few more words use in feature.
+
+2.Identifiers:User-Defined
+----------
+Variables ClassNames Package Methods Object 
+int a=10;
+class Addition
+package javaprograms
+Scanner scan
+nextInt()
+
+Rules:
+
+3.Literals: pie=3.14f;
+----------
+Variable values cal it as Literals.
+int a=10;
+Integer: int htno=123;
+Float float percentage=99.99f;
+Char char grade='O';
+Boolean boolean result=true;
+String String name="Krishna";
+
+Static or Dynamic:Literal
+
+4.Constants: final
+---------
+Constant Value:We are un able to change, if try throws errors.
+declare with final keyword.
+
+Java Program:Syntax Error Missing ;
+
+Defects/Bugs:Not identifyed by compiler.
+
+5.Variables:Container
+int htno=101; [Primitive]
+int htno[]={101,102,103,104,105,..};
+
+Name:htno 
+Index:2
+Address:10005
+
+6.DataTypes:
+-----------
+
+All Variables are Identifiers:true 
+All Identifiers are Variables:false
+
+All Literals are Constants:false 
+All Constants are Literals:true 
+
+int a=10;
+final b=20;
+
+Errors and Types:
+---------------
+Syntax:Rule 
+Compiler:
+Developer or ATE:
+
+1.Syntax or CompileTime Errors:
+Identified these errors at compiletime either compiler or developer
+If your code have any syntax errors, you are unable to excute or run and no output.
+
+2.Exceptions or RunTime Errors:
+Invalid inputs:
+Checked:
+Un-Checked:ArithmeticException
+
+3.Logical Errors:Functional
+--------------
+c=a-b;
+
+T: 5 to 20  + - 
+5 4 3 2 1 21 22 23 24,, 4356677878  
+20
+4
+21
+
+50P->200-50=150
+Miles:1400+100=1500:Manul Manual Selenium
+Rupes:1500
+
+Comments and Types 
+Type Conversion and Types 
+
+Operators:
+FrontEnd:
+BackEnd:
+Logical[Functional]:Programming
+Database:
