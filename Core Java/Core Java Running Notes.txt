@@ -625,3 +625,76 @@ FrontEnd:
 BackEnd:
 Logical[Functional]:Programming
 Database:
+
+Comments and Types:
+------------------
+Non-Excutable Statements.
+1.To write user define explanations[Normal English].
+2.Java Statements, dont Compile and excute but still in program.
+
+1.Single-Line: //backward double slash 
+2.Multi-Line: /*   */
+
+Coding Rules:
+------------
+->User Defined, always give the Releated Names.
+->Add Comments in every 2 to 3 lines.
+Add Add 
+
+
+Re-Use[API] Amazon[Reg Login] 5y v100
+Reg Login P v1  
+Reg Log C v2 
+Reg Login v3  v100 5y 
+Reg Login Payment v101 
+
+int float 
+Stu 
+Student 
+SSS 
+
+Data-Type Conversion and Types:
+------------------
+To convert values from one datatype to another datatype.
+
+1.Implicit/Automatic/Widening:
+Automatically converted by compiler, not required to write any specfic statements by developer.
+Low[Small] datatype to High[Big] datatype
+
+byte-short-char-int-long-float-double
+
+2.Explicit/Manual/Narrowing:
+Converted by developer,must write releated statements.
+
+High datatype to Low datatype
+
+double-float-long-int-char-short-byte
+
+1gb Memory: 500mb 
+500mb: 1gb Memory
+
+ASCII:
+
+1Project contains One or more Packages 
+1Package contains One or more Classes 
+1Class contains one or more Statements or Methods
+
+
+Operators:
+FrontEnd:
+BackEnd:
+Logical[Functional]:Programming
+Database:
+
+C C++ Java
+
+C:Procedure Oriented[Step-by-Step] Gaming
+Java:Object Oriented:Jump fron one to another
+Class Object[State Behavoiur Identity]
+Virtual Physical
+Templet/BluePrint:Pre-Define Rules
+Objects:
+
+Fruit:Apple Banana Orange 
+Mobile:Samsung:Model 
+Vehicle:Car:Alto:CNG/Electric/Petrol/Desil 
