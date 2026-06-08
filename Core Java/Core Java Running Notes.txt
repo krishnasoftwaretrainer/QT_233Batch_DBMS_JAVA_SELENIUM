@@ -698,3 +698,89 @@ Objects:
 Fruit:Apple Banana Orange 
 Mobile:Samsung:Model 
 Vehicle:Car:Alto:CNG/Electric/Petrol/Desil 
+===================
+Java Operators:
+--------------
+Operator is an Symbol:+ < ==  != &&
+These Operators using to perform operations on Operends.
+
+a+b:  5+3
+
+1.Arthametic Operators
+2.Relational Operators
+3.Logical Operators
+4.Assignment Operators
+5.Unary Operators
+6.Ternary Operators
+
+7.Bitwise and Shift Operators
+
+1.Arthametic Operators:
+--------------------
+Arthametic Operations: 
+
+1.Addition:+
+2.Substraction: -
+3.Multification: * 
+4.Division: /
+5.Modules Division: %
+
+Operator Precedence[Priority]:
+------------------
+BODMAS:Bracket Off Division Mutlification Addition Substraction
+
+High Priority:/ * %
+
+Low Priority: + -
+
+Input:Integer or Float
+OutPut:Integer or Float
+
+2.Relational[Comparison] Operators:
+--------------------
+< <= > >= == != 
+
+Input:Integer or Float
+OutPut:Boolean
+
+5.7>3.9:true    3>5:false 3>=5:false 3==5:false 5.4>=5.5:false  5.5>=5.5:true    
+3!=5:true 
+
+> >or= < <or= 
+5.5>=5.5: 5.5>5.5:false or 5.5==5.5:true: true
+< or =
+>=:>=80%  90%  80%  55% 
+55%>80% or 55%==80%
+False or False:FALSE
+
+a<=b:a<b or a==b
+     20<20 or 2==20
+	 false  or true:true 
+	 
+Precedence:
+---------
+High:< <= > >=
+Low:== != 
+
+= == equals()
+
+3.Logical Operators:
+-----------------
+AND OR NOT
+
+Input:Boolean
+OutPut:Boolean
+
+Truth Table:
+-----------
+Input1	Input2	AND		OR 		NOT 
+-----------------------------------
+True	True	True 	True	False 
+
+True 	False	False	True	
+
+False 	True 	False	True
+
+False	False	False	False	True 
+
+ 
