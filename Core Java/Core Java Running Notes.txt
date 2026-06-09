@@ -783,4 +783,74 @@ False 	True 	False	True
 
 False	False	False	False	True 
 
+
+Every validation should perform by using java concepts.
+
+Washing Cloths:Manual Automation  Bike 
+20TC:Manual Automation
+
+APP:IAS IPS Degree Education Amazon:Zoom 
+
+Selenium Script:  2+3=4 Code 
+
+Me:2hr 30days and My Friend:
+
+1st: 5th:1993 BSc Cs[Telugu]  MCA 
+
+4.Assignment Operators:
+---------------------
+=:Assignment
+a=3,b=6;
+c=a+b;
+
++= -= *= /= %=
+int a=3; Normal Variable
+a+=5;
+a=a+5;
+a=3+5;
+a=8
+
+b=a+5;
+b=3+5;
+b=8;
+
+5.Unary Operators:
+----------------
+Unary Plus: +
+Unary Minus: -
+-5  +10  10
+
+1.Increment Operators: ++
+Increase the value +1 for existing value.
+
+x=10; x++=11
+
+A.Pre-Increment:++a: a=10; update a=11
+First it increase the value +1 then update the existing value and print the update value.
+Print:11 
+Update:11
+
+B.Post-Increment:b++ b=10
+
+First it print the existing value then it increase the +1 and update into existing value
+Print:10 
+Update:11
+
+2.Decrement Operators: --
+Decrease the -1 for existing value.
+
+y=10;y--=9
+
+C.Pre-Decrement:--c c=10 Print:9
+
+First it decrease the -1 and update into existing value then print the updated value.
+
+Print:9 
+Update:9
+
+D.Post-Decrement:d-- d=10
+First it print the existing value then decrease the -1 and update into existing value
+Print:10 
+Update:9
+
  
