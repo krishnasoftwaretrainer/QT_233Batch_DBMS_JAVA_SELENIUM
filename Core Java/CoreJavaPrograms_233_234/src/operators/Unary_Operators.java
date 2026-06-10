@@ -33,27 +33,27 @@ public class Unary_Operators {
 		
 		int x=10;
 		
-		System.out.println("First X Value:"+x);
-		System.out.println("Actuval x="+x); //a=10
-		System.out.println("++x="+(++x)); //a=11
-		System.out.println("Updated x="+x); //a=11
+		System.out.println("First X Value:"+x);  //10
+		System.out.println("Actuval x="+x); //10
+		System.out.println("++x="+(++x)); //11
+		System.out.println("Updated x="+x); //11
 		System.out.println("=================");
 		
-		System.out.println("Actuval x="+x);	//b=10
-		System.out.println("x++="+(x++)); //b=10
-		System.out.println("Updated x="+x); //b=11
+		System.out.println("Actuval x="+x);	//x=11
+		System.out.println("x++="+(x++)); //Print 11
+		System.out.println("Updated x="+x); //Update x=12
 		System.out.println("=================");
 		
-		System.out.println("Actuval x="+x);	 //c=10	
-		System.out.println("--x="+(--x)); //c=9
-		System.out.println("Updated x="+x); //c=9
+		System.out.println("Actuval x="+x);	 //x=12
+		System.out.println("--x="+(--x)); //x=11
+		System.out.println("Updated x="+x); //x=11
 		System.out.println("=================");
 		
-		System.out.println("Actuval x="+x); //d=10
-		System.out.println("x--="+(x--)); //d=10
-		System.out.println("Updated x="+x); //d=9
+		System.out.println("Actuval x="+x); //x=11
+		System.out.println("x--="+(x--)); //Print x=11
+		System.out.println("Updated x="+x); //x=10
 		
-		System.out.println("Last X Value:"+x);
+		System.out.println("Last X Value:"+x); //x=10
 	}
 
 }

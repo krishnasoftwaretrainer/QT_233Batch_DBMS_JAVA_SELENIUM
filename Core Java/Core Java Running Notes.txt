@@ -699,12 +699,13 @@ Fruit:Apple Banana Orange
 Mobile:Samsung:Model 
 Vehicle:Car:Alto:CNG/Electric/Petrol/Desil 
 ===================
+
 Java Operators:
 --------------
 Operator is an Symbol:+ < ==  != &&
 These Operators using to perform operations on Operends.
 
-a+b:  5+3
+a+b:  5+3 
 
 1.Arthametic Operators
 2.Relational Operators
@@ -713,7 +714,8 @@ a+b:  5+3
 5.Unary Operators
 6.Ternary Operators
 
-7.Bitwise and Shift Operators
+7.Bitwise 
+8.Shift Operators
 
 1.Arthametic Operators:
 --------------------
@@ -724,6 +726,14 @@ Arthametic Operations:
 3.Multification: * 
 4.Division: /
 5.Modules Division: %
+
+550/
+50 discount 
+550-50=500
+500/2=250
+5 Pens 2+2=4 Remainder:1
+5%2=1
+5/2=2.5
 
 Operator Precedence[Priority]:
 ------------------
@@ -739,12 +749,18 @@ OutPut:Integer or Float
 2.Relational[Comparison] Operators:
 --------------------
 < <= > >= == != 
+Smaller Biiger Equal NotEqual
+
+2 Brothers:22 22
+Mobile:5k != Mobile:10k:
 
 Input:Integer or Float
 OutPut:Boolean
 
 5.7>3.9:true    3>5:false 3>=5:false 3==5:false 5.4>=5.5:false  5.5>=5.5:true    
 3!=5:true 
+
+State First:P1>P2 P1>3 P1>P4.....
 
 > >or= < <or= 
 5.5>=5.5: 5.5>5.5:false or 5.5==5.5:true: true
@@ -782,7 +798,6 @@ True 	False	False	True
 False 	True 	False	True
 
 False	False	False	False	True 
-
 
 Every validation should perform by using java concepts.
 
@@ -853,4 +868,39 @@ First it print the existing value then decrease the -1 and update into existing 
 Print:10 
 Update:9
 
- 
+6.Ternary Operators:
+------------------
+It is another form of if condition, this operator using for conditional purpose.
+
+: ?
+
+New Build:.apk  .exe  URL Browser:Paste
+Third Party Browsers:Clock Alarm 
+
+7.Bitwise and Shift Operators:
+-------------------
+Bitwise & Bitwise | Bitwise XOR ^
+Input:Integer:10 12 (&)
+
+Integer to Binary then Perform &
+Then Convert Binary to Integer then print output
+
+Binary:0 1  Boolean: true[1] false[0]
+OutPut:Integer
+
+Truth Table:
+-----------
+Input1	Input2	AND(&)	OR(|) XOR(^) 
+-----------------------------------
+1		1		1 		1		0	 
+
+1 		0		0		1		1
+
+0 		1 		0		1		1
+
+0		0		0		0	 	0
+
+8.Shift Operators:
+---------------
+1.Left Shift:<<
+2.Right Shift:>>
