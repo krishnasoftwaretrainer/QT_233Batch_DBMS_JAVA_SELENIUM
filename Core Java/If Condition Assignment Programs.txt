@@ -1,0 +1,20 @@
+Assignment:
+---------
+1.Check if two numbers are equal.
+Java Program to Check if a Given Integer is Odd or Even
+Check if a character is a vowel or Consonant
+2.Determine if a number is negative or positive.
+2.Determine if a number is negative or positive or Zero.
+3.Check if a number is a multiple of 10.
+4.Check if a number is greater than 100.
+5.Check if two numbers are equal.
+6.Determine if a number is within a specified range.
+7.Check if a number is divisible by another number.
+8.Find the maximum of two given numbers.Math[max(num1, num2)]
+9.Find the minimum of given two numbers[min(num1, num2)].
+10.Find the largest of three numbers.
+11.Check if a person can retire based on age.
+12.Determine if a person is a teenager based on age.
+13.Determine if a character is a special symbol.
+14.Check if a Character is Uppercase or Lowercase.
+15.Check if a Character is a Vowel or Consonant.

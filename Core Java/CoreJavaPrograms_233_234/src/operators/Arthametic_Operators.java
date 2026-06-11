@@ -11,11 +11,12 @@ public class Arthametic_Operators {
 		int mul=a*b;
 		int div=a/b;
 		int mdiv=a%b;
-		System.out.println(sum);
-		System.out.println(sub);
-		System.out.println(mul);
-		System.out.println(div);
-		System.out.println(mdiv);
+		
+		System.out.println("Sum:"+sum);
+		System.out.println("Sub:"+sub);
+		System.out.println("Mul:"+mul);
+		System.out.println("Div:"+div);
+		System.out.println("MDiv:"+mdiv);
 		
 		int all=sum+sub+mul+div+mdiv;
 		System.out.println(all);

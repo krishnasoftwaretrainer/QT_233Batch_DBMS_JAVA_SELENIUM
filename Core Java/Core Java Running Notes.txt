@@ -904,3 +904,118 @@ Input1	Input2	AND(&)	OR(|) XOR(^)
 ---------------
 1.Left Shift:<<
 2.Right Shift:>>
+
+Sequentional Flow Statements 
+----------
+Here Java program statements are excuted based on given or written sequence.
+
+Control Flow Statements in Java:
+--------------------------
+Here Java program statements are excuted based on given condition.
+
+Condition:True or False
+
+First Student ObtainedMarks=85;
+Second Student ObtainedMarks=32;
+
+ObtainedMarks>=35 [85>=35]True [32>=35 False] 
+TBS:Pass 
+FBS:Fail
+
+True:TBS:True Block Statements
+False:FBS:False Block Statements
+
+1.Conditional/Branching/Selection Statements:
+A.if() Condition
+a.Simple-if()
+b.if-else()
+c.else-if() or ladder-if()
+d.nested-if()
+
+B.switch() Condition
+
+2.Looping/Iterative Statements:
+-----
+a.for()
+b.while()
+c.do-while()
+d.nested-loops
+
+3.Jumping Statements:
+-------
+a.break
+b.continue
+c.return
+
+Defination of Condition or Loop or Jumping
+Syntax
+FlowChart
+Explanation
+Example Programs
+
+a.Simple-if():
+------------
+1k:SDET:5 Openings:First Second Third
+Apllys an Condition:Interview
+Written Technical 
+
+Only we have the TBS
+in Simple-if()
+1.If the given Condition is true it excutes the TBS 
+2.If the given Condition is false,it throws the null value.
+Pass 
+Null[No Output/Empty]
+
+Syntax:
+-----
+if(Condition) t/f
+{
+TBS; true 
+}
+null 
+{ ->Open means Entry[Condition should be True]
+} ->Close means Exit[After excutes the Body] 
+
+2 Students:Writen Exam 
+55:Pass 
+25:Null 
+
+b.if-else(): 35 Pass 35 Fail 
+---------
+Syntax:
+------
+if(Condition) t/f
+{ //enter
+TBS; rain 
+}  //exit 
+else 
+{  //enter
+FBS; rain 
+}//exit
+
+Wrong PIN:Blocked 24hrs 
+
+c.else-if() or ladder-if():
+-------------------
+When every you need to verify more than one condition go with the else if 
+
+Syntax:
+--------
+if(Condition-1) t/f 
+{
+TBS;
+}
+else if(Condition-2) t/f
+{
+TBS;
+}
+else if(Condition-3) t/f 
+{
+TBS;
+}
+else 
+{
+FBS;
+}
+
+Student Grades:A B C D Fail
