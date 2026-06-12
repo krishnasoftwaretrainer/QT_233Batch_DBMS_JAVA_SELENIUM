@@ -22,11 +22,11 @@ public class If_Ellse {
 		
 		if(ObtainedMarks<35)  //35 343
 		{
-			System.out.println("Fail");
+			System.out.println("Fail");  //Executes the if body
 		}
 		else
 		{
-			System.out.println("Pass");
+			System.out.println("Pass");  //Else
 		}
 	}
 

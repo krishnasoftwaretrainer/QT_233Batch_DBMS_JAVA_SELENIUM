@@ -22,7 +22,7 @@ public class Even_OddNumber {
 				
 			}  */
 		
-		if(num%2==1)
+		if(num%2==1)  //0
 		{
 			System.out.println(num+" is Odd number");
 		}

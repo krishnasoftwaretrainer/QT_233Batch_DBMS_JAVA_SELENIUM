@@ -1019,3 +1019,38 @@ FBS;
 }
 
 Student Grades:A B C D Fail
+
+
+else-if() condition is another form of switch condition
+
+S1:95 S2:99 S3:98 S4:96
+
+d.Nested if():Nested Conditions 
+------------
+One Condition inside another Condition
+Outer Condition and Inner Condition
+
+Syntax:
+-------
+if(Outer Condition) T T F
+{
+Body or Inner Condition
+{
+if(Inner Condition) T F
+{
+Body; TBS 
+}
+else //Inner Else
+{
+FBS; Inner
+}
+else //Outer Else
+{
+FBS; Outer
+}
+
+AI:
+1.Money/Budget:Tokens:Each Input  1k 500
+2.Water:Data Center:Google:1TMC 10TMC dx 
+3.Future:
+

@@ -11,7 +11,7 @@ public class Simple_If {
 		
 		if(ObtainedMarks>=35)  //Logics true/false  85>=35:true 25>=35:false
 		{
-		System.out.println("Pass");	
+		System.out.println("Pass");	 //Body
 		}
 	}
 
