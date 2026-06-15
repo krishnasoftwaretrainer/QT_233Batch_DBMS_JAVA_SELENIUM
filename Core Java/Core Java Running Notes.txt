@@ -1054,3 +1054,65 @@ AI:
 2.Water:Data Center:Google:1TMC 10TMC dx 
 3.Future:
 
+
+Switch[Selection] Condition:
+----------------
+In switch condition, it compares the input with each case.
+
+Input:c  d  b
+Case1:a False it move to the next case
+Case2:b False it check the next case
+Case3:c True excutes the body
+break;
+deafult:
+
+Syntax:
+------
+switch(Codition)
+{
+Case 1: T  F
+{
+Body; TBS;
+break;
+}
+Case 2:
+{
+Body;
+break;
+}
+Case N:
+{
+Body;
+}
+deafult:
+{
+Body; FBS;
+}
+
+
+
+Looping/Iterative Statements in Java:
+-------------------------
+If you want to run specfic body Multiple times based on condition or Continuesly means infinty times use the looping statements.
+
+ATM:Balance WithDraw Deposite:100
+
+1.for()
+2.while()
+3.do-while()
+4. nested-loops
+
+For Loop:
+-------Counted Loop:10:1 2 3 4 5 6 7 8 9 10
+Excution is Fixed Length:50 
+
+Syntax:
+-----
+for(InitialValue;Condition;Increment/Decrement)
+{
+Body; 
+}
+
+2.While Loop:
+---------
+
