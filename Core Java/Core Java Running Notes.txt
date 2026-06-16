@@ -1102,10 +1102,28 @@ ATM:Balance WithDraw Deposite:100
 3.do-while()
 4. nested-loops
 
+Entry Control Loops:
+--------
+Before Excution
+Condition checking at Entry Point:True 
+/False
+Movie Theator:
+Hotel:Token or First Payment
+
+for()
+while()
+
+Exit Control Loops:
+----------
+After Excution
+Today:One Time 
+
+do-while()
+
 For Loop:
 -------Counted Loop:10:1 2 3 4 5 6 7 8 9 10
 Excution is Fixed Length:50 
-
+If you know, how many times loop should excute, go with the for loop.
 Syntax:
 -----
 for(InitialValue;Condition;Increment/Decrement)
@@ -1115,4 +1133,84 @@ Body;
 
 2.While Loop:
 ---------
+If you dont know, how many times loop should excute, go with the while loop.
 
+While loop is Infinet Loop.
+ATM:
+
+Syntax:
+-----
+InitialValue;
+while(Condition) T 
+{
+Body; TBS;
+Increment/Decrement;
+} Exit;
+
+while(true)
+
+3.do-while():
+-----------
+Syntax:
+--------
+InitialValue;
+do 
+{
+Body; Once 
+Increment/Decrement;
+}while(Condition); Exit 
+
+Nested Loops:
+----------
+If you write one loop inside another loop.
+Nested-for():Single Line(int i=1;i<=10,i++)
+Nested-while():
+Nested-doWhile:
+
+SR C1	C2	C3 
+R1 1	2	3	4	5	6	7	8	9	10
+
+C1
+1 R1 
+2 R2 
+3 R3 
+4
+5
+6
+7
+8
+9
+10
+
+MR MC: Pattern Programs:Nested for() Loop  
+ 
+	C1	C2	C3	C4	C5
+R1	1	2	3	4	5
+
+R2	1	2	3	4	5
+
+R3	1	2	3	4	5
+
+R4	1	2	3	4	5
+
+R5	1	2	3	4	5  5*5=25
+
+Syntax:
+------
+for() //Outer Loop[Rows]
+{
+for() //Inner Loop[Columns]
+{
+Body;  //25Times
+}
+}
+
+Valid	Valid 
+
+Valid	Invalid
+
+Invalid	Valid
+
+Invalid	Invalid
+
+Blank	Blank
