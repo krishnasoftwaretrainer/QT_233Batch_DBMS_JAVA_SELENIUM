@@ -18,7 +18,8 @@ public class Switch_Calculator {
 	System.out.println("3.MULTIPLICATION");
 	System.out.println("4.DIVISION");
 	System.out.println("5.MODULUS");
-	
+	//break;
+	//continue;
 	System.out.println("Enter your choice");
 	char choice=scan.next().charAt(0);
 	
@@ -29,6 +30,7 @@ public class Switch_Calculator {
 		int sum=num1+num2;
 		System.out.println("The sum is "+sum);
 		break;
+		//continue;
 	}
 	
 	case '-':

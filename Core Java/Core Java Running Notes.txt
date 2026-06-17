@@ -1213,4 +1213,50 @@ Invalid	Valid
 
 Invalid	Invalid
 
+
 Blank	Blank
+
+
+Nested for() Loops:
+-----------------
+Syntax:
+------
+for(InitialValue;Condition;Increment/Decrement) //OuterLoop    True True False 
+{
+for(InitialValue;Condition;Increment/Decrement) //InnerLoop    True False True  
+{
+Body;  TBS 
+}
+}
+
+Pattern Programs:
+---------------
+
+3.Jumping Statements in Java:
+------
+break;  //Termination
+continue; //Termination
+
+To stop the excution.
+break:USe only either Condition or Loops
+Note: break cannot be used outside of a loop or a switch
+When you are Use break, it stops permently.
+
+Red:Bike or Car 
+
+continue:Use Only in Loops 
+Note: continue cannot be used outside of a loop
+
+When you are Use continue, it stops temperarly and always it checks the condition.
+
+while(true)
+if(signal=="red") break continue
+{
+STOP; 5s 10s 15s 20s 25s Telugu Alaram:6am
+}
+else
+{
+GO;
+}
+return;
+
