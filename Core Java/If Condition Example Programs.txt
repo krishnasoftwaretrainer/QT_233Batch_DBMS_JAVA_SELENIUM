@@ -1,0 +1,213 @@
+if Statement (10 examples)
+java
+Copy
+Edit
+// 1. Check if number is positive
+if (num > 0) System.out.println("Positive");
+
+// 2. Check if character is vowel
+if (ch == 'a' || ch == 'e') System.out.println("Vowel");
+
+// 3. Check if user is adult
+if (age >= 18) System.out.println("Adult");
+
+// 4. Print if number is even
+if (num % 2 == 0) System.out.println("Even");
+
+// 5. Check if marks >= 35
+if (marks >= 35) System.out.println("Pass");
+
+// 6. Check if character is uppercase
+if (ch >= 'A' && ch <= 'Z') System.out.println("Uppercase");
+
+// 7. Check if year is leap year (only divisible by 4)
+if (year % 4 == 0) System.out.println("Leap year");
+
+// 8. Check if string is not empty
+if (!str.isEmpty()) System.out.println("Not empty");
+
+// 9. Check if temperature is above 30
+if (temp > 30) System.out.println("Hot Day");
+
+// 10. Check if input is digit
+if (Character.isDigit(ch)) System.out.println("Digit");
+=============================
+if-else Statement (10 examples)
+java
+Copy
+Edit
+// 11. Even or Odd
+if (num % 2 == 0) System.out.println("Even");
+else System.out.println("Odd");
+
+// 12. Positive or Negative
+if (num >= 0) System.out.println("Positive");
+else System.out.println("Negative");
+
+// 13. Pass or Fail
+if (marks >= 35) System.out.println("Pass");
+else System.out.println("Fail");
+
+// 14. Vote Eligibility
+if (age >= 18) System.out.println("Eligible");
+else System.out.println("Not Eligible");
+
+// 15. Check number is zero or not
+if (num == 0) System.out.println("Zero");
+else System.out.println("Non-Zero");
+
+// 16. Grade A or B
+if (marks >= 90) System.out.println("Grade A");
+else System.out.println("Grade B");
+
+// 17. Divisible by 5 or not
+if (num % 5 == 0) System.out.println("Divisible by 5");
+else System.out.println("Not Divisible");
+
+// 18. Odd or Even using ternary
+System.out.println(num % 2 == 0 ? "Even" : "Odd");
+
+// 19. Login success/fail
+if (username.equals("admin") && password.equals("1234")) System.out.println("Login Success");
+else System.out.println("Login Failed");
+
+// 20. Weekend or weekday
+if (day.equals("Sunday") || day.equals("Saturday")) System.out.println("Weekend");
+else System.out.println("Weekday");
+=============
+else-if Ladder (10 examples)
+java
+Copy
+Edit
+// 21. Grading system
+if (marks >= 90) System.out.println("A");
+else if (marks >= 80) System.out.println("B");
+else if (marks >= 70) System.out.println("C");
+else if (marks >= 60) System.out.println("D");
+else System.out.println("F");
+
+// 22. Temperature range
+if (temp > 40) System.out.println("Very Hot");
+else if (temp > 30) System.out.println("Hot");
+else if (temp > 20) System.out.println("Warm");
+else System.out.println("Cold");
+
+// 23. Age group
+if (age <= 12) System.out.println("Child");
+else if (age <= 19) System.out.println("Teen");
+else if (age <= 59) System.out.println("Adult");
+else System.out.println("Senior");
+
+// 24. Month name by number
+if (month == 1) System.out.println("Jan");
+else if (month == 2) System.out.println("Feb");
+// ... up to 12
+
+// 25. Check grade
+if (grade.equals("A")) System.out.println("Excellent");
+else if (grade.equals("B")) System.out.println("Good");
+else System.out.println("Average");
+
+// 26. Time of day
+if (hour < 12) System.out.println("Morning");
+else if (hour < 17) System.out.println("Afternoon");
+else System.out.println("Evening");
+
+// 27. BMI category
+if (bmi < 18.5) System.out.println("Underweight");
+else if (bmi < 25) System.out.println("Normal");
+else if (bmi < 30) System.out.println("Overweight");
+else System.out.println("Obese");
+
+// 28. Speeding fine
+if (speed > 100) System.out.println("Heavy fine");
+else if (speed > 80) System.out.println("Fine");
+else System.out.println("OK");
+
+// 29. Number range
+if (num < 10) System.out.println("Single digit");
+else if (num < 100) System.out.println("Two digit");
+else System.out.println("Large number");
+
+// 30. Blood Pressure level
+if (bp < 90) System.out.println("Low");
+else if (bp < 120) System.out.println("Normal");
+else System.out.println("High");
+=============
+Nested if Statement (10 examples)
+java
+Copy
+Edit
+// 31. Login validation
+if (username.equals("admin")) {
+   if (password.equals("1234")) {
+       System.out.println("Login Success");
+   } else {
+       System.out.println("Wrong Password");
+   }
+}
+
+// 32. Eligibility check with nested conditions
+if (age >= 18) {
+   if (citizen) {
+       System.out.println("Eligible to vote");
+   } else {
+       System.out.println("Not a citizen");
+   }
+} else {
+   System.out.println("Too young");
+}
+
+// 33. Number even & positive
+if (num > 0) {
+   if (num % 2 == 0) {
+       System.out.println("Positive Even");
+   } else {
+       System.out.println("Positive Odd");
+   }
+}
+
+// 34. Student pass category
+if (marks >= 35) {
+   if (marks >= 75) System.out.println("Distinction");
+   else System.out.println("Pass");
+} else {
+   System.out.println("Fail");
+}
+
+// 35. Discount eligibility
+if (customerType.equals("premium")) {
+   if (purchaseAmount > 1000) {
+       System.out.println("20% Discount");
+   }
+}
+
+// 36. Nested if for triangle type
+if (a + b + c == 180) {
+   if (a == b && b == c) System.out.println("Equilateral");
+   else if (a == b  b == c  c == a) System.out.println("Isosceles");
+   else System.out.println("Scalene");
+}
+
+// 37. ATM PIN check
+if (cardInserted) {
+   if (pin == 1234) System.out.println("Access Granted");
+   else System.out.println("Wrong PIN");
+}
+
+// 38. Nested salary check
+if (exp > 5) {
+   if (salary < 50000) System.out.println("Eligible for hike");
+   else System.out.println("No hike");
+}
+
+// 39. Exam eligibility
+if (attendance >= 75) {
+   if (internalMarks >= 10) System.out.println("Eligible for exam");
+}
+
+// 40. Nested eligibility with gender
+if (age >= 21) {
+   if (gender.equals("Male")) System.out.println("Eligible for job");
+   else System.out.println("Need more info");
+}

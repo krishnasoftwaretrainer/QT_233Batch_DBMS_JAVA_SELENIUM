@@ -1260,3 +1260,90 @@ GO;
 }
 return;
 
+Control Flow Statements:
+---------------
+1.Conditional:if switch
+2.Looping: 1s 10times 
+3.Jumping: 
+Normal Test 
+
+
+Arrays in Java:
+------------Yes 
+Collection of elements of same datatype.
+
+Primitive:Hold Single Value.
+int htno=101;
+
+Non-Primitive:
+Array:Hold Multiple values.
+
+I need to store student hallticket numbers.
+
+int htno1=101;
+int htno2=102;
+int htno3=103;
+------
+--------
+int htno100=200
+
+Syntax:
+-------
+datatype VariableName[]={Value1,Value2...};
+int htno[]={101,102,103,103..200};
+float percentage[]={99.99f,95.3f,92.0f};
+char gender[]={'M','F','M','F'}
+String snames[]={"Krishna","",""}
+boolean result[]={true,false,true};
+
+int a=10; 0
+	a=20; 0
+	a=30; 0
+	Syso(a); 30 
+
+
+int htno[0]=101;
+	htno[1]=102;
+	htno[2]=103;
+
+Types of Arrays:
+---------------
+1.Single or One Dimension Array:
+Single Row and Multiple Columns or 
+Multiple Rows and Single Column
+
+R0C0 R0C1 R0C2 R0C3 R0C4 
+[10,20,30,40,50]:SR MC 
+
+[10 R0C0
+20  R1C0 
+30  R2C0
+40  R3C0
+50]:R4C0  MR SC 
+
+Normal for loop is enough 
+
+2.Double or Two Dimension Array:
+-----------------
+Multiple Rows with Multiple Columns 
+Size:Num of Rows * Num of Columns
+			3 * 2 = 6
+			2 * 3 = 6
+10,20,30,40,50,60 
+
+R0C0 R0C1
+10	  20 
+R1C0 R1C1
+30		40
+R2C0 R2C1
+50		60 
+
+3.Multi Dimension Array 
+-----------
+Arthametic Operations:+ - * / on Arrays
+int a=10,b=20;
+int c=a+b;
+
+int a[]={};
+int b[]={};
+int c[]=a[]+b[];

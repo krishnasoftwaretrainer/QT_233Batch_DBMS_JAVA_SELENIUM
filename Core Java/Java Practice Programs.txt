@@ -1,0 +1,1296 @@
+1.How to Read and Print an Integer value in Java.
+public static void main(String[] args)
+    {
+        // Declare the variables
+        int num;
+ 
+        // Input the integer
+        System.out.println("Enter the integer: ");
+ 
+        // Create Scanner object
+        Scanner s = new Scanner(System.in);
+ 
+        // Read the next integer from the screen
+        num = s.nextInt();
+ 
+        // Display the integer
+        System.out.println("Entered integer is: " + num);
+    }
+
+1.1 Concatenating Strings
+
+public class ConcatenateStrings {
+    public static void main(String[] args) {
+        String firstName = "Rama";
+ 	String lastName = "Rao";
+        System.out.println("Full Name: " + firstName + " " + lastName);
+    }
+}
+Output:
+Full Name: Rama Rao
+
+2.Java Program to Multiply two Floating-Point Numbers
+
+public static void main(String[] args)
+    {
+ 
+        // f is to ensures that numbers are float DATA TYPE
+        float f1 = 1.5f;
+        float f2 = 2.0f;
+ 
+        // to store the multiplied value
+        float p = f1 * f2;
+ 
+        // to print the product
+        System.out.println("The product is: " + p);
+    }
+
+ 2.1 Java Program to Find Remainder
+
+public class FindRemainder {
+    public static void main(String[] args) {
+        int a = 29;
+        int b = 5;
+        System.out.println("Remainder is: " + (a % b));
+    }
+}
+Output:
+Remainder is: 4
+
+3.Java Program to Check if a Given Integer is Odd or Even
+
+public static void main(String[] args)
+    {
+        // Declaring and initializing integer variable
+        int num = 10;
+ 
+        // Checking if number is even or odd number
+        // via remainder
+        if (num % 2 == 0) {
+ 
+            // If remainder is zero then this number is even
+            System.out.println("Entered Number is Even");
+        }
+ 
+        else {
+ 
+            // If remainder is not zero then this number is
+            // odd
+            System.out.println("Entered Number is Odd");
+        }
+    }
+
+4.Java Program to Calculate Simple Interest
+
+public static void main(String args[])
+    {
+        // We can change values here for
+        // different inputs
+        float P = 1, R = 1, T = 1;
+ 
+        /* Calculate simple interest */
+        float SI = (P * T * R) / 100;
+        System.out.println("Simple interest = " + SI);
+    }
+
+5.Java Program For Int to Char Conversion
+
+public static void main(String[] args)
+    {
+        // Custom integer input
+        int i = 97;
+ 
+        // Type casting character to integer
+        char ch = (char)i;
+ 
+        // Print statement
+        System.out.println(ch);
+    }
+Output:
+Char: a
+
+6. Write a Java program to print the area and perimeter of a circle.
+
+
+    public static void main(String[] args) {
+        // Calculate the perimeter of the circle using the constant radius
+
+	final double radius = 7.5;
+
+      //  double perimeter = 2 * Math.PI * radius;
+	 double perimeter = 2 * PI * r * r;
+
+        // Calculate the area of the circle using the constant radius
+        //double area = Math.PI * radius * radius;
+	double area = PI * r * r;
+
+        // Print the calculated perimeter and area
+        System.out.println("Perimeter is = " + perimeter);
+        System.out.println("Area is = " + area);
+    }
+Output:
+perimeter: 353.25
+area: 176.62
+
+
+6.1 Volume of a Cube
+
+public class CubeVolume {
+    public static void main(String[] args) {
+        int side = 5;
+        System.out.println("Volume of Cube: " + (side * side * side));
+    }
+}
+Output:
+
+Volume of Cube: 125
+
+7.Write a Java program that takes five numbers as input to calculate and print the average of the numbers.
+
+Test Data:
+Input first number: 10
+Input second number: 20
+Input third number: 30
+Input fourth number: 40
+Enter fifth number: 50
+
+Java Code:
+
+import java.util.Scanner;
+ 
+public class Exercise12 {
+ 
+ public static void main(String[] args) {
+  // Create a Scanner object to read input from the user
+  Scanner in = new Scanner(System.in);
+   
+  // Prompt the user to input the first number
+  System.out.print("Input first number: ");
+  
+  // Read and store the first number
+  int num1 = in.nextInt();
+   
+  // Prompt the user to input the second number
+  System.out.print("Input second number: ");
+  
+  // Read and store the second number
+  int num2 = in.nextInt();
+   
+  // Prompt the user to input the third number
+  System.out.print("Input third number: ");
+  
+  // Read and store the third number
+  int num3 = in.nextInt();
+   
+  // Prompt the user to input the fourth number
+  System.out.print("Input fourth number: ");
+  
+  // Read and store the fourth number
+  int num4 = in.nextInt();
+  
+  // Prompt the user to input the fifth number
+  System.out.print("Enter fifth number: ");
+  
+  // Read and store the fifth number
+  int num5 = in.nextInt();
+   
+  // Calculate and print the average of the five numbers
+  System.out.println("Average of five numbers is: " + (num1 + num2 + num3 + num4 + num5) / 5);
+ }
+} 
+
+Sample Output:
+
+Input first number: 10                                                                                        
+Input second number: 20                                                                                       
+Input third number: 30                                                                                        
+Input fourth number: 40                                                                                       
+Enter fifth number: 50                                                                                        
+Average of five numbers is: 30
+
+8.  Write a Java program to print the area and perimeter of a rectangle.
+ public static void main(String[] strings) {
+        // Define constants for the width and height of the rectangle
+        final double width = 5.6;
+        final double height = 8.5;
+
+        // Calculate the perimeter of the rectangle
+        double perimeter = 2 * (height + width);
+		
+        // Calculate the area of the rectangle
+        double area = width * height;			
+
+        // Print the calculated perimeter using placeholders for values
+        System.out.printf("Perimeter is 2*(%.1f + %.1f) = %.2f \n", height, width, perimeter);
+
+        // Print the calculated area using placeholders for values
+        System.out.printf("Area is %.1f * %.1f = %.2f \n", width, height, area);
+    }
+
+9. Write a Java program to check whether Java is installed on your computer.
+    public static void main(String[] args) {
+        // Display Java version
+        System.out.println("\n Java Version: " + System.getProperty("java.version"));
+        
+        // Display Java runtime version
+        System.out.println("Java Runtime Version: " + System.getProperty("java.runtime.version"));
+        
+        // Display Java home directory
+        System.out.println("Java Home: " + System.getProperty("java.home"));
+        
+        // Display Java vendor name
+        System.out.println("Java Vendor: " + System.getProperty("java.vendor"));
+        
+        // Display Java vendor URL
+        System.out.println("Java Vendor URL: " + System.getProperty("java.vendor.url"));
+        
+        // Display Java class path
+        System.out.println("Java Class Path: " + System.getProperty("java.class.path") + "\n");
+    }
+
+10. Write a Java program to print the ASCII value of a given character.
+
+public static void main(String[] args) 
+{
+        // Define an integer variable 'chr' and assign the ASCII value of 'Z' to it.
+        int chr = 'Z';
+        
+        
+        // Print the ASCII value of 'Z' to the console.
+        System.out.println("The ASCII value of Z is: " + chr);
+    }
+
+10.1 Convert Seconds to Minutes
+
+public class SecondsToMinutes {
+    public static void main(String[] args) {
+        int seconds = 120;
+        System.out.println("Minutes: " + (seconds / 60));
+    }
+}
+Output:
+Minutes: 2
+
+11.Print the current date.
+
+import java.util.Date;
+
+public class PrintDate {
+    public static void main(String[] args) {
+        Date currentDate = new Date();
+        System.out.println(currentDate);
+    }
+}
+
+12.Write a Java program to convert temperature from Fahrenheit to Celsius degrees.
+
+import java.util.Scanner;
+public class Exercise1 {
+
+    public static void main(String[] Strings) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Input a degree in Fahrenheit: ");
+        double fahrenheit = input.nextDouble();
+
+        double  celsius =(( 5 *(fahrenheit - 32.0)) / 9.0);
+        System.out.println(fahrenheit + " degree Fahrenheit is equal to " + celsius + " in Celsius");
+    }
+}
+
+Sample Output:
+
+Input a degree in Fahrenheit: 212                                                                             
+212.0 degree Fahrenheit is equal to 100.0 in Celsius
+
+13.Write a Java program that reads a number in inches and converts it to meters.
+
+import java.util.Scanner;
+public class Exercise2 {
+
+    public static void main(String[] Strings) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Input a value for inch: ");
+        double inch = input.nextDouble();
+        double meters = inch * 0.0254;
+        System.out.println(inch + " inch is " + meters + " meters");
+
+    }
+}
+
+Sample Output:
+
+Input a value for inch: 1000                                                                                  
+1000.0 inch is 25.4 meters 
+
+14.Write a Java program that reads an integer between 0 and 1000 and adds all the digits in the integer.
+
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] Strings) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Input an integer between 0 and 1000: ");
+        int num = input.nextInt();
+
+        int firstDigit = num % 10;
+        int remainingNumber = num / 10;
+        int SecondDigit = remainingNumber % 10;
+        remainingNumber = remainingNumber / 10;
+        int thirdDigit = remainingNumber % 10;
+        remainingNumber = remainingNumber / 10;
+        int fourthDigit = remainingNumber % 10;
+        int sum = thirdDigit + SecondDigit + firstDigit + fourthDigit;
+        System.out.println("The sum of all digits in " + num + " is " + sum);
+
+    }
+}
+
+Sample Output:
+
+Input an integer between 0 and 1000: 565                                                                      
+The sum of all digits in 565 is 16 
+
+15.Write a Java program that accepts two integers from the user and prints the sum, the difference, the product, the average.
+
+Test Data
+Input 1st integer: 25
+Input 2nd integer: 5
+
+import java.util.Scanner;
+public class Exercise9 {
+
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input 1st integer: ");
+        int firstInt = in.nextInt();
+        System.out.print("Input 2nd integer: ");
+        int secondInt = in.nextInt();
+
+        System.out.printf("Sum of two integers: %d%n", firstInt + secondInt);
+        System.out.printf("Difference of two integers: %d%n", firstInt - secondInt);
+        System.out.printf("Product of two integers: %d%n", firstInt * secondInt);
+        System.out.printf("Average of two integers: %.2f%n", (double) (firstInt + secondInt) / 2);
+  
+    }
+}
+
+Sample Output:
+
+Input 1st integer: 25                                                                                       
+Input 2nd integer: 5                                                                                        
+Sum of two integers: 30                                                                                     
+Difference of two integers: 20                                                                              
+Product of two integers: 125                                                                                
+Average of two integers: 15.00                                                                              
+Distance of two integers: 20                                                                                
+Max integer: 25                                                                                             
+Min integer: 5 
+
+16.Write a Java program to print the results of the following operations.
+
+Test Data:
+a. -5 + 8 * 6
+b. (55+9) % 9
+c. 20 + -3*5 / 8
+d. 5 + 15 / 3 * 2 - 8 % 3
+
+public static void main(String[] args) 
+{
+    // Calculate and store the result of the expression: -5 + 8 * 6
+    int w = -5 + 8 * 6;
+
+    // Calculate and store the result of the expression: (55 + 9) % 9
+    int x = (55 + 9) % 9;
+
+    // Calculate and store the result of the expression: 20 + (-3 * 5 / 8)
+    int y = 20 + (-3 * 5 / 8);
+
+    // Calculate and store the result of the expression: 5 + 15 / 3 * 2 - 8 % 3
+    int z = 5 + 15 / 3 * 2 - 8 % 3;
+
+    // Print the calculated values, each on a new line
+    System.out.print(w + "\n" + x + "\n" + y + "\n" + z);
+  } 
+
+Sample Output:
+
+43                                                                                                      
+1                                                                                                      
+19                                                                                                      
+13
+
+17.Write a Java program that takes two numbers as input and displays the product of two numbers.
+
+Test Data:
+Input first number: 25
+Input second number: 5
+
+import java.util.Scanner;
+ 
+public class Exercise5 {
+ 
+ public static void main(String[] args) {
+  // Create a Scanner object to read input from the user
+  Scanner in = new Scanner(System.in);
+   
+  // Prompt the user to input the first number
+  System.out.print("Input first number: ");
+  // Read and store the first number
+  int num1 = in.nextInt();
+   
+  // Prompt the user to input the second number
+  System.out.print("Input second number: ");
+  // Read and store the second number
+   
+  // Calculate the product of the two numbers and display the result
+  System.out.println(num1 + " x " + num2 + " = " + num1 * num2);
+ }
+} 
+
+Sample Output:
+
+Input first number: 25                                                                                        
+Input second number: 5                                                                                        
+25 x 5 = 125
+
+18.Write a Java program to print the sum (addition), multiply, subtract, divide and remainder of two numbers.
+
+Test Data:
+Input first number: 125
+Input second number: 24
+
+public class Exercise6 {
+ 
+ public static void main(String[] args) {
+  // Create a Scanner object to read input from the user
+  Scanner in = new Scanner(System.in);
+   
+  // Prompt the user to input the first number
+  System.out.print("Input first number: ");
+  // Read and store the first number
+  int num1 = in.nextInt();
+   
+  // Prompt the user to input the second number
+  System.out.print("Input second number: ");
+  // Read and store the second number
+   
+  // Calculate and print the sum of the two numbers
+  System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
+   
+  // Calculate and print the difference of the two numbers
+  System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
+   
+  // Calculate and print the product of the two numbers
+  System.out.println(num1 + " x " + num2 + " = " + (num1 * num2));
+   
+  // Calculate and print the division of the two numbers
+  System.out.println(num1 + " / " + num2 + " = " + (num1 / num2));
+ 
+  // Calculate and print the remainder of the division of the two numbers
+  System.out.println(num1 + " mod " + num2 + " = " + (num1 % num2);
+ }
+} 
+
+Sample Output:
+
+Input first number: 125                                                                                        
+Input second number: 24                                                                                        
+125 + 24 = 149
+125 - 24 = 101
+125 x 24 = 3000
+125 / 24 = 5
+125 mod 24 = 5  
+
+19.Write a Java program to compute the specified expressions and print the output.
+
+Specified Expression :
+(25.5 * 3.5 - 3.5 * 3.5) / (40.5 - 4.5)
+
+public class Exercise9 {
+ 
+    public static void main(String[] arg) {
+        // Calculate and print the result of a mathematical expression
+        System.out.println((25.5 * 3.5 - 3.5 * 3.5) / (40.5 - 4.5));
+    }
+} 
+
+Sample Output:
+
+2.138888888888889
+
+20. Write a Java program to print the area and perimeter of a rectangle.
+Test Data:
+Width = 5.5 Height = 8.5
+
+public static void main(String[] strings) {
+        // Define constants for the width and height of the rectangle
+        final double width = 5.6;
+        final double height = 8.5;
+
+        // Calculate the perimeter of the rectangle
+        double perimeter = 2 * (height + width);
+		
+        // Calculate the area of the rectangle
+        double area = width * height;			
+
+        // Print the calculated perimeter using placeholders for values
+        System.out.printf("Perimeter is 2*(%.1f + %.1f) = %.2f \n", height, width, perimeter);
+
+        // Print the calculated area using placeholders for values
+        System.out.printf("Area is %.1f * %.1f = %.2f \n", width, height, area);
+    }
+
+Sample Output:
+
+Perimeter is 2*(8.5 + 5.6) = 28.20 
+Area is 5.6 * 8.5 = 47.60 
+
+21. Write a Java program that accepts four integers from the user and prints equal if all four are equal, and not equal otherwise.
+
+
+public class Solution {
+    public static void main(String[] args) {
+        // Creating a Scanner object to take input from the user
+        Scanner in = new Scanner(System.in);
+        
+        // Prompting the user to input the first number
+        System.out.print("Input first number: ");
+        int num1 = in.nextInt();
+        
+        // Prompting the user to input the second number
+        System.out.print("Input second number: ");
+        int num2 = in.nextInt();
+        
+        // Prompting the user to input the third number
+        System.out.print("Input third number: ");
+        int num3 = in.nextInt();
+        
+        // Prompting the user to input the fourth number
+        System.out.print("Input fourth number: ");
+        int num4 = in.nextInt();
+        
+        // Checking if all four numbers are equal
+        if (num1 == num2 && num2 == num3 && num3 == num4) {
+            // Printing a message if all numbers are equal
+            System.out.println("Numbers are equal.");
+        } else {
+            // Printing a message if numbers are not all equal
+            System.out.println("Numbers are not equal!");
+        }
+    }
+
+Sample Output:
+
+Input first number:  25
+Input second number:  37
+Input third number:  45
+Input fourth number:  23
+Numbers are not equal!
+
+22. Write a Java program to compare two numbers.
+
+Test Data:
+Input first integer: 25
+Input second integer: 39
+
+public class Exercise32 {
+    public static void main(String args[]) {
+        // Create a Scanner to obtain input from the command window
+        Scanner input = new Scanner(System.in);
+        int number1; // First number to compare
+        int number2; // Second number to compare
+
+        // Prompt the user to input the first integer
+        System.out.print("Input first integer: ");
+        number1 = input.nextInt(); // Read the first number from the user
+
+        // Prompt the user to input the second integer
+        System.out.print("Input second integer: ");
+        number2 = input.nextInt(); // Read the second number from the user
+
+        // Compare and display the results
+        if (number1 == number2)
+            System.out.printf("%d == %d\n", number1, number2);
+        if (number1 != number2)
+            System.out.printf("%d != %d\n", number1, number2);
+        if (number1 < number2)
+            System.out.printf("%d < %d\n", number1, number2);
+        if (number1 > number2)
+            System.out.printf("%d > %d\n", number1, number2);
+        if (number1 <= number2)
+            System.out.printf("%d <= %d\n", number1, number2);
+        if (number1 >= number2)
+            System.out.printf("%d >= %d\n", number1, number2);
+    }
+
+23.Write a Java program to take the user for a distance (in meters) and the time taken (as three numbers: hours, minutes, seconds), and display the speed, in meters per second, kilometers per hour and miles per hour (hint: 1 mile = 1609 meters).
+
+Test Data
+Input distance in meters: 2500
+Input hour: 5
+Input minutes: 56
+Input seconds: 23
+
+public class Exercise7 {
+
+    public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in); 
+
+		float timeSeconds;
+		float mps,kph, mph;
+
+		System.out.print("Input distance in meters: ");
+		float distance = scanner.nextFloat();
+
+		System.out.print("Input hour: ");
+		float hr = scanner.nextFloat();
+
+		System.out.print("Input minutes: ");
+		float min = scanner.nextFloat();
+
+		System.out.print("Input seconds: ");
+		float sec = scanner.nextFloat();
+
+		timeSeconds = (hr*3600) + (min*60) + sec;
+		mps = distance / timeSeconds;
+		kph = ( distance/1000.0f ) / ( timeSeconds/3600.0f );
+		mph = kph / 1.609f;
+
+		System.out.println("Your speed in meters/second is "+mps);
+		System.out.println("Your speed in km/h is "+kph);
+		System.out.println("Your speed in miles/h is "+mph);
+		
+
+		scanner.close();
+	}
+
+24. Write a Java program that reads a number and displays the square, cube, and fourth power.
+
+Test Data
+Input the side length value: 15
+
+public class Exercise8 {
+
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input the side length value: ");
+        double val = in.nextDouble();
+
+        System.out.printf("Square: %12.2f\n", val * val);
+        System.out.printf("Cube: %14.2f\n", val * val * val);
+        System.out.printf("Fourth power: %6.2f\n", Math.pow(val, 4));
+    }
+Sample Output:
+
+Input the side length value: 15                                                                               
+Square: .2f                                                                                                   
+Cube: .2f                                                                                                     
+Fourth power: 50625.00  
+
+25. Write a Java program that accepts two integers from the user and prints the sum, the difference, the product, the average, the distance (the difference between the integers), the maximum (the largest of the two integers), and the minimum (the smallest of the two integers).
+
+Test Data
+Input 1st integer: 25
+Input 2nd integer: 5
+
+public class Exercise9 {
+
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input 1st integer: ");
+        int firstInt = in.nextInt();
+        System.out.print("Input 2nd integer: ");
+        int secondInt = in.nextInt();
+
+        System.out.printf("Sum of two integers: %d%n", firstInt + secondInt);
+        System.out.printf("Difference of two integers: %d%n", firstInt - secondInt);
+        System.out.printf("Product of two integers: %d%n", firstInt * secondInt);
+        System.out.printf("Average of two integers: %.2f%n", (double) (firstInt + secondInt) / 2);
+        System.out.printf("Distance of two integers: %d%n", Math.abs(firstInt - secondInt));
+        System.out.printf("Max integer: %d%n", Math.max(firstInt, secondInt));
+        System.out.printf("Min integer: %d%n", Math.min(firstInt, secondInt));
+    }
+
+Sample Output:
+
+Input 1st integer: 25                                                                                       
+Input 2nd integer: 5                                                                                        
+Sum of two integers: 30                                                                                     
+Difference of two integers: 20                                                                              
+Product of two integers: 125                                                                                
+Average of two integers: 15.00                                                                              
+Distance of two integers: 20                                                                                
+Max integer: 25                                                                                             
+Min integer: 5 
+
+26. Check if a Number is Divisible by 5 and 11
+
+public class DivisibilityCheck {
+    public static void main(String[] args) {
+        int number = 55;
+
+        if (number % 5 == 0 && number % 11 == 0) {
+            System.out.println(number + " is divisible by 5 and 11");
+        } else {
+            System.out.println(number + " is not divisible by 5 and 11");
+        }
+    }
+}
+
+27. Check if a Character is a Vowel or Consonant
+
+public class VowelConsonant {
+    public static void main(String[] args) {
+        char ch = 'e';
+
+        if (ch == 'a' || ch == 'e' ||  ch == 'i' || ch == 'o' ||  ch == 'u' ||
+            ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') 
+{
+            System.out.println(ch + " is a vowel");
+        } else {
+            System.out.println(ch + " is a consonant");
+        }
+    }
+}
+
+28. Check if a Character is Alphabet or Not
+
+public class AlphabetCheck {
+    public static void main(String[] args) {
+        char ch = 'A';
+        if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+            System.out.println(ch + " is an alphabet.");
+        } else {
+            System.out.println(ch + " is not an alphabet.");
+        }
+    }
+}
+
+28.1 Check if a character is an uppercase letter
+public class UppercaseCheck {
+    public static void main(String[] args) {
+        char ch = 'A';
+        if (ch >= 'A' && ch <= 'Z') {
+            System.out.println("Character is uppercase.");
+        }
+    }
+}
+
+29. Check if Number is Positive and Divisible by 10
+
+public class PositiveAndDivisibleBy10 {
+    public static void main(String[] args) {
+        int number = 50;
+        if (number > 0 && number % 10 == 0) {
+            System.out.println(number + " is positive and divisible by 10.");
+        } else {
+            System.out.println(number + " does not meet the criteria.");
+        }
+    }
+}
+
+30. Check if a Character is Uppercase or Lowercase
+
+public class Main {
+    public static void main(String[] args) {
+        char ch = 'G';
+        if (ch >= 'a' && ch <= 'z') {
+            System.out.println(ch + " is a lowercase letter.");
+        } else if (ch >= 'A' && ch <= 'Z') {
+            System.out.println(ch + " is an uppercase letter.");
+        } else {
+            System.out.println(ch + " is not a letter.");
+        }
+    }
+}
+
+31. Check if a given string is empty or not.
+
+public class Main {
+    public static void main(String[] args) {
+        String str1 = "";
+        String str2 = "Hello, world!";
+        
+        if (str1.isEmpty()) {
+            System.out.println("The first string is empty.");
+        } else {
+            System.out.println("The first string is not empty.");
+        }
+
+        if (str2.isEmpty()) {
+            System.out.println("The second string is empty.");
+        } else {
+            System.out.println("The second string is not empty.");
+        }
+    }
+}
+
+32. Determine if a string has an even or odd number of characters.
+
+public class EvenOddLength {
+    public static void main(String[] args) {
+        // Example string
+        String str = "Hello, world!";
+
+        // Check if the string length is even or odd
+        if (str.length() % 2 == 0) {
+            System.out.println("The string has an even number of characters.");
+        } else {
+            System.out.println("The string has an odd number of characters.");
+        }
+    }
+}
+
+33. Print above Number Pyramid pattern in java
+1
+2	3
+4	5	6
+7	8	9	10
+
+public class NumberPyramid {
+    public static void main(String[] args) {
+        int number = 1; // Start the sequence from 1
+        int rows = 4; // Number of rows for the pyramid
+
+        for (int i = 1; i <= rows; i++) {  // Loop through rows
+            for (int j = 1; j <= i; j++) {  // Loop to print numbers in each row
+                System.out.print(number + "\t"); // Print the current number
+                number++; // Increment the number
+            }
+            System.out.println(); // Move to the next line after each row
+        }
+    }
+}
+
+
+34.Calculate Area of Rectangle by using user-defined method with return type with parameters.
+
+public class RectangleArea {
+
+    // Method to calculate area
+    public static int calculateArea(int length, int width) {
+        return length * width;
+    }
+
+    public static void main(String[] args) {
+        int length = 5;
+        int width = 4;
+
+        // Method call and storing the result
+        int area = calculateArea(length, width);
+        System.out.println("The area of the rectangle is: " + area);
+    }
+}
+
+35. Class and Object Example
+class Dog {
+    String name;
+    int age;
+
+    void bark() {
+        System.out.println(name + " is barking");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.name = "Rex";
+        dog.age = 3;
+        dog.bark();
+    }
+}
+
+36.Constructor Example
+class Dog {
+    String name;
+    int age;
+
+    // Constructor
+    Dog(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void bark() {
+        System.out.println(name + " is barking");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog("Buddy", 4);
+        dog.bark();
+    }
+}
+
+37. Inheritance Example
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();
+        dog.bark();
+    }
+}
+
+38. Method Overriding Example
+
+class Animal {
+    void sound() {
+        System.out.println("Animal is making a sound");
+    }
+}
+
+class Dog extends Animal {
+    
+    void sound() {
+        System.out.println("Dog is barking");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.sound();
+    }
+}
+
+39. Polymorphism Example
+
+class Animal {
+    void sound() {
+        System.out.println("Animal is making a sound");
+    }
+}
+
+class Dog extends Animal {
+ 
+    void sound() {
+        System.out.println("Dog is barking");
+    }
+}
+
+class Cat extends Animal {
+    
+    void sound() {
+        System.out.println("Cat is meowing");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal animal;
+
+        animal = new Dog();
+        animal.sound();
+
+        animal = new Cat();
+        animal.sound();
+    }
+}
+
+40. Encapsulation Example
+
+class Person {
+    private String name;
+    private int age;
+
+    // Getter method for name
+    public String getName() {
+        return name;
+    }
+
+    // Setter method for name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter method for age
+    public int getAge() {
+        return age;
+    }
+
+    // Setter method for age
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person person = new Person();
+        person.setName("John");
+        person.setAge(25);
+
+        System.out.println("Name: " + person.getName());
+        System.out.println("Age: " + person.getAge());
+    }
+}
+
+41. Abstraction Example
+
+abstract class Animal {
+    abstract void sound();
+}
+
+class Dog extends Animal {
+    
+    void sound() {
+        System.out.println("Dog is barking");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal animal = new Dog();
+        animal.sound();
+    }
+}
+
+42. Interface Example
+
+interface Animal {
+    void sound();
+}
+
+class Dog implements Animal {
+  
+    public void sound() {
+        System.out.println("Dog is barking");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal dog = new Dog();
+        dog.sound();
+    }
+}
+
+43. Multiple Inheritance with Interface Example
+
+interface Animal {
+    void eat();
+}
+
+interface Pet {
+    void play();
+}
+
+class Dog implements Animal, Pet {
+   
+    public void eat() {
+        System.out.println("Dog is eating");
+    }
+
+ 
+    public void play() {
+        System.out.println("Dog is playing");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();
+        dog.play();
+    }
+}
+
+44. Static Method Example
+
+class MathUtil {
+    // Static method
+    static int add(int a, int b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int sum = MathUtil.add(5, 10);
+        System.out.println("Sum: " + sum);
+    }
+}
+
+45. Final Keyword Example
+
+class Vehicle {
+    // Final method cannot be overridden
+    final void start() {
+        System.out.println("Vehicle is starting");
+    }
+}
+
+class Car extends Vehicle {
+    // This would cause a compile-time error
+    // void start() {
+    //     System.out.println("Car is starting");
+    // }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.start();
+    }
+}
+
+46. Method Overloading with Different Parameters Example
+
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println("Sum of 2 numbers: " + calc.add(10, 20));
+        System.out.println("Sum of 3 numbers: " + calc.add(10, 20, 30));
+    }
+}
+
+47. This Keyword Example
+
+class Student {
+    String name;
+
+    Student(String name) {
+        // This keyword refers to the current instance
+        this.name = name;
+    }
+
+    void display() {
+        System.out.println("Student name: " + name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student("Alice");
+        student.display();
+    }
+}
+
+48. Multilevel inheritance.
+
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+class Mammal extends Animal {
+    void breathe() {
+        System.out.println("Mammals breathe air.");
+    }
+}
+
+class Dog extends Mammal {
+    void bark() {
+        System.out.println("The dog barks.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();
+        dog.breathe();
+        dog.bark();
+    }
+}
+
+49. Parameterized constructor.
+
+class Car {
+    String model;
+    int year;
+
+    // Parameterized constructor
+    Car(String model, int year) {
+        this.model = model;
+        this.year = year;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car("Honda", 2021);
+        System.out.println("Car Model: " + car.model + ", Year: " + car.year);
+    }
+}
+
+50. Multiple Catch Blocks [Handling multiple exceptions with multiple catch blocks]
+
+public class Main 
+{
+    public static void main(String[] args)
+ {
+        try 
+{
+            int array[] = new int[5];
+            array[7] = 10; // This will throw ArrayIndexOutOfBoundsException
+        }
+ catch (ArithmeticException e) {
+            System.out.println("Arithmetic Exception: " + e);
+        } 
+catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("ArrayIndexOutOfBounds Exception: " + e);
+        } 
+
+
+        System.out.println("Rest of the code...");
+    }
+}
+
+
+
+Assignment:
+---------
+1.Check if two numbers are equal.
+2.Determine if a number is negative and odd.
+3.Check if a number is a multiple of 10.
+4.Check if a number is greater than 100.
+5.Check if two numbers are equal.
+6.Determine if a number is within a specified range.
+7.Check if a number is divisible by another number.
+8.Find the maximum of two given numbers.Math[max(num1, num2)]
+9.Find the minimum of given two numbers[min(num1, num2)].
+10.Find the largest of three numbers.
+11.Check if a person can retire based on age.
+12.Determine if a person is a teenager based on age.
+13.Determine if a character is a special symbol.
+14.Check if a Character is Uppercase or Lowercase.
+15.Check if a Character is a Vowel or Consonant.
+
+
+
+
