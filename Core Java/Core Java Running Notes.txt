@@ -1347,3 +1347,71 @@ int c=a+b;
 int a[]={};
 int b[]={};
 int c[]=a[]+b[];
+
+Core Java:Basic Concepts + OOPS Concepts
+
+Non-Primitive DataTypes:
+--------------
+Arrays Strings OOPS 
+
+Strings in Java:
+--------------
+Collection of Characters. 
+Characters:A to Z, a to z, 0 to 9,SS[^*&]
+
+String we can declare in 2Ways:
+1.by using String Literal
+2.by uisng new KeyWord
+
+How to declare the String:
+----------------
+1.Static
+Syntax:String Literal declaration
+------
+datatype StringVariableName="Value";
+EX: String name="Krishna";
+
+Syntax:Using new KeyWord
+Syntax:
+-------
+datatype StringVariableName=new String("Value");
+
+String name=new String("Krishna");
+
+String Pool Concept:
+-----------Memory
+
+
+
+2.Dynamic:
+next():Only accepts upto white space[Single Word]
+
+nextLine():Including White space
+
+String Methods:
+----------
+== equals equalsIgnoreCase
+
+diff:== equals() = 
+
+Excepted:"Products"
+Actuval:"String"
+
+Compare the Excepted with Actuval result,
+if both are Same:Pass 
+if both are not Same:Fail 
+
+OOPS Concept:
+---------
+Class and Object
+Methods 
+Constructors
+Inheritance
+Polimorphism
+Method OverLoading
+Method OverRiding
+Data Abstraction
+Interface
+Encapsulation
+Garbage Collection
+Exception Handling
