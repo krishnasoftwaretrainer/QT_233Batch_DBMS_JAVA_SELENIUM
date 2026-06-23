@@ -11,13 +11,14 @@ public class String_Methods
 		 * NullPointerException
 		 */
 		
-		/*
+		
 		String str1 = "Products";
 		String str2 = "products";
 		
 		System.out.println(str1.equals(str2));  //true CaseSensitive P not equal to p
-		//System.out.println(str1==str2);  //false
 		
+		//System.out.println(str1==str2);  //false
+		/*
 		//Strin EqualIgnoreCase Method
 		String str3 = "Products";
 		String str4 = "products";

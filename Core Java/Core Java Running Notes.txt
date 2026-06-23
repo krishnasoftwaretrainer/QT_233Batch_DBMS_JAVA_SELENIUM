@@ -1415,3 +1415,116 @@ Interface
 Encapsulation
 Garbage Collection
 Exception Handling
+
+Java is pure OOP:true false
+1.Supports th Primitive DataTypes
+2.Excecutes the Code/Program directly in MainMethod
+
+Class:Parent Object:Child/s 
+Class is Virtual  2k 1k 
+BluePrint Templet Pre-define Rules Pre-define Structure Deposite WithDraw
+
+Object is instance of Class
+Object is Real or Physical
+Object is blindly follows the Class Rules
+Govt:9am to 4pm Sunday is HoliDay   
+
+Without Class is ther Object:No 
+Without Object is ther Class:Yes 
+
+Object have 3 things 
+Behavoiur
+State
+Identity
+
+Mobile:Samsung Oppo
+Fruit:Apple Banana Guvva 
+Vehicle:Bike Car Bus 
+Company:TCS MC QT RS 
+
+Procedure Oriented:Cobol Pascal C 
+Step-by-Step
+Object Oriented:C++ Java Python .net JS TS 
+
+Methods in Java:Functions 
+------
+Block of Code:() { Body }
+Specific Behavoiur
+Addition():+ 2,3 5
+
+Method:You can compile java program directly without MainMethod
+You cant run/execute java method without MainMethod
+
+Advantages of Methods in OOPS
+-------
+1.Re-Usability
+2.Readabulity
+3.Security:private
+
+2Types of Methods:
+-------------
+1.Pre-Define or Built-in Method:Already created by Author.
+nextInt()  length() equals() 
+
+2.User Define Methods:Creates or developed by Developer or ATE or SDET
+
+How to Create User-Define Methods 
+Syntax:Method Signature
+------
+AccessSpecifier ReturnType MethodName (Parameters_List)
+{
+Body;
+}
+
+Structure of Java Program Without OOPS:
+----------------
+Class ClassName
+{
+MainMethod()
+{
+Cal the Pre-define Methods;
+Body;
+}
+}
+
+Structure of Java Program With OOPS:
+----------------
+Class ClassName
+{
+Method1()
+{
+Body;
+}
+Method2()
+{
+Body;
+}
+MainMethod()
+{
+Cal the Pre-define Methods;
+Cal the User-define Methods;
+}
+}
+
+How to Call Methods[Pre-define or User-Define]
+
+100:Guests:Krishna Father Phone Direct 
+
+
+2Types of Method in Java:
+-----------------
+1.Static Method:
+public static void addition()
+
+Static method cal through the ClassName.
+ClassName.MethodName();
+
+2.Instance/Non-Static Method:
+public void substraction()
+Non-Static methods should call through Object only.
+Create the Object inside MainMethod
+------
+ClassName ObjName=new ClassName();
+
+Call Method through Object
+Object.MethodName();
