@@ -1516,15 +1516,55 @@ How to Call Methods[Pre-define or User-Define]
 1.Static Method:
 public static void addition()
 
-Static method cal through the ClassName.
+Static method cal through the ClassName:true
 ClassName.MethodName();
+Static method cal through the ObjName:true
+but it shows warning:The static method subtraction() from the type Calculator1 should be accessed in a static way
 
 2.Instance/Non-Static Method:
 public void substraction()
-Non-Static methods should call through Object only.
+Non-Static methods should call through Object:true
+Non-Static methods should call through ClassName:false
+it shows errors: Cannot make a static reference to the non-static method
+ 
 Create the Object inside MainMethod
 ------
 ClassName ObjName=new ClassName();
 
 Call Method through Object
 Object.MethodName();
+
+AccessSpecifiers or Modifyers in Methods/Java:
+------------------
+Who re-use my method
+Anyone Specific Onlyme:Bike Mobile Wifi
+
+public:Anyone or Anywhere[Open][Project Level]
+Same Package and Same Class:Calculator1 
+Same Package and Different Class:Cal2 
+Different Package and Different Class:Cal3 
+
+private:Onlyme Ristrict[Class Level]
+->Same Package and Same Class:Calculator1 
+
+if you tryto use outside class it shows,
+Error:The method subtraction() from the type Calculator1 is not visible
+
+protected:Specific[Package Level]
+Same Package and Same Class:Calculator1 
+Same Package and Different Class:Cal2 
+
+if you tryto use outside package it shows,
+Error:The method multiplication() from the type Calculator1 is not visible
+
+default:Same as protected
+
+User-Define Methods:
+------------------
+1.Without ReturnType and Without Parameters
+2.Without ReturnType and With Parameters
+3.With ReturnType and Without Parameters
+4.With ReturnType and With Parameters
+
+S1 S2 S3 S4 S5 S6:2Students 
+Calculator:Re-USe 900 850
