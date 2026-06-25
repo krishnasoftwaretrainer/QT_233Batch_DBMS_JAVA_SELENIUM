@@ -1568,3 +1568,63 @@ User-Define Methods:
 
 S1 S2 S3 S4 S5 S6:2Students 
 Calculator:Re-USe 900 850
+
+Video Assignment in Methods
+
+Constructors in Java:
+------------------
+Constructor is a special method in java. 
+Constructor using to initialize objects.
+
+->Constructor Name Same as the ClassName
+->Constructor dont have returntype ]not even void]
+->Constructor automatically executed when an object is created
+->Using to initialize instance variables
+->No value given it will take default values.
+->One Class only One Constructor and create more than one method
+
+Method:
+->Method Name and Class Name should different
+->Method must have the returntype[even void]
+->Method should call after creating object
+
+Constructor Types:
+----------------
+1.Constructor without Parameters 
+2.Constructor with Parameters 
+3.Default Constructor
+
+4 Pillers of OOPS Concepts in Java:
+----------
+1.Inheritance
+2.Polymorphism
+3.Data Abstraction
+4.Encapsulation
+
+Inheritance in Java:
+------------------
+Re-Usebulity
+
+Child Class inherites/acueries the features from parent class.
+
+Parent/Base/Existing/Super:Father 
+Some Methods or Properties: Addition()
+
+Child/Derived/New/Sub:Son/Daughter
+Addition():Declare:Duplication
+Addition():Re-Use 
+
+Is-A Relation:
+
+Re-Use:Parent:ChromeBrowser Config 
+Child1:Amazon using ChromeBrowser
+Child2:FaceBook using ChromeBrowser
+Child3:SwagLabs using ChromeBrowser
+
+Types of Inheritance:
+------------
+1.Single-Level
+2.Multi-Level
+3.Hierarchical
+4.MultiPile
+5.Hybrid

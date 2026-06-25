@@ -2,6 +2,8 @@ package cal.methods;  //Package
 
 import java.util.Scanner;
 
+import constructors.SampleConstructor;
+
 public class Calculator1  //Class
 {
 	//Scanner scan=new Scanner(System.in);  //Scanner Class Object Creation
@@ -50,6 +52,10 @@ public class Calculator1  //Class
 		//cal1.subtraction();
 		
 		cal1.multiplication();
+		
+		SampleConstructor con=new SampleConstructor();  //Protected
+		con.SampleMethod1();  //Protected
+		con.SampleMethod2();  //Private
 	}
 	
 }
