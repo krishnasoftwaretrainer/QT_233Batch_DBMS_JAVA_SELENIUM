@@ -1607,24 +1607,84 @@ Re-Usebulity
 
 Child Class inherites/acueries the features from parent class.
 
-Parent/Base/Existing/Super:Father 
+Existing/Parent/Base/Super:Father 
 Some Methods or Properties: Addition()
 
-Child/Derived/New/Sub:Son/Daughter
+New/Child/Derived/Sub:Son/Daughter
 Addition():Declare:Duplication
 Addition():Re-Use 
 
-Is-A Relation:
+Is-A Relation:BMW is-a Car
+Parent:Common Properties 
+Child:Use th Parent Common Properties
+
+Parent:Bank:RBI:Comman Properties
+Child:SBI HDFC ICICI etc...
 
 Re-Use:Parent:ChromeBrowser Config 
 Child1:Amazon using ChromeBrowser
 Child2:FaceBook using ChromeBrowser
 Child3:SwagLabs using ChromeBrowser
 
+In inheritance extends keyword is using to create the relation ship b/w parent and child.
+
 Types of Inheritance:
 ------------
-1.Single-Level
-2.Multi-Level
-3.Hierarchical
-4.MultiPile
-5.Hybrid
+1.Single-Level Inheritance:
+------------
+Single Child acquires or inherites the features or propertes form single parent.
+
+Parent Class 
+Child Class 
+
+child extends parent
+
+ChromeBrowser:Parent 
+SwagLabs ValidLogin:Child 
+
+2.Multi-Level Inheritance:
+-------------
+Parent
+Parent/Child extends Parent 
+Child extends Parent/Child
+
+3.Hierarchical Inheritance:
+--------------
+Multiple childs acquires the propertes from single parent.
+
+4.MultiPile Inheritance:
+-----------------
+Single child acquires the propertes from multiple parents.
+
+Ambiguity Problem: Through extends keyword.
+
+Multiple Inheritance Possible in Java:Yes 
+
+Multiple Inheritance is Possible in Java through Inheritance Concept[extends]:No 
+
+Multiple Inheritance is Possible in Java through Interface Concept[implements]:Yes
+
+5.Hybrid Inheritance:
+--------------------
+SLI+MLH+HI=Hybrid[Possible:Yes]
+SLI+MLH+MPI+HI=Hybrid[Possible:No]Interface
+
+Hybrid Work Mode in IT Company:
+-------
+WFH+WFO=Hybrid
+4days:WFO 1day:WFH INCEDO
+
+Polimorphism
+Method OverLoading
+Method OverRiding
+
+Polimorphism:Ploy+Morphism
+			  Many Forms
+			  
+Types of Polimorphism:
+--------------
+1.Static[Compile-Time] Polymorphism
+Method OverLoading
+
+2.Dynamic[Run-Time] Polymorphism
+Method OverRiding
