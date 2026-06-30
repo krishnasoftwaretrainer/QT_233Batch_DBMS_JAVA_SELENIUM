@@ -1680,11 +1680,55 @@ Method OverRiding
 
 Polimorphism:Ploy+Morphism
 			  Many Forms
-			  
+One behavious different ways
+
+
+Polymorphism we can achive in 2 ways:
 Types of Polimorphism:
 --------------
 1.Static[Compile-Time] Polymorphism
-Method OverLoading
+Method OverLoading:
+OverLoaded Methods:Same Method Name and different parameters
+
+Method Name:Same and Parameters:Different
+
+Method Name:Different and Parameters:Different:NO 
+
+Method Name:Same and Parameters:Same:Duplicate Method[NO]
+int a=20,b=10;
+int c=a+b;
+
+2+3=5
+2+3+4=9
+2+3+4+5=14
+
+Types of Method OverLoading:
+--------------
+1.Number of Parameters or Arguments
+2.Different DataTypes of Parameters 
+3.InterChange[ Order of Parameters] of Parameters 
 
 2.Dynamic[Run-Time] Polymorphism
-Method OverRiding
+Method OverRiding[Inheritance]
+
+New class acquires/inherites the propertes or features from existing class.
+
+Parent Class[Normal Java Class]:Existing 
+Child Class:[Normal Java Class]:Child
+Child extends Parent
+Normal Java Class extends Normal Java Class
+Parent and Child have the different method names.
+
+Normal Java Class:Methods or MainMethod or Global Variables
+
+Method OverRiding:Child Class overrides the parent features
+Rule:Parent and Child must have the SAme method name 
+-------------
+Parent:A 
+Child:B 
+Child extends Parent:A[Rs5],B[Rs6]  
+
+OverRides:Replacing:New with Old 
+
+Example for Method OverLoading:
+-----------------

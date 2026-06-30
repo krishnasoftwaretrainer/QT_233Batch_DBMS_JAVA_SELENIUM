@@ -2,7 +2,7 @@ package cal.methods;  //Package
 
 import java.util.Scanner;
 
-import constructors.SampleConstructor;
+import com.java.constructors.SampleConstructor;
 
 public class Calculator1  //Class
 {
