@@ -1732,3 +1732,61 @@ OverRides:Replacing:New with Old
 
 Example for Method OverLoading:
 -----------------
+Inheritance:
+Implemented by Parent
+Followed by Child
+
+Method OverRiding
+Implemented by Parent
+OverRides by Child
+
+TRAI:Rs.300:JIO Airtel Vodafone BSNL
+84days 
+9am 10am
+ 
+Data Abstraction:Un-Implemented Methods
+----------------
+Parent:[No Implementation]Without implemented methods 
+public void LoneRateOfInterest();
+Why Parent is not implemented:Security
+ATM:WithDraw:Do you know the logic?
+Phone Cal:Internal Logic
+Fever:Dolo650:
+Clutch:
+
+abstract class:Un-Implemented
+abstract method:Un-Implemented
+
+St1:Normal class accepts the abstract method:F
+St2:Abstract class accepts the abstract method:T
+St3:Abstract class accepts the normal method:T
+
+
+We can achive data abstraction in 2 ways:
+------------
+1.abstract class:It accepts the Un-Implemented and Implemented
+ 
+Un-Implemented and Implemented
+1.():Un-Implemented:50%:Parent
+2.():Implemented:50%
+
+If we are using abstract class the Security is between 0 to 100%
+
+10Q:2Q 8Q 
+
+2.interface class:Only accepts the Un-Implemented methods.
+
+If we are using interface class the Security is 100%
+ 
+Parent:FrontEnd:UI 
+Child:BackEnd:Logic is Hide.
+
+Child:Implements the Parent Method.
+
+Using Interface Class:
+-----------
+1.To achive 100% Data abstraction
+2.To implement Multiple Inheritance
+
+Normal Child extends Normal Parent
+Normal Child implements interface Parent1,Parent2,Parent3 
