@@ -1790,3 +1790,49 @@ Using Interface Class:
 
 Normal Child extends Normal Parent
 Normal Child implements interface Parent1,Parent2,Parent3 
+
+Assignment:
+---------
+Calculating Area:
+-------
+Rectangle area = length * breadth;
+Circle area = 3.14 * radius * radius;
+Triangle area = 0.5 * base * height;
+
+WebDriver driver = new ChromeDriver();
+WebDriver driver = new EdgeDriver();
+WebDriver driver = new FirefoxDriver();
+
+Encapsulation in Java:
+---------------------
+Security:
+
+Data Abstraction:Hiding Implementation
+Encapsulation:Hiding Data
+
+private int bankbalance=5k; Me not others 
+
+Project:Banks
+
+Package:SBIBank
+Class1:Customer1:Krishna 
+Class2:Customer2:Ramesh
+Class2:Employee:Suresh
+
+Package:HDFCBank
+
+Getter:To get the data[Show/Display]
+Setter:To set the data[Update] 10k 5k
+
+Inheritance
+Polymorphism
+Data Abstraction
+Encapsulation
+
+String username="standard_user"
+String password="secret_sauce"
+
+
+Garbage Collection
+Exception Handling
+
