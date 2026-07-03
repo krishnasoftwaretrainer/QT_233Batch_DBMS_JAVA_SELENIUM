@@ -1835,4 +1835,52 @@ String password="secret_sauce"
 
 Garbage Collection
 Exception Handling
+================
+Garbage Collection:
+---------------
+Un-Used Memory:Allocated but not Used
+The value of the local variable c is not used.
+ 
+Dead Objects:Created but not Used 
 
+Allocation and De-Allocation of Memory:
+-------------
+Downloaded:Movie[500mb]1.4gb:Mobile 
+
+Re-Usebulity:Save the Memory
+
+C and C++:Pointers:Allocate and De-Allocate[Use some Method] malloc realloc free()
+Manual Process:Developer or ATE 
+scanf("%d",&a);  Allocates the memory
+cin
+
+Java:Garbage Collection jdk feature
+Automation Process: new
+
+Exception Handling:
+-----------------
+Errors in Java:
+--------
+1.Compile-Time[Syntax]
+2.Run-Time[Excution]
+
+Exceptions:Problem
+
+Interpreter and Compiler
+break and continue
+
+2Types of Exceptions:
+-----------------
+1.Checked[Compile-Time]:Manditory to Handle.
+KeyWord: throws
+try and catch()
+
+
+2.Un-Checked[Run-Time]:Optional
+Effect on Excution Process 
+
+A.ArthameticException
+B.NullPointerException
+C.ArrayIndexOutOfBoundException
+
+KeyWord:try and catch()
