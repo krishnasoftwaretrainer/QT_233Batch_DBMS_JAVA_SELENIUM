@@ -1,0 +1,136 @@
+New Batch:233 and 234
+
+Software Testing:To test the developers developed app is working according to client requirements or not.
+
+if, 
+Working according to client requirements:Quality
+Not working according to client requirements:Defect
+
+Excepted Result:According to Requirements
+Actuval Result:According actuval application behaviour
+
+TC:20:Pass 20P 0F 
+Compare Excepted vs Actual:
+if both are Same:Pass or Quality App 
+if both are not Same:Fail or Defect App 
+
+2Ways to perform Software Testing:
+-----
+1.Manual Testing:To test the app manually, without using any automation tools.
+Human Efforts:100%
+Late delivery:1Month:8hrs Specific Time 
+
+2.Automation Testing:
+------------------
+To test the app by using automation tools.
+Goal:To reduce human efforts
+1.Fast delivery:15days:24hrs:Night
+WhatsUP
+
+1k Money:Offline[Manual] and Online[Apps or Tools]
+Sat Class:Offline and Online
+
+V1 99 V100 
+
+Smoke Testing:URL Tittle
+Functional Testing
+Re-Testing
+
+Regression Testing:
+---------------
+Alrady Passed Test Cases:
+WhatsUP App:Agile Model:Sprints:
+WhatsUP:Text Message
+WhatsUP:Status
+WhatsUP:Upload Files 
+Audio Call 
+Video Call 
+Payments:3Yrs->WaterFall Model Traditional
+
+Sprints:Text Message:20Req:3Months:V1 
+Sprints:Status:15req:2Months:V2=V1+V2  
+Sprints:Upload Files:50days:V3=V1+V2+V3 
+Sprints:Audio Call:60days:V...V100 
+SDLC:RG RA Design Development Testing[STLC & ATLC] Deployment
+
+Integration:Text Messages[100TC]+Status[100Tc]+Upload Files[150TC]
+
+Regression-1:350TC:Pass 
+
+UAT:Alpha and Beta 
+
+PlayStore:WhatsUP:TextMe+Status+FileUpload
+
+End-To-End Testing:To test the all features upto now.
+
+Automation Tool:
+---------------
+Selenium with Java:
+------------------
+Java:Core Java + Advanced Java 
+
+Core Java:
+---------
+Selenium Tool:
+-------------
+Learn how to convert manual testcases into selenium scripts.
+TC1:Login:
+STLC:Test Cases[MTE-100TC]->Manual Way 
+ATLC:Test Script[ATE]->Use Selenium Tool 
+
+
+Automation Testing:Manual+Automation
+To test the app by using Automation Tools.
+
+Selenium WebDriver Automation Tool 
+Programming Language Concepts:
+CoreJava Python C# Ruby JavaScript
+
+Java:Software Developers+ATE[SDET]40%+60%
+
+Selenium with Java 
+Selenium Scripts[CoreJava+Selenium Concepts
+Run->
+
+4 Components:
+--------
+1.Selenium IDE:Extension of MFF 
+Record and Play
+If you want to create quick bug reproduction scripts, create scripts to aid in automation-aided exploratory testing, then you want to use Selenium IDE; a Chrome, Firefox and Edge add-on that will do simple record-and-playback of interactions with the browser. 
+
+2.Selenium RC:Remote Control
+
+3.Selenium WebDriver
+4.Selenium Grid: If you want to scale by distributing and running tests on several machines and manage multiple environments from a central point, making it easy to run the tests against a vast combination of browsers/OS, then you want to use Selenium Grid.
+
+Selenium WebDriver:
+
+Configuration or Environment Setup:
+--------------
+->Programming Language:Core Java 
+Download[Update Version], Install and Set Java Path[JDK26]
+->IDE 
+EclipseIDE:Download, Install latest version
+IntellijIDE:Download, Install latest version
+->Browsers:Chrome ,Edge, Firefox, Opera and Safari.
+Download, Install latest
+Selenium Tool:Selenium WebDriver
+[Stable: 4.44.0 (May 12, 2026)]
+Download, Install latest
+https://www.selenium.dev/downloads/
+
+Configure Selenium Project
+Write First Selenium Script 
+Run Selenium Script 
+Observe the OutPut
+
+Basic Scripts
+Advanced Scripts 
+FrameWorks
+
+Test Case1:Selenium Script->Run 
+---------
+Step1:Open Chrome Browser
+Step2:Maximize Browser
+Step3:Enter URL 
+Step4:Close Browser
