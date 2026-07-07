@@ -129,8 +129,43 @@ Advanced Scripts
 FrameWorks
 
 Test Case1:Selenium Script->Run 
----------
-Step1:Open Chrome Browser
+---------Pre-Steps
+Step1:Open Chrome/Edge/Firefox Browser
 Step2:Maximize Browser
 Step3:Enter URL 
-Step4:Close Browser
+Step4:Smoke Testing
+Step5:Close Browser
+
+Smoke Testing:We are at required page or not:Pass/Fail
+
+ChromeDriver[BE] Chrome Browser[FE]
+EdgeDriver() Edge Browser
+FirefoxDriver Firefox Browser
+
+Before 4.0 Version:
+System.setProperty("webdriver.edge.driver","driver path");
+
+Browsers have 2Tyes:
+--------
+1.Head:It opens the UI[Script is executed physically]
+Need to observe the excution flow.[Local execution]
+
+2.Headless:No GUI[Script excuted internally]
+Cloud execution.  20min 
+
+In Selenium, the default mode is headed.
+
+Smoke Testing:
+----------
+1.URL Verification:
+Excepted URL vs Actuval URL:Pass/Fail
+
+2.Title Verification:
+Excepted Title vs Actuval Title:P/F 
+
+
+Step1:Open Chrome/Edge/Firefox Browser
+Step2:Maximize Browser
+Step3:Enter URL 
+Step4:Smoke Testing
+Step5:Close Browser
