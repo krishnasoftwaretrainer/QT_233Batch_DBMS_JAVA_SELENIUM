@@ -164,8 +164,67 @@ Excepted URL vs Actuval URL:Pass/Fail
 Excepted Title vs Actuval Title:P/F 
 
 
+Pre-Condition:
+------------
 Step1:Open Chrome/Edge/Firefox Browser
 Step2:Maximize Browser
 Step3:Enter URL 
 Step4:Smoke Testing
 Step5:Close Browser
+
+Domain:E-Commerce Domain
+Application/Project:Swag Labs End-To-End[Customer]
+Modules/Pages:Login Create Cart Products
+Login:+ - :Quality
+
+Swag Labs-Login[TC1:VU VP]
+------------------
+Step1:Open Chrome/Edge/Firefox Browser
+Step2:Maximize Browser
+Step3:Enter URL 
+Step4:Smoke Testing
+Step5:Enter Valid Username
+Step6:Enter Valid Password
+Step7:Click on Login Button
+Step8:Validate TC[Pass/Fail] 
+Step5:Close Browser
+
+Web App Testing:
+----------
+Web Elements:
+-------------
+1.Text Box:Enter Data 
+2.Text Area:Enter Data 
+3.Button:Click
+4.Links:Click
+5.RadioButtons:Click
+6.Checkboxes:Click
+7.Dropdowns:Select
+
+
+Web Locators:
+------------
+Direct Locators
+1.ID 
+2.Name 
+3.ClassName
+4.TagName
+5.LinkText
+6.PartialLinkText
+
+In-Direct Locators
+------------
+7.CSS Selector
+8.XPath
+
+DOM[Document Object Model] Page:
+-----------
+HTML Script:Different HTML Tags
+<html>   
+<title> </title>
+<body>
+
+</body>
+</html>
+
+Assignment: https://www.opencart.com/index.php?route=account/login
