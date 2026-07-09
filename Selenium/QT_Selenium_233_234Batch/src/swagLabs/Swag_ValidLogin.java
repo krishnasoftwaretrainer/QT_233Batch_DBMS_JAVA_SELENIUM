@@ -11,7 +11,8 @@ public class Swag_ValidLogin {
 		Thread.sleep(1000);
 		driver.manage().window().maximize();
 		Thread.sleep(2000);
-		driver.get("https://www.saucedemo.com/");
+		//driver.get("https://www.saucedemo.com/");
+		driver.get("https://www.facebook.com/");
 		Thread.sleep(2000);
 
 		String actvalURL = driver.getCurrentUrl();
@@ -25,9 +26,25 @@ public class Swag_ValidLogin {
 			 driver.findElement(By.name("password")).sendKeys("secret_sauce");
 			 Thread.sleep(2000);
 			 driver.findElement(By.id("login-button")).click();
+			 Thread.sleep(2000);
+			 String actvalproductsURL = driver.getCurrentUrl();
 			 
 			 
-			// driver.findElement(By.id("user-name")).sendKeys("standard_user");
+			 if(actvalproductsURL.contains("inventory"))
+			 {
+				 //LogOut
+				driver.findElement(By.id("react-burger-menu-btn")).click();
+				Thread.sleep(2000);
+				driver.findElement(By.linkText("Logout")).click();
+				Thread.sleep(2000);
+			 }
+			 
+			 else
+			 {
+				System.out.println("Login Failed"); 
+			 }
+			 
+			 // driver.findElement(By.id("user-name")).sendKeys("standard_user");
 			// Thread.sleep(2000);
 			// driver.findElement(By.name("password")).sendKeys("secret_sauce");
 
@@ -36,12 +53,14 @@ public class Swag_ValidLogin {
 			 * Login Button Ste Step8:Validate TC[Pass/Fail]
 			 * 
 			 */
-		} else 
+		} 
+		else 
 		{
 			System.out.println("Smoke Testing Fail");
 		}
 		Thread.sleep(2000);
 		driver.close();
+	
 
 	}
 

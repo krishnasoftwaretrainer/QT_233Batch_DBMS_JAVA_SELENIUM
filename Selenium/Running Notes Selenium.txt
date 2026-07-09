@@ -228,3 +228,49 @@ HTML Script:Different HTML Tags
 </html>
 
 Assignment: https://www.opencart.com/index.php?route=account/login
+
+Web Locators:
+------------
+Direct Locators
+1.ID 
+2.Name 
+3.ClassName:
+4.TagName
+5.LinkText
+6.PartialLinkText
+
+TagName:Duplicate
+ClassName:InvalidSelectorException: Compound class names not permitted
+
+In-Direct Locators
+------------
+7.CSS Selector
+8.XPath:Dynamic Locator
+XPaths 2Tyes:
+---------
+1.Absolute XPath:NO 
+/html/body/section/div/div/div[2]/form/div[1]/div[1]/input
+
+2.Relative XPath
+//*[@id="basicBootstrapForm"]/div[1]/div[1]/input
+Syntax://tagname[@attribute="value"]
+//input[@placeholder="First Name"]
+
+DOM[Document Object Model] Page:
+-----------
+HTML Script:Different HTML Tags
+<html>   
+<title> </title>
+<body>
+
+</body>
+</html>
+
+Assignment: https://www.opencart.com/index.php?route=account/login
+
+isSelected():T/F
+isDisplayed():T/F
+isEnabled():T/F 
+
+App1:https://demo.automationtesting.in/Register.html
+App2:https://demoqa.com/text-box
