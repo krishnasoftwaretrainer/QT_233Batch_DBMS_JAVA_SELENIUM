@@ -11,8 +11,8 @@ public class Swag_ValidLogin {
 		Thread.sleep(1000);
 		driver.manage().window().maximize();
 		Thread.sleep(2000);
-		//driver.get("https://www.saucedemo.com/");
-		driver.get("https://www.facebook.com/");
+		driver.get("https://www.saucedemo.com/");
+		//driver.get("https://www.facebook.com/");
 		Thread.sleep(2000);
 
 		String actvalURL = driver.getCurrentUrl();
@@ -36,6 +36,7 @@ public class Swag_ValidLogin {
 				driver.findElement(By.id("react-burger-menu-btn")).click();
 				Thread.sleep(2000);
 				driver.findElement(By.linkText("Logout")).click();
+				//driver.findElement(By.partialLinkText("Logo")).click();
 				Thread.sleep(2000);
 			 }
 			 

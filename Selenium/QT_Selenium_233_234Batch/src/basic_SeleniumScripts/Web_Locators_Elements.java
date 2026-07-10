@@ -18,7 +18,7 @@ public class Web_Locators_Elements {
 		
 		//Xpath:
 		driver.findElement(By.xpath("//input[@placeholder=\"First Name\"]")).sendKeys("Krishna");
-		//Thread.sleep(2000);
+		Thread.sleep(2000);
 		
 		//2.Last Name:Text Box:XPath
 		driver.findElement(By.xpath("//input[@ng-model=\"LastName\"]")).sendKeys("Rao");
@@ -56,6 +56,8 @@ public class Web_Locators_Elements {
 		driver.findElement(By.id("checkbox3")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.id("checkbox3")).click();
+		Thread.sleep(2000);
+		
 		
 	}
 
