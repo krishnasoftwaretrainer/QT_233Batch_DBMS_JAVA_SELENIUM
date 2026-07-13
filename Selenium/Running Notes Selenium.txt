@@ -324,3 +324,29 @@ SELENIUM TOPICS:
 36. SELENIUM PROJECT
 
 CLEAR METHOD:default names or values.
+
+Dropdowns[ListBox]:How to select value from dropdown[Perform select operation].
+
+Scrolling_WebPage:
+Vertical Scrolling:
+1.Top to Bottom[Up to Down]
+js.executeScript("window.scrollBy(0,500)");
+2.Bottom to Top[Down to Up]
+js.executeScript("window.scrollBy(0,-500)");
+Horizontal Scrolling:
+3.Left to Right
+js.executeScript("window.scrollBy(500,0)");
+4.Right to Left
+js.executeScript("window.scrollBy(-500,0)");
+
+Browser Navigations:
+------------------
+Enter URL:
+1.BackWard
+2.ForWard
+3.Refresh
+
+ScreenShots:
+-----------
+File sc1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+Files.copy(sc1, new File("D:\\QT\\QT_Selenium_225,226,227\\ScreenShots\\ 1SC1.png"));
