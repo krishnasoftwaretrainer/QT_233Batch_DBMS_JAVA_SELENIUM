@@ -350,3 +350,24 @@ ScreenShots:
 -----------
 File sc1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 Files.copy(sc1, new File("D:\\QT\\QT_Selenium_225,226,227\\ScreenShots\\ 1SC1.png"));
+
+driver.switchTo:
+-------
+driver.switchTo.alert
+driver.switchTo.frame
+driver.switchTo.Window
+
+Alerts Handling in Selenium:
+------------------------
+3Types:
+
+1.Clik on OK Alert[Accept]
+2.Clik on OK or Cancel Alert[Accept/Dismiss]
+3.Enter Some Text in TextBox then Clik on OK or Cancel Alert[SendKeys/Accept/Reject]
+
+Alerts have 4Methods:
+-------
+accept();-->OK 
+dismiss();-->Cancel
+SendKeys("");-->Enter Text 
+getText(); -->Getting Text 
