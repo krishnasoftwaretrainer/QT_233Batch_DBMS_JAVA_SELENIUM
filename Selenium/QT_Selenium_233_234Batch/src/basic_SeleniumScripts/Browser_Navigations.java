@@ -7,9 +7,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class Browser_Navigations {
 
 	public static void main(String[] args) throws InterruptedException {
-		ChromeOptions options=new ChromeOptions();
-		options.addArguments("--headless");
-		WebDriver driver = new ChromeDriver(options);
+		//ChromeOptions options=new ChromeOptions();
+		//options.addArguments("--headless");
+		//WebDriver driver = new ChromeDriver(options);
+		
+		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		//driver.get("https://www.saucedemo.com/");
 		

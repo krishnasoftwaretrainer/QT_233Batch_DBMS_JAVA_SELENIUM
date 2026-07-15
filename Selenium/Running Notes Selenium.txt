@@ -371,3 +371,41 @@ accept();-->OK
 dismiss();-->Cancel
 SendKeys("");-->Enter Text 
 getText(); -->Getting Text 
+
+Frames in Selenium:
+------------------
+SwitchTo Frame:
+----------
+1.Frame Index[0 to n-1]
+2.Frame ID or Name
+3.Frame WebElement
+
+Working with Windows:
+------------------
+Window Handling:
+------------
+1.Open new app in NewTab or NewWindow
+2.Get Single Window Handle[Unique ID]
+3.Get Window Handles[Unique IDs]
+4.Switching between Windows or Tabs
+5.Maximize and Minimize and Set Window Size
+6.driver.close() and driver.quit()
+
+WebTables
+
+File Upload[AutoIT] and Download
+
+FrameWorks:
+----------
+AutoIT FrameWork
+TestNG
+DataDriven
+POM 
+Hybrid
+JUnit
+BDD Cucumber
+
+GIT and GITHUB
+CI/CD:
+Jenkins
+GITHUB ACTIONs
