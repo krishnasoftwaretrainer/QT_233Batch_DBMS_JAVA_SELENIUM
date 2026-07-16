@@ -390,10 +390,49 @@ Window Handling:
 4.Switching between Windows or Tabs
 5.Maximize and Minimize and Set Window Size
 6.driver.close() and driver.quit()
+7.Set Window Size and Position
+
+driver.close():It close the last active tab or window.
+
+driver.quit():It close the all active windows and tabs.
+
+getWindowHandle:
+----
+First: FB41BBE42294AF7DA5FCB59AC13A3335
+First: 979AB5CA78AF7F1DE98A8A92602DC2DF
+First: 2D935A82E6CDF975E6C3F7C3C1EC2B57
+----------
+First: A25FC63CE64C33BE6A7FEAC46DCC421F
+Second: CDFDB839DF07FB6652DBEF7DD1B7AB9F
+Third: E2A639BB245D73F6AED65818F0CDAF5B
+Fourth: 81D242A56F66768C52C3C6E572143378
+---------
+First: 8387EA2D4B29BCC3BCF045FDEF42EA93
+Second: 9CB5E6BDEEB0675EE8BBB1FF822A2AF0
+Third: 5561163DDD1D0F8E7B5372689143C87B
+Fourth: 54355DA4D382E9CE692B6E2DA19F8F8D
+------------
+All: [8AD9E386597C33A8038D7BF312E1838F, EC4FB24FD45DFEEB81A95815FF4BB471, E6AE5E16AB2ADFEA853D67947924D99C, 1E402D650777325113DD9A537311668F]
+
+// Set Size
+Dimension size = new Dimension(800, 600);
+driver.manage().window().setSize(size);
+
+// Set Position
+Point position = new Point(200, 100);
+driver.manage().window().setPosition(position);
 
 WebTables
 
-File Upload[AutoIT] and Download
+File Upload[AutoIT] and Download:
+-------------------
+
+Download:
+--------
+https://www.oracle.com/in/java/technologies/downloads/
+
+
+
 
 FrameWorks:
 ----------

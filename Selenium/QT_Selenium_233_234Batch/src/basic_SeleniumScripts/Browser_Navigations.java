@@ -43,7 +43,13 @@ public class Browser_Navigations {
 		//ReFesh the Page
 		driver.navigate().refresh();
 		Thread.sleep(2000);
+				
+		if(driver!=null)  //true false
+		{
 		driver.close();
+		System.out.println("if condition is executed");
+		}
+		
 		System.out.println("Success");
 		
 	}
