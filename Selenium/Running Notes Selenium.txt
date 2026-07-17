@@ -422,14 +422,31 @@ driver.manage().window().setSize(size);
 Point position = new Point(200, 100);
 driver.manage().window().setPosition(position);
 
-WebTables
+WebTables:
+---------
+SQL:Database Tables
+CRUD:Create Insert Select Update Delete
 
-File Upload[AutoIT] and Download:
+For Identify/Find Locaters:
+---------
+1.Manual Identification. 
+2.Copy XPath from DOM.
+3.SelectorsHub
+https://chromewebstore.google.com/detail/selectorshub/ndgimibanhlabgdgjcpbbndiehljcpfh?utm_source=ext_app_menu
+
+Dropdown    Frame
+------------------
+Index			Index
+Value			StringIDorName
+VisibleText		WebElement
+
+FileUpload:
+----------
+1.Using SendKeys
+2.Using AutoIT FrameWork
+
+Actions in Selenium:
 -------------------
-
-Download:
---------
-https://www.oracle.com/in/java/technologies/downloads/
 
 
 
