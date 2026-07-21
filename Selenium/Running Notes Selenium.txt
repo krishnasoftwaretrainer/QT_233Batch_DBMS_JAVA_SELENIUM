@@ -440,6 +440,31 @@ Index			Index
 Value			StringIDorName
 VisibleText		WebElement
 
+File Upload[AutoIT] and Download:
+-------------------
+
+Download:
+--------
+https://www.oracle.com/in/java/technologies/downloads/
+
+WebTables:
+---------
+SQL:Database Tables
+CRUD:Create Insert Select Update Delete
+
+For Identify/Find Locaters:
+---------
+1.Manual Identification. 
+2.Copy XPath from DOM.
+3.SelectorsHub
+https://chromewebstore.google.com/detail/selectorshub/ndgimibanhlabgdgjcpbbndiehljcpfh?utm_source=ext_app_menu
+
+Dropdown    Frame
+------------------
+Index			Index
+Value			StringIDorName
+VisibleText		WebElement
+
 FileUpload:
 ----------
 1.Using SendKeys
@@ -447,7 +472,39 @@ FileUpload:
 
 Actions in Selenium:
 -------------------
+Ctrl+A Ctrl+C Ctrl+V:KeyBoard Actions
+123
 
+Mouse Actions:Right Double Drag Click-and-Hold
+
+action.dragAndDropBy(drag, 0, 100).build().perform();
+------
+action.moveByOffset(0, 200).perform();
+
+MoveToElement:
+-----------
+
+AutoIT FrameWork:
+
+TestNG 
+
+
+Rama Rao 
+RAMA RAO 
+
+KeyBoard Actions:
+----------------
+abcd ABCD ABCDEFGHI
+Press Shift button:KeyDown 
+Type
+Release Release:KeyUp
+
+Rama Rao Rama Rao 
+
+Direct: 5
+Indirect:
+SendKeys('5');
+5
 
 
 
