@@ -542,3 +542,19 @@ GIT and GITHUB
 CI/CD:
 Jenkins
 GITHUB ACTIONs
+============================
+FrameWorks:
+----------
+TestNG:Next Generation
+JUnit+NUnit=TestNG
+
+TestNG:Concepts: JUnit+NUint=TestNG 
+-------
+1.TestNG Library inclusion (.jar / Maven dependency)
+2. No 'main()' method required[Annotations @Test]
+3. TestNG Test Execution(@Test Annotation)
+4. Test Results – Pass / Fail count 
+5. HTML Reports – 'test-output/index.html'
+6. Test priority
+7. Invocation count=3 1/3 2/3 3/3
+	Enabled / Disabled tests
