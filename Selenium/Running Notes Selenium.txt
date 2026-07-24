@@ -558,3 +558,16 @@ TestNG:Concepts: JUnit+NUint=TestNG
 6. Test priority
 7. Invocation count=3 1/3 2/3 3/3
 	Enabled / Disabled tests
+8. Test Suite execution using `testng.xml`
+9. Failed test re-run – `testng-failed.xml`
+10. TestNG Annotations ('@Test', `@BeforeSuite`, `@AfterSuite`, `@BeforeTest`, `@AfterTest`, `@BeforeClass`, `@AfterClass`, `@BeforeMethod`, '@AfterMethod', `@BeforeGroups`, `@AfterGroups`)
+
+
+Test Suite=Multiple Classes 
+Class1:Valid
+Class2:InValid
+Class3:Blank
+
+SwagLogin_TestNGAnnotations:3Tests
+SwagLogin:3Tests
+
