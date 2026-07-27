@@ -2,48 +2,52 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-24T11:54:29 IST" name="Default suite" finished-at="2026-07-24T11:55:12 IST" duration-ms="42748">
+  <suite started-at="2026-07-27T12:20:41 IST" name="SwagOOPSSuite" finished-at="2026-07-27T12:21:24 IST" duration-ms="42718">
     <groups>
     </groups>
-    <test started-at="2026-07-24T11:54:29 IST" name="Default test" finished-at="2026-07-24T11:55:12 IST" duration-ms="42748">
-      <class name="testNg_Scripts.SwagLogin_TestNGAnnotations">
-        <test-method is-config="true" signature="BrowserConfig()[pri:0, instance:testNg_Scripts.SwagLogin_TestNGAnnotations@4facf68f]" started-at="2026-07-24T11:54:29 IST" name="BrowserConfig" finished-at="2026-07-24T11:54:37 IST" duration-ms="7536" status="PASS">
+    <test started-at="2026-07-27T12:20:41 IST" name="OOPSTest" finished-at="2026-07-27T12:21:24 IST" duration-ms="42718">
+      <class name="swagWith_OOPS.Swag_InValidLogin">
+        <test-method is-config="true" signature="BrowserConfig()[pri:0, instance:swagWith_OOPS.Swag_InValidLogin@17046283]" started-at="2026-07-27T12:20:41 IST" name="BrowserConfig" finished-at="2026-07-27T12:20:49 IST" duration-ms="7579" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserConfig -->
-        <test-method signature="Swag_ValidLogin()[pri:0, instance:testNg_Scripts.SwagLogin_TestNGAnnotations@4facf68f]" started-at="2026-07-24T11:54:37 IST" name="Swag_ValidLogin" finished-at="2026-07-24T11:54:43 IST" duration-ms="6574" status="PASS">
+        <test-method signature="Swag_InValidInValidLogin()[pri:0, instance:swagWith_OOPS.Swag_InValidLogin@17046283]" started-at="2026-07-27T12:20:49 IST" name="Swag_InValidInValidLogin" finished-at="2026-07-27T12:20:55 IST" duration-ms="6483" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Swag_ValidLogin -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:testNg_Scripts.SwagLogin_TestNGAnnotations@4facf68f]" started-at="2026-07-24T11:54:43 IST" name="BrowserTearDown" finished-at="2026-07-24T11:54:44 IST" duration-ms="366" status="PASS">
+        </test-method> <!-- Swag_InValidInValidLogin -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:swagWith_OOPS.Swag_InValidLogin@17046283]" started-at="2026-07-27T12:20:55 IST" name="BrowserTearDown" finished-at="2026-07-27T12:20:55 IST" duration-ms="323" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
-        <test-method is-config="true" signature="BrowserConfig()[pri:0, instance:testNg_Scripts.SwagLogin_TestNGAnnotations@4facf68f]" started-at="2026-07-24T11:54:44 IST" name="BrowserConfig" finished-at="2026-07-24T11:54:50 IST" duration-ms="6581" status="PASS">
+      </class> <!-- swagWith_OOPS.Swag_InValidLogin -->
+      <class name="swagWith_OOPS.Swag_ValidLogin">
+        <test-method is-config="true" signature="BrowserConfig()[pri:0, instance:swagWith_OOPS.Swag_ValidLogin@1cbbffcd]" started-at="2026-07-27T12:21:09 IST" name="BrowserConfig" finished-at="2026-07-27T12:21:17 IST" duration-ms="7876" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserConfig -->
-        <test-method signature="Swag_InValidLogin()[pri:1, instance:testNg_Scripts.SwagLogin_TestNGAnnotations@4facf68f]" started-at="2026-07-24T11:54:50 IST" name="Swag_InValidLogin" finished-at="2026-07-24T11:54:57 IST" duration-ms="6568" status="PASS">
+        <test-method signature="Swag_ValidValidLogin()[pri:0, instance:swagWith_OOPS.Swag_ValidLogin@1cbbffcd]" started-at="2026-07-27T12:21:17 IST" name="Swag_ValidValidLogin" finished-at="2026-07-27T12:21:23 IST" duration-ms="6604" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Swag_InValidLogin -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:testNg_Scripts.SwagLogin_TestNGAnnotations@4facf68f]" started-at="2026-07-24T11:54:57 IST" name="BrowserTearDown" finished-at="2026-07-24T11:54:57 IST" duration-ms="301" status="PASS">
+        </test-method> <!-- Swag_ValidValidLogin -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:swagWith_OOPS.Swag_ValidLogin@1cbbffcd]" started-at="2026-07-27T12:21:23 IST" name="BrowserTearDown" finished-at="2026-07-27T12:21:24 IST" duration-ms="283" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
-        <test-method is-config="true" signature="BrowserConfig()[pri:0, instance:testNg_Scripts.SwagLogin_TestNGAnnotations@4facf68f]" started-at="2026-07-24T11:54:57 IST" name="BrowserConfig" finished-at="2026-07-24T11:55:04 IST" duration-ms="6507" status="PASS">
+      </class> <!-- swagWith_OOPS.Swag_ValidLogin -->
+      <class name="swagWith_OOPS.Swag_BlankLogin">
+        <test-method is-config="true" signature="BrowserConfig()[pri:0, instance:swagWith_OOPS.Swag_BlankLogin@31c88ec8]" started-at="2026-07-27T12:20:55 IST" name="BrowserConfig" finished-at="2026-07-27T12:21:02 IST" duration-ms="6810" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserConfig -->
-        <test-method signature="Swag_BlankLogin()[pri:2, instance:testNg_Scripts.SwagLogin_TestNGAnnotations@4facf68f]" started-at="2026-07-24T11:55:04 IST" name="Swag_BlankLogin" finished-at="2026-07-24T11:55:10 IST" duration-ms="6404" status="PASS">
+        <test-method signature="Swag_BlankBlankLogin()[pri:0, instance:swagWith_OOPS.Swag_BlankLogin@31c88ec8]" started-at="2026-07-27T12:21:02 IST" name="Swag_BlankBlankLogin" finished-at="2026-07-27T12:21:09 IST" duration-ms="6402" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Swag_BlankLogin -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:testNg_Scripts.SwagLogin_TestNGAnnotations@4facf68f]" started-at="2026-07-24T11:55:10 IST" name="BrowserTearDown" finished-at="2026-07-24T11:55:12 IST" duration-ms="1838" status="PASS">
+        </test-method> <!-- Swag_BlankBlankLogin -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:swagWith_OOPS.Swag_BlankLogin@31c88ec8]" started-at="2026-07-27T12:21:09 IST" name="BrowserTearDown" finished-at="2026-07-27T12:21:09 IST" duration-ms="249" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
-      </class> <!-- testNg_Scripts.SwagLogin_TestNGAnnotations -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- swagWith_OOPS.Swag_BlankLogin -->
+    </test> <!-- OOPSTest -->
+  </suite> <!-- SwagOOPSSuite -->
 </testng-results>
