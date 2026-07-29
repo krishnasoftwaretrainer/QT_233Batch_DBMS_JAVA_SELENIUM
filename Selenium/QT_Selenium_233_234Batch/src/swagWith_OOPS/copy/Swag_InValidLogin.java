@@ -1,4 +1,4 @@
-package swagWith_OOPS;
+package swagWith_OOPS.copy;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,27 +7,33 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
-public class Swag_ValidLogin extends BaseClass_Parent  //Class-1
+public class Swag_InValidLogin extends BaseClass_Parent //Class-2
 {
-	
-	
 
-	@Test // Tests Case:1[Valid Valid] //9am 5pm 8am 7pm
-	public void Swag_ValidValidLogin() throws InterruptedException // WOR WOP
+
+	@Test // Tests Case:2[InValid InValid]
+	public void Swag_InValidInValidLogin() throws InterruptedException // WOR WOP
 	{
 
+		SoftAssert softAssert = new SoftAssert();
+		
 		WebElement userName = driver.findElement(By.tagName("input"));
-		userName.sendKeys("standard_user");
+		userName.sendKeys("cvxfbxfbdf");
 		Thread.sleep(2000);
 
 		WebElement password = driver.findElement(By.name("password"));
-		password.sendKeys("secret_sauce");
+		password.sendKeys("yukyukuk");
 		Thread.sleep(2000);
 
 		WebElement loginbtn = driver.findElement(By.id("login-button"));
 		loginbtn.click();
 		Thread.sleep(2000);
 		
+		WebElement errorMessage = driver.findElement(By.cssSelector("h3[data-test='error']"));
+		softAssert.assertTrue(errorMessage.isDisplayed(), "Error message is not displayed");
+	
+		softAssert.assertAll();
 	}
 }

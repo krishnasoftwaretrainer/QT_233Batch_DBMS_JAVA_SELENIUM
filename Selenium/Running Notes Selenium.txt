@@ -532,9 +532,12 @@ FrameWorks:
 ----------
 AutoIT FrameWork
 TestNG
+Assertions
 DataDriven
 POM 
 Hybrid
+Maven Project
+Waits
 JUnit
 BDD Cucumber
 
@@ -542,7 +545,7 @@ GIT and GITHUB
 CI/CD:
 Jenkins
 GITHUB ACTIONs
-============================
+
 FrameWorks:
 ----------
 TestNG:Next Generation
@@ -551,7 +554,7 @@ JUnit+NUnit=TestNG
 TestNG:Concepts: JUnit+NUint=TestNG 
 -------
 1.TestNG Library inclusion (.jar / Maven dependency)
-2. No 'main()' method required[Annotations @Test]
+2. No 'main()' method Required[Annotations @Test]
 3. TestNG Test Execution(@Test Annotation)
 4. Test Results – Pass / Fail count 
 5. HTML Reports – 'test-output/index.html'
@@ -561,13 +564,116 @@ TestNG:Concepts: JUnit+NUint=TestNG
 8. Test Suite execution using `testng.xml`
 9. Failed test re-run – `testng-failed.xml`
 10. TestNG Annotations ('@Test', `@BeforeSuite`, `@AfterSuite`, `@BeforeTest`, `@AfterTest`, `@BeforeClass`, `@AfterClass`, `@BeforeMethod`, '@AfterMethod', `@BeforeGroups`, `@AfterGroups`)
+11. Data-driven testing (`.properties`, `.xlsx`, `@DataProvider`)
+12. Assertions (Hard, Soft) 
+13. Parameters from `testng.xml`
+14. Groups (Smoke, Sanity, Regression)
+
+BeforeSuit
+Suit:3Class[3Tests]
+AfterSuit
 
 
+ PASSED: testNg_Scripts.SwagLogin.Swag_ValidLogin
+==========================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+==========================================
+Default suite
+Total tests run:1, Passes:1, Failures:0, Skips:0
+==========================================
 Test Suite=Multiple Classes 
 Class1:Valid
 Class2:InValid
 Class3:Blank
 
+Assert.assertEquals()
+Assert.assertTrue()
+Assert.assertFalse()
+Assert.assertNotNull()
+Assert.assertTrue(driver.getCurrentUrl().contains("inventory"));
+
 SwagLogin_TestNGAnnotations:3Tests
 SwagLogin:3Tests
+
+
+Swag Login:Class1:@Test 3Methods:VU VP,IVU IVP,BU BP
+
+Swag ValidLogin:Class1:@Test:VU VP 
+Swag InValidLogin:Class2:@Test:IVU IVP
+Swag BlankLogin:Class3:@Test:BU BP
+ 
+Assertions:
+----------
+Excepted
+Actuval
+
+Data Driven:
+---------
+Properties
+Excel Sheet 
+
+Maven Project
+POM 
+
+Hybrid
+
+BDD Cucumber
+
+
+Assertions:Hybrid+BDD Cucumber
+----------Automatic Validations
+Compare Excepted vs Actuval automatically.
+
+Excepted:Error Message
+Actuval:Displayed Error Message
+
+Test Result:Pass/Fail
+Interpreter vs Compiler
+
+Assert.assertEquals() 
+Assert.assertTrue()
+Assert.assertFalse()
+Assert.assertNotNull()  Reg 2 100
+
+1.Hard Assertion:
+Assert.assertEquals(actuvalTitle, exceptedTitle,"Title Verification Fail");
+		
+			
+2.Soft Assertion:
+SoftAssert softAssert=new SoftAssert();
+softAssert.assertEquals(actuvalTitle, exceptedTitle,"Title Verification Fail");
+
+softAssert.assertAll();
+
+Data Driven FrameWork:
+--------------------
+Single Class:
+-----------
+Browser Open Maximize Enter URL 
+Find Locator
+Enter Test Data 
+Perform Operations
+Assertions 
+TearDown
+
+Hybrid FrameWork:DDF+POM+TestNG
+---------------
+Base Class:Inheritence
+Browser Open Maximize Enter URL 
+TearDown
+
+Data Driven FrameWork:
+Test Data 
+Properties File 
+ExcelSheet
+
+POM FrameWork
+Locators
+
+Operations:
+Clicks SendKeys 
+
+TestNG FrameWorks
+Assertions
 

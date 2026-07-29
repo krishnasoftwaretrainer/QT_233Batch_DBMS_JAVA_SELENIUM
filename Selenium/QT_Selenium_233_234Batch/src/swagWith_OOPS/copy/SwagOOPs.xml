@@ -3,9 +3,9 @@
 <suite name="SwagOOPSSuite">
   <test thread-count="5" name="OOPSTest">
     <classes>
-    <class name="swagWith_OOPS.Swag_ValidLogin"/>
-      <class name="swagWith_OOPS.Swag_InValidLogin"/>
-      <class name="swagWith_OOPS.Swag_BlankLogin"/>
+    <class name="swagWith_OOPS.copy.Swag_ValidLogin"/>
+      <class name="swagWith_OOPS.copy.Swag_InValidLogin"/>
+      <class name="swagWith_OOPS.copy.Swag_BlankLogin"/>
       
     </classes>
   </test> <!-- OOPSTest -->

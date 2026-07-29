@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="swagWith_OOPS.Swag_ValidLogin">
+      <class name="testNg_Scripts.Soft_Asertions">
         <methods>
-          <include name="Swag_ValidValidLogin"/>
-          <include name="BrowserTearDown"/>
-          <include name="BrowserConfig"/>
+          <include name="TitleVerification"/>
         </methods>
-      </class> <!-- swagWith_OOPS.Swag_ValidLogin -->
+      </class> <!-- testNg_Scripts.Soft_Asertions -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
