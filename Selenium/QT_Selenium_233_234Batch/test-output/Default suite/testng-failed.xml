@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testNg_Scripts.Soft_Asertions">
+      <class name="propertiesFiles.SwagData_Prop">
         <methods>
-          <include name="TitleVerification"/>
+          <include name="swagData"/>
         </methods>
-      </class> <!-- testNg_Scripts.Soft_Asertions -->
+      </class> <!-- propertiesFiles.SwagData_Prop -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

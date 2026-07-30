@@ -11,8 +11,6 @@ import org.testng.annotations.Test;
 public class Swag_ValidLogin extends BaseClass_Parent  //Class-1
 {
 	
-	
-
 	@Test // Tests Case:1[Valid Valid] //9am 5pm 8am 7pm
 	public void Swag_ValidValidLogin() throws InterruptedException // WOR WOP
 	{

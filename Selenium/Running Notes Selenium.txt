@@ -665,15 +665,64 @@ TearDown
 
 Data Driven FrameWork:
 Test Data 
-Properties File 
-ExcelSheet
+Properties File:URL  
+ExcelSheet:TestData 
 
 POM FrameWork
-Locators
+Locators:POM 
 
 Operations:
 Clicks SendKeys 
 
 TestNG FrameWorks
 Assertions
+
+
+
+Data Driven FrameWork:
+--------------------
+Store the testdata in saperate files and retrieve into your application through your selenium script.
+
+Identify/Find File
+Read the data 
+Use into your app 
+
+Properties Files:Single Set[URL,Locators]
+Excel Files[Multiple Sets of Test Data]
+
+WorkBook
+Sheet's
+Rows
+Columns/Cell:
+
+Operations on ExcelFiles:
+----------
+Create Single Sheet
+Create Multiple Sheets
+ 
+Write Data Single Cell 
+Write Data Multiple Cells[Single Row]
+Write Data Multiple Cells and Rows 
+
+Read Data Single Cell
+Read Data Multiple Cells[Single Row]
+Read Data Multiple Cells and Rows 
+
+ApachePOI: https://poi.apache.org/ 
+--------
+https://archive.apache.org/dist/poi/release/bin/
+
+
+HSSF:MS-Excel Version:<2001
+.xls
+
+----------
+XSSF:MS-Excel Version:>2001 
+.xlsx
+
+XSSFWorkbook
+XSSFSheet
+XSSFRow
+XSSFCells:Write/Read
+
 

@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [SwagOOPSSuite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="OOPSTest(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="swagWith_OOPS.Swag_InValidLogin">
+      <class name="propertiesFiles.SwagData_Prop">
         <methods>
-          <include name="Swag_InValidInValidLogin"/>
-          <include name="BrowserConfig"/>
-          <include name="BrowserTearDown"/>
+          <include name="swagData"/>
         </methods>
-      </class> <!-- swagWith_OOPS.Swag_InValidLogin -->
-      <class name="swagWith_OOPS.Swag_BlankLogin">
-        <methods>
-          <include name="Swag_BlankBlankLogin"/>
-          <include name="BrowserConfig"/>
-          <include name="BrowserTearDown"/>
-        </methods>
-      </class> <!-- swagWith_OOPS.Swag_BlankLogin -->
+      </class> <!-- propertiesFiles.SwagData_Prop -->
     </classes>
-  </test> <!-- OOPSTest(failed) -->
-</suite> <!-- Failed suite [SwagOOPSSuite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
