@@ -1,0 +1,14 @@
+AUTOMATION TESTING[SELENIUM] TEST-4
+---------------------
+
+Test-4 URL:	https://forms.gle/k3sCoKMm5cVDS83D7
+
+Instructions:
+-----------
+Total Questions: 25 Multiple Choice Questions (MCQs)
+Test Duration: 20 minutes
+Each question carries 2 mark
+No negative marking
+Do not refresh the page during the test
+Submit the form once all questions are completed
+
