@@ -564,15 +564,44 @@ TestNG:Concepts: JUnit+NUint=TestNG
 8. Test Suite execution using `testng.xml`
 9. Failed test re-run – `testng-failed.xml`
 10. TestNG Annotations ('@Test', `@BeforeSuite`, `@AfterSuite`, `@BeforeTest`, `@AfterTest`, `@BeforeClass`, `@AfterClass`, `@BeforeMethod`, '@AfterMethod', `@BeforeGroups`, `@AfterGroups`)
-11. Data-driven testing (`.properties`, `.xlsx`, `@DataProvider`)
-12. Assertions (Hard, Soft) 
-13. Parameters from `testng.xml`
-14. Groups (Smoke, Sanity, Regression)
+11. Assertions (Hard, Soft) 
+12. DataDriven testing ('.properties', '.xlsx', '@DataProvider')
+13.Parallel Execution
+14. Parameters from 'testng.xml'
+15. Groups (Smoke, Sanity, Regression)
+
+int htno1=101;
+int htno2=102;
+
+int htno[]={101,102,103,""};
+String sname[]={"Krishna",123,"",...};
+
+{"standard_user","secret_sauce"
+"standard_user","invalid_pwd"
+"invalid_user","secret_sauce"
+"invalid_user","invalid_pwd"};
+
+int htno[]={101,102,103,"104",true};
+String sname[]={"Krishna","Rama", "Sita",789};
+Object[] data= {"Krishna",101,"Rama",102, "Sita", 103,55.55,'C',true};
+
+Without DataPrivder:7Sets of TestData
+Write Same Script 7times, every time new test data.
+
+With DataProvider:7Sets of TestData
+Write Script only 1time but execute every time new test data.
+
+222 Lines Script: SwagLogin_MultipleTestData_InsideScript_Without_DataPrivider_WithoutAnnotations
+
+157 Lines Script: SwagLogin_MultipleTestData_InsideScript_Without_DataPrivider 
+
+59 Lines Script: SwagLogin_MultipleTestData_InsideScript_With_DataPrivider
+
+
 
 BeforeSuit
 Suit:3Class[3Tests]
 AfterSuit
-
 
  PASSED: testNg_Scripts.SwagLogin.Swag_ValidLogin
 ==========================================
@@ -595,7 +624,6 @@ Assert.assertTrue(driver.getCurrentUrl().contains("inventory"));
 
 SwagLogin_TestNGAnnotations:3Tests
 SwagLogin:3Tests
-
 
 Swag Login:Class1:@Test 3Methods:VU VP,IVU IVP,BU BP
 
@@ -620,7 +648,6 @@ Hybrid
 
 BDD Cucumber
 
-
 Assertions:Hybrid+BDD Cucumber
 ----------Automatic Validations
 Compare Excepted vs Actuval automatically.
@@ -638,7 +665,6 @@ Assert.assertNotNull()  Reg 2 100
 
 1.Hard Assertion:
 Assert.assertEquals(actuvalTitle, exceptedTitle,"Title Verification Fail");
-		
 			
 2.Soft Assertion:
 SoftAssert softAssert=new SoftAssert();
@@ -677,8 +703,6 @@ Clicks SendKeys
 TestNG FrameWorks
 Assertions
 
-
-
 Data Driven FrameWork:
 --------------------
 Store the testdata in saperate files and retrieve into your application through your selenium script.
@@ -708,11 +732,8 @@ Read Data Single Cell
 Read Data Multiple Cells[Single Row]
 Read Data Multiple Cells and Rows 
 
-ApachePOI: https://poi.apache.org/ 
+ApachePOI: https://poi.apache.org/
 --------
-https://archive.apache.org/dist/poi/release/bin/
-
-
 HSSF:MS-Excel Version:<2001
 .xls
 
@@ -725,4 +746,16 @@ XSSFSheet
 XSSFRow
 XSSFCells:Write/Read
 
+Data Driven FrameWork:
+-----------------
+TestData + TestScript[ReadData from ExcelFile + Use Testdata into App]
 
+Properties File:
+
+Single Set of Testdata: IVU IVP
+Inside Script:Normal Script
+External File:Properties
+
+Multiple Sets of TestData:VU VP,VU IVP etc...
+Inside Script:@DataPrivder
+External File:ExcelSheets[.xlsx]

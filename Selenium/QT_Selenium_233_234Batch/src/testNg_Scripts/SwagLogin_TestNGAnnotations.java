@@ -11,9 +11,11 @@ public class SwagLogin_TestNGAnnotations
 {
 	WebDriver driver;
 	
-	@BeforeMethod
+	
 	//@BeforeTest
 	//@BeforeClass
+	
+	@BeforeMethod
 	public void BrowserConfig() throws InterruptedException
 	{
 		driver = new ChromeDriver();

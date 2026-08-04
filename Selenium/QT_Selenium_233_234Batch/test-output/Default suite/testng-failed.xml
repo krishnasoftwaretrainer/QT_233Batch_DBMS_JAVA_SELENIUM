@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="propertiesFiles.SwagData_Prop">
+      <class name="dataDrivenFrameWork.SwagLogin_MultipleTestData_InsideScript_With_DataPrivider$DataProvider_Swag">
         <methods>
-          <include name="swagData"/>
+          <include name="BrowserLaunch"/>
+          <include name="BrowserClose"/>
+          <include name="SwagLabLoginpage"/>
         </methods>
-      </class> <!-- propertiesFiles.SwagData_Prop -->
+      </class> <!-- dataDrivenFrameWork.SwagLogin_MultipleTestData_InsideScript_With_DataPrivider$DataProvider_Swag -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

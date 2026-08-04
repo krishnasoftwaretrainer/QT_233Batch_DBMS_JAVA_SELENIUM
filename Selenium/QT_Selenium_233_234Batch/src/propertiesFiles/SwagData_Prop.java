@@ -26,8 +26,7 @@ public class SwagData_Prop
 	Properties prop = new Properties();
 	
 	prop.load(fis);
-	
-	
+		
 	driver.get(prop.getProperty("swagurl"));
 	
 	Thread.sleep(2000);

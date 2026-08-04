@@ -35,7 +35,7 @@ XSSFWorkbook workbook = new XSSFWorkbook();
 			XSSFCell cell = row.getCell(j);
 			
 			String data = cell.getStringCellValue();
-			
+			//double data = cell.getNumericCellValue();
 			//System.out.println(data);
 			System.out.print(data +" || ");
 		}
