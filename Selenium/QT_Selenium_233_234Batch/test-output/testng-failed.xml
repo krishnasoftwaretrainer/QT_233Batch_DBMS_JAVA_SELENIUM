@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="dataDrivenFrameWork.SwagLogin_MultipleTestData_InsideScript_With_DataPrivider$DataProvider_Swag">
+      <class name="dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider">
         <methods>
           <include name="BrowserLaunch"/>
           <include name="BrowserClose"/>
           <include name="SwagLabLoginpage"/>
         </methods>
-      </class> <!-- dataDrivenFrameWork.SwagLogin_MultipleTestData_InsideScript_With_DataPrivider$DataProvider_Swag -->
+      </class> <!-- dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

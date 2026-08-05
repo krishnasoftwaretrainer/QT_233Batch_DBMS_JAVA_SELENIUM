@@ -1,41 +1,253 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-08-04T12:05:46 IST" name="Default suite" finished-at="2026-08-04T12:07:14 IST" duration-ms="88178">
+  <suite started-at="2026-08-05T11:35:30 IST" name="Default suite" finished-at="2026-08-05T11:37:47 IST" duration-ms="137265">
     <groups>
     </groups>
-    <test started-at="2026-08-04T12:05:46 IST" name="Default test" finished-at="2026-08-04T12:07:14 IST" duration-ms="88178">
-      <class name="dataDrivenFrameWork.SwagLogin_MultipleTestData_InsideScript_Without_DataPrivider_WithoutAnnotations">
-        <test-method signature="Swag_ValidValidLogin()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_InsideScript_Without_DataPrivider_WithoutAnnotations@1a451d4d]" started-at="2026-08-04T12:05:46 IST" name="Swag_ValidValidLogin" finished-at="2026-08-04T12:05:59 IST" duration-ms="13602" status="PASS">
+    <test started-at="2026-08-05T11:35:30 IST" name="Default test" finished-at="2026-08-05T11:37:47 IST" duration-ms="137265">
+      <class name="dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider">
+        <test-method is-config="true" signature="BrowserLaunch()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:35:30 IST" name="BrowserLaunch" finished-at="2026-08-05T11:35:36 IST" duration-ms="5802" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Swag_ValidValidLogin -->
-        <test-method signature="Swag_ValidInValidLogin()[pri:1, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_InsideScript_Without_DataPrivider_WithoutAnnotations@1a451d4d]" started-at="2026-08-04T12:05:59 IST" name="Swag_ValidInValidLogin" finished-at="2026-08-04T12:06:12 IST" duration-ms="12428" status="PASS">
+        </test-method> <!-- BrowserLaunch -->
+        <test-method signature="SwagLabLoginpage(java.lang.String,java.lang.String)[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:35:36 IST" name="SwagLabLoginpage" data-provider="SwagLabsLoginTestData" finished-at="2026-08-05T11:35:44 IST" duration-ms="8273" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Swag_ValidInValidLogin -->
-        <test-method signature="Swag_InvalidValidLogin()[pri:2, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_InsideScript_Without_DataPrivider_WithoutAnnotations@1a451d4d]" started-at="2026-08-04T12:06:12 IST" name="Swag_InvalidValidLogin" finished-at="2026-08-04T12:06:24 IST" duration-ms="12404" status="PASS">
+        </test-method> <!-- SwagLabLoginpage -->
+        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:35:44 IST" name="BrowserClose" finished-at="2026-08-05T11:35:44 IST" duration-ms="140" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Swag_InvalidValidLogin -->
-        <test-method signature="Swag_InvalidInValidLogin()[pri:3, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_InsideScript_Without_DataPrivider_WithoutAnnotations@1a451d4d]" started-at="2026-08-04T12:06:24 IST" name="Swag_InvalidInValidLogin" finished-at="2026-08-04T12:06:37 IST" duration-ms="12403" status="PASS">
+        </test-method> <!-- BrowserClose -->
+        <test-method is-config="true" signature="BrowserLaunch()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:35:44 IST" name="BrowserLaunch" finished-at="2026-08-05T11:35:50 IST" duration-ms="5250" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Swag_InvalidInValidLogin -->
-        <test-method signature="Swag_ValidBlankLogin()[pri:4, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_InsideScript_Without_DataPrivider_WithoutAnnotations@1a451d4d]" started-at="2026-08-04T12:06:37 IST" name="Swag_ValidBlankLogin" finished-at="2026-08-04T12:06:49 IST" duration-ms="12407" status="PASS">
+        </test-method> <!-- BrowserLaunch -->
+        <test-method signature="SwagLabLoginpage(java.lang.String,java.lang.String)[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:35:50 IST" name="SwagLabLoginpage" data-provider="SwagLabsLoginTestData" finished-at="2026-08-05T11:35:58 IST" duration-ms="8229" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[invalid_pwd]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Swag_ValidBlankLogin -->
-        <test-method signature="Swag_BlankValidLogin()[pri:5, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_InsideScript_Without_DataPrivider_WithoutAnnotations@1a451d4d]" started-at="2026-08-04T12:06:49 IST" name="Swag_BlankValidLogin" finished-at="2026-08-04T12:07:01 IST" duration-ms="12442" status="PASS">
+        </test-method> <!-- SwagLabLoginpage -->
+        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:35:58 IST" name="BrowserClose" finished-at="2026-08-05T11:35:58 IST" duration-ms="141" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Swag_BlankValidLogin -->
-        <test-method signature="Swag_BlankLogin()[pri:6, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_InsideScript_Without_DataPrivider_WithoutAnnotations@1a451d4d]" started-at="2026-08-04T12:07:01 IST" name="Swag_BlankLogin" finished-at="2026-08-04T12:07:14 IST" duration-ms="12433" status="PASS">
+        </test-method> <!-- BrowserClose -->
+        <test-method is-config="true" signature="BrowserLaunch()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:35:58 IST" name="BrowserLaunch" finished-at="2026-08-05T11:36:03 IST" duration-ms="5208" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Swag_BlankLogin -->
-      </class> <!-- dataDrivenFrameWork.SwagLogin_MultipleTestData_InsideScript_Without_DataPrivider_WithoutAnnotations -->
+        </test-method> <!-- BrowserLaunch -->
+        <test-method signature="SwagLabLoginpage(java.lang.String,java.lang.String)[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:36:03 IST" name="SwagLabLoginpage" data-provider="SwagLabsLoginTestData" finished-at="2026-08-05T11:36:12 IST" duration-ms="8220" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test_invalid_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SwagLabLoginpage -->
+        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:36:12 IST" name="BrowserClose" finished-at="2026-08-05T11:36:12 IST" duration-ms="160" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserClose -->
+        <test-method is-config="true" signature="BrowserLaunch()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:36:12 IST" name="BrowserLaunch" finished-at="2026-08-05T11:36:17 IST" duration-ms="5241" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserLaunch -->
+        <test-method signature="SwagLabLoginpage(java.lang.String,java.lang.String)[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:36:17 IST" name="SwagLabLoginpage" data-provider="SwagLabsLoginTestData" finished-at="2026-08-05T11:36:25 IST" duration-ms="8194" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test_invalid_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[invalid_pwd]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SwagLabLoginpage -->
+        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:36:25 IST" name="BrowserClose" finished-at="2026-08-05T11:36:25 IST" duration-ms="155" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserClose -->
+        <test-method is-config="true" signature="BrowserLaunch()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:36:25 IST" name="BrowserLaunch" finished-at="2026-08-05T11:36:31 IST" duration-ms="5281" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserLaunch -->
+        <test-method signature="SwagLabLoginpage(java.lang.String,java.lang.String)[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:36:31 IST" name="SwagLabLoginpage" data-provider="SwagLabsLoginTestData" finished-at="2026-08-05T11:36:39 IST" duration-ms="8178" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SwagLabLoginpage -->
+        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:36:39 IST" name="BrowserClose" finished-at="2026-08-05T11:36:39 IST" duration-ms="124" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserClose -->
+        <test-method is-config="true" signature="BrowserLaunch()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:36:39 IST" name="BrowserLaunch" finished-at="2026-08-05T11:36:44 IST" duration-ms="5216" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserLaunch -->
+        <test-method signature="SwagLabLoginpage(java.lang.String,java.lang.String)[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:36:44 IST" name="SwagLabLoginpage" data-provider="SwagLabsLoginTestData" finished-at="2026-08-05T11:36:52 IST" duration-ms="8200" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SwagLabLoginpage -->
+        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:36:52 IST" name="BrowserClose" finished-at="2026-08-05T11:36:52 IST" duration-ms="131" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserClose -->
+        <test-method is-config="true" signature="BrowserLaunch()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:36:52 IST" name="BrowserLaunch" finished-at="2026-08-05T11:36:58 IST" duration-ms="5253" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserLaunch -->
+        <test-method signature="SwagLabLoginpage(java.lang.String,java.lang.String)[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:36:58 IST" name="SwagLabLoginpage" data-provider="SwagLabsLoginTestData" finished-at="2026-08-05T11:37:06 IST" duration-ms="8166" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SwagLabLoginpage -->
+        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:37:06 IST" name="BrowserClose" finished-at="2026-08-05T11:37:06 IST" duration-ms="160" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserClose -->
+        <test-method is-config="true" signature="BrowserLaunch()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:37:06 IST" name="BrowserLaunch" finished-at="2026-08-05T11:37:11 IST" duration-ms="5243" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserLaunch -->
+        <test-method signature="SwagLabLoginpage(java.lang.String,java.lang.String)[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:37:11 IST" name="SwagLabLoginpage" data-provider="SwagLabsLoginTestData" finished-at="2026-08-05T11:37:19 IST" duration-ms="8183" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test_invalid_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SwagLabLoginpage -->
+        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:37:19 IST" name="BrowserClose" finished-at="2026-08-05T11:37:20 IST" duration-ms="189" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserClose -->
+        <test-method is-config="true" signature="BrowserLaunch()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:37:20 IST" name="BrowserLaunch" finished-at="2026-08-05T11:37:25 IST" duration-ms="5258" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserLaunch -->
+        <test-method signature="SwagLabLoginpage(java.lang.String,java.lang.String)[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:37:25 IST" name="SwagLabLoginpage" data-provider="SwagLabsLoginTestData" finished-at="2026-08-05T11:37:33 IST" duration-ms="8177" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[invalid_pwd]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SwagLabLoginpage -->
+        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:37:33 IST" name="BrowserClose" finished-at="2026-08-05T11:37:33 IST" duration-ms="164" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserClose -->
+        <test-method is-config="true" signature="BrowserLaunch()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:37:33 IST" name="BrowserLaunch" finished-at="2026-08-05T11:37:38 IST" duration-ms="5270" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserLaunch -->
+        <test-method signature="SwagLabLoginpage(java.lang.String,java.lang.String)[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:37:38 IST" name="SwagLabLoginpage" data-provider="SwagLabsLoginTestData" finished-at="2026-08-05T11:37:47 IST" duration-ms="8197" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test_invalid_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[invalid_pwd]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SwagLabLoginpage -->
+        <test-method is-config="true" signature="BrowserClose()[pri:0, instance:dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider@9f116cc]" started-at="2026-08-05T11:37:47 IST" name="BrowserClose" finished-at="2026-08-05T11:37:47 IST" duration-ms="151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserClose -->
+      </class> <!-- dataDrivenFrameWork.SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

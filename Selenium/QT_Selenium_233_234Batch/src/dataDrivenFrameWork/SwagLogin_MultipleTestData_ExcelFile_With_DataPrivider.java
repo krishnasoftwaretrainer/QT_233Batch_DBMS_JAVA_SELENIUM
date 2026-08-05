@@ -1,40 +1,28 @@
 package dataDrivenFrameWork;
 
+import java.io.IOException;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
-public class SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider {
-	public class DataProvider_Swag {
-		WebDriver driver;
+public class SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider extends BaseClass
+{
 
 		@DataProvider(name = "SwagLabsLoginTestData")
-		public Object[][] SwagLaginData() // WR WOP
+		public Object[][] SwagLaginData() throws IOException // WR WOP
 		{
-			return new Object[][] { 
-				{ "standard_user", "secret_sauce" }, 
-				{ "standard_user", "invalid_pwd" },
-					{ "invalid_user", "secret_sauce" },
-					{ "invalid_user", "invalid_pwd" }, 
-					{ "standard_user", "" },
-					{ "", "secret_sauce" }, 
-					{ "", "" },
-
-			};
-		}
-
-		@BeforeMethod
-		public void BrowserLaunch() throws InterruptedException {
-			driver = new ChromeDriver();
-			Thread.sleep(2000);
-			driver.get("https://www.saucedemo.com/");
-			Thread.sleep(2000);
-			driver.manage().window().maximize();
+			return ReadExcelData.readExcelData11(
+	                "D:\\QT\\QT_233_234 Selenium\\SwalabsLoginTestData.xlsx",
+	                "SWagLoginPageTestData"
+	        );
 		}
 
 		@Test(dataProvider = "SwagLabsLoginTestData")
 		public void SwagLabLoginpage(String UserName, String Password) throws InterruptedException {
-
+		
+			
+			Thread.sleep(2000);
 			WebElement userName = driver.findElement(By.tagName("input"));
 			userName.sendKeys(UserName);
 			Thread.sleep(2000);
@@ -46,14 +34,8 @@ public class SwagLogin_MultipleTestData_ExcelFile_With_DataPrivider {
 			WebElement loginbtn = driver.findElement(By.id("login-button"));
 			loginbtn.click();
 			Thread.sleep(2000);
-
+			
 		}
-
-		@AfterMethod
-		public void BrowserClose() {
-			driver.close();
-		}
-
-	}
 
 }
+
