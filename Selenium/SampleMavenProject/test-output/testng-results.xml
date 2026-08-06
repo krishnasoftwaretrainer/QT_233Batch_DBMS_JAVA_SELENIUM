@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-08-06T11:56:21 IST" name="Default suite" finished-at="2026-08-06T11:57:38 IST" duration-ms="77013">
+    <groups>
+    </groups>
+    <test started-at="2026-08-06T11:56:21 IST" name="Default test" finished-at="2026-08-06T11:57:38 IST" duration-ms="77013">
+      <class name="test.TestClass">
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:56:22 IST" name="browserLaunch" finished-at="2026-08-06T11:56:26 IST" duration-ms="4113" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:56:26 IST" name="loginTest" data-provider="loginData" finished-at="2026-08-06T11:56:28 IST" duration-ms="2380" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:56:28 IST" name="closeBrowser" finished-at="2026-08-06T11:56:30 IST" duration-ms="2226" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:56:30 IST" name="browserLaunch" finished-at="2026-08-06T11:56:33 IST" duration-ms="2928" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:56:33 IST" name="loginTest" data-provider="loginData" finished-at="2026-08-06T11:56:36 IST" duration-ms="2271" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[invalid_pwd]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:56:36 IST" name="closeBrowser" finished-at="2026-08-06T11:56:38 IST" duration-ms="2178" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:56:38 IST" name="browserLaunch" finished-at="2026-08-06T11:56:41 IST" duration-ms="3185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:56:41 IST" name="loginTest" data-provider="loginData" finished-at="2026-08-06T11:56:43 IST" duration-ms="2218" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test_invalid_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:56:43 IST" name="closeBrowser" finished-at="2026-08-06T11:56:45 IST" duration-ms="2188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:56:45 IST" name="browserLaunch" finished-at="2026-08-06T11:56:49 IST" duration-ms="3129" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:56:49 IST" name="loginTest" data-provider="loginData" finished-at="2026-08-06T11:56:51 IST" duration-ms="2235" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test_invalid_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[invalid_pwd]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:56:51 IST" name="closeBrowser" finished-at="2026-08-06T11:56:53 IST" duration-ms="2215" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:56:53 IST" name="browserLaunch" finished-at="2026-08-06T11:56:56 IST" duration-ms="3160" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:56:56 IST" name="loginTest" data-provider="loginData" finished-at="2026-08-06T11:56:58 IST" duration-ms="2163" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:56:58 IST" name="closeBrowser" finished-at="2026-08-06T11:57:01 IST" duration-ms="2204" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:57:01 IST" name="browserLaunch" finished-at="2026-08-06T11:57:03 IST" duration-ms="2821" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:57:03 IST" name="loginTest" data-provider="loginData" finished-at="2026-08-06T11:57:06 IST" duration-ms="2231" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:57:06 IST" name="closeBrowser" finished-at="2026-08-06T11:57:08 IST" duration-ms="2180" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:57:08 IST" name="browserLaunch" finished-at="2026-08-06T11:57:11 IST" duration-ms="3119" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:57:11 IST" name="loginTest" data-provider="loginData" finished-at="2026-08-06T11:57:13 IST" duration-ms="2198" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:57:13 IST" name="closeBrowser" finished-at="2026-08-06T11:57:15 IST" duration-ms="2183" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:57:15 IST" name="browserLaunch" finished-at="2026-08-06T11:57:18 IST" duration-ms="3195" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:57:18 IST" name="loginTest" data-provider="loginData" finished-at="2026-08-06T11:57:21 IST" duration-ms="2188" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test_invalid_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:57:21 IST" name="closeBrowser" finished-at="2026-08-06T11:57:23 IST" duration-ms="2175" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:57:23 IST" name="browserLaunch" finished-at="2026-08-06T11:57:26 IST" duration-ms="3206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:57:26 IST" name="loginTest" data-provider="loginData" finished-at="2026-08-06T11:57:28 IST" duration-ms="2234" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[invalid_pwd]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:57:28 IST" name="closeBrowser" finished-at="2026-08-06T11:57:30 IST" duration-ms="2190" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:57:30 IST" name="browserLaunch" finished-at="2026-08-06T11:57:34 IST" duration-ms="3129" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:57:34 IST" name="loginTest" data-provider="loginData" finished-at="2026-08-06T11:57:36 IST" duration-ms="2202" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test_invalid_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[invalid_pwd]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.TestClass@55b7a4e0]" started-at="2026-08-06T11:57:36 IST" name="closeBrowser" finished-at="2026-08-06T11:57:38 IST" duration-ms="2191" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- test.TestClass -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
