@@ -759,3 +759,64 @@ External File:Properties
 Multiple Sets of TestData:VU VP,VU IVP etc...
 Inside Script:@DataPrivder
 External File:ExcelSheets[.xlsx]
+
+getLastRowNum()->Last Index Value:5
+getPhysicalNumberOfRows()->Counts the Physical Values:4
+
+Maven Project:
+POM FrameWork
+Hybrid FrameWork
+
+Assignment:
+==========
+
+Maven Project:
+-------------https://mvnrepository.com/
+.jar 
+
+Dependecisis Formet
+Selenium
+
+Page Object Model FrameWork:
+---------------
+Locators 
+Functions or Method
+
+1.By 
+2.@findBy
+
+Hybrid FrameWork:
+---------------
+TestNG+DataDriven+POM+Maven+BaseClass+Properties+TestClass+TestSuit
+
+TestNG:
+-------
+Annotations
+DataPrivder
+Assertions 
+
+DataDriven:
+-----------
+Properties:URL 
+Excel:
+
+POM:
+---
+Locators 
+
+Maven:
+-----
+Project Structure
+Dependecisis
+
+TestClass:
+--------
+Operations or Functions 
+
+Test Suit
+
+Creating Hybrid FramWork from Scratch:
+--------------
+Step1:Create Maven Project and update jdk. 
+Step2:Add required dependency.
+Step3:Create required packages.
