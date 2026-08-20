@@ -820,3 +820,107 @@ Creating Hybrid FramWork from Scratch:
 Step1:Create Maven Project and update jdk. 
 Step2:Add required dependency.
 Step3:Create required packages.
+
+CI/CD:Continue Integration and Continue Delivery/Deployment
+
+Store your project into cloud environment.
+
+GITHUB:Cloud Environment[Repository/Memory]
+
+Push[Upload] and Pull[Download]
+
+2.
+
+How to upload files from GitHub:
+Manual Way[GUI]:
+GIT:Commands:
+
+How to download files from GitHub:
+Manual Way[GUI]:
+
+GIT:Commands:
+
+git remote add origin YOUR_GITHUB_REPOSITORY_URL
+
+git branch -M main
+
+git push -u origin main
+
+CI/CD:
+-----
+Jenkins or GitHub Actions
+
+Manual[UI]:GitHub DeskTop
+
+Automation:
+
+CICD:GitHub Actions 
+DevOps:Cloud Teams 
+
+Delivery:Manual
+Deployment:Automation
+
+Jenkins and GitHub Actions:
+-----------------------
+Jenkins->GitHub
+
+GitHub->GitHub Actions 
+
+End-To-End Project Process:
+-----------------------
+
+
+Hybrid FrameWork:Maven Project
+Browser Config:Open Close:BaseClass 
+URL:Properties File 
+Test Data:ExcelSheets:DataDriven
+Locators:POM
+TestNG 
+Functions/Methods:TestClass[Run]
+Test Suit:
+
+Hybrid=DataDriven+POM+TestNG:ATE 
+
+BDD Cucumber FrameWork:
+------------------
+Feature File:Gerkhin Language[English]
+Given When And Then But 
+
+
+StepDefinations
+RunnerClass
+
+BA or Marketing 
+
+Role:SDET 
+Responsiblites:
+
+Getting:
+Surviving:WFH WFO Hybrid
+
+Project Session:
+---------------
+End-To-End flow of Project:Business Flow 
+
+Resume:
+Project-1:SwagLabs App:E-Commerce Domain Project-2:FaceBookApp:SocialMedia Domain
+Pages or Modules:End-To-End
+RegistrationPage/NewRegPage-1
+LoginPage-2
+Search Products-3
+Add Cart-4
+CheckOut-5
+Payment-6
+Track Order-7
+LogOut-8  500TC+500TC=1K
+
+1.Manual Testing:STLC 
+RA TP TS TC TES TE 
+BRS FRS SRS PMP Templetes
+
+2.Automation Testing
+Hybrid FrameWork:Run 
+
+JD:Job Description 
+Domain:E-Commerce HealthCare Banking Insurance OnlineMeeting
+
